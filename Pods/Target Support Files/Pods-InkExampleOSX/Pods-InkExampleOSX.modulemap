@@ -1,0 +1,6 @@
+framework module Pods_InkExampleOSX {
+  umbrella header "Pods-InkExampleOSX-umbrella.h"
+
+  export *
+  module * { export * }
+}

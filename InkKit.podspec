@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author           = { "Shaps" => "shapsuk@me.com" }
   s.source           = { :git => "https://github.com/shaps80/InkKit.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/shaps'
-  s.platforms        = { :ios => '8.0', :osx => '10.11' }
+  s.platforms        = { :ios => '8.0' }
   s.requires_arc     = true
   s.source_files     = 'Pod/Classes/**/*'
 end

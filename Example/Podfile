@@ -5,7 +5,3 @@ target 'InkExampleiOS', :exclusive => true do
   pod 'InkKit', :path => '../'
 end
 
-target 'InkExampleOSX', :exclusive => true do
-  pod 'InkKit', :path => '../'
-end
-

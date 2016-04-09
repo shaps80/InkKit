@@ -1,5 +1,5 @@
 <img src="Resources/icon.png" width=128 height=128 alt="InkKit Logo" />
-
+ 
 # InkKit
 
 [![Version](https://img.shields.io/cocoapods/v/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
@@ -43,7 +43,7 @@ If the convenience methods below don't solve your needs, you can start by using 
 func draw(inRect:attributes:drawing:)
 ```
 
-Which would look like this in usage: 
+Which would look like this in usage:
 
 ```swift
 UIGraphicsGetCurrentContext()?.draw(inRect: rect, drawing: { (context, rect, attributes) in

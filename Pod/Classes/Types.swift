@@ -136,8 +136,8 @@ public final class DrawingAttributes {
   /// The fill color
   public var fillColor: Color?
   
-  /// The line width (defaults to 1/scale)
-  public var lineWidth: CGFloat = 1 / Screen.currentScreen().scale
+  /// The line width -- defaults to 1
+  public var lineWidth: CGFloat = 1
   
   /// The line cap style (defaults to .Round)
   public var lineCap: CGLineCap = .Round
@@ -163,7 +163,7 @@ public final class DrawingAttributes {
     
     CGContextSetLineCap(context, lineCap)
     CGContextSetLineJoin(context, lineJoin)
-    CGContextSetLineWidth(context, lineWidth)
+    CGContextSetLineWidth(context, lineWidth / Screen.currentScreen().scale)
   }
   
   public func apply(path: BezierPath) {
@@ -181,7 +181,7 @@ public final class DrawingAttributes {
     
 //    path.lineCapStyle = lineCap
 //    path.lineJoinStyle = lineJoin
-    path.lineWidth = lineWidth
+    path.lineWidth = lineWidth / Screen.currentScreen().scale
   }
   
 }

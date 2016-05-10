@@ -35,10 +35,10 @@ extension String {
    */
   public func sizeWithAttributes(attributes: [String : AnyObject]?, constrainedSize: CGSize? = nil) -> CGSize {
     if let size = constrainedSize {
-      return NSAttributedString(string: self, attributes: attributes).size()
+      return NSAttributedString(string: self, attributes: attributes).boundingRectWithSize(size, options: .UsesLineFragmentOrigin, context: nil).size
     }
     
-    return (self as NSString).sizeWithAttributes(attributes) ?? CGSizeZero
+    return NSAttributedString(string: self, attributes: attributes).size()
   }
   
   /**

@@ -12,21 +12,15 @@ import InkKit
 final class DrawView: UIView {
   
   var rotation: CGFloat = 0 {
-    didSet {
-      setNeedsDisplay()
-    }
+    didSet { setNeedsDisplay() }
   }
   
   var horizontalAlignment: HorizontalAlignment = .Center {
-    didSet {
-      setNeedsDisplay()
-    }
+    didSet { setNeedsDisplay() }
   }
   
   var verticalAlignment: VerticalAlignment = .Middle {
-    didSet {
-      setNeedsDisplay()
-    }
+    didSet { setNeedsDisplay() }
   }
   
   override func layoutSubviews() {
@@ -61,7 +55,23 @@ final class DrawView: UIView {
       attributes.fillColor = UIColor.redColor().colorWithAlphaComponent(0.5)
       attributes.dashPattern = [1, 4]
       attributes.lineWidth = 2
-    }.drawAtPoint(CGPointMake(0, 0))
+    }.drawAtPoint(CGPointMake(10, 10))
+    
+    let path = UIBezierPath(roundedRect: CGRect(x: leftRect.minX + 50, y: 20, width: 200, height: 100), cornerRadius: 5)
+    UIColor.lightGrayColor().setFill()
+    path.fill()
+    
+//    Draw.addShadow(.Outer, path: path, color: UIColor.blueColor(), radius: 5, offset: CGSize(width: 0, height: 0))
+//    Draw.addShadow(.Inner, path: path, color: UIColor.blackColor().colorWithAlphaComponent(0.5), radius: 5, offset: CGSize(width: 0, height: 5))
+  
+    Draw.strokeLine(CGPoint(x: 0, y: 119.5), endPoint: CGPoint(x: rightRect.maxX, y: 119.5), color: UIColor.blackColor()) { (attributes) in
+      attributes.lineWidth = 1
+    }
+    
+    Draw.addStroke(.Outer, path: path) { (attributes) in
+      attributes.lineWidth = 6
+      attributes.strokeColor = UIColor.whiteColor()
+    }
   }
   
   private func attributes() -> [String: AnyObject] {

@@ -24,7 +24,7 @@ extension Draw {
    - parameter radius: The blur radius of this shadow
    - parameter offset: The offest of this shadow
    */
-  public static func addShadow(type: ShadowType, path: UIBezierPath, color: Color, radius: CGFloat, offset: CGSize) {
+  public static func addShadow(type: ShadowType, path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
     switch type {
     case .Inner:
       addInnerShadow(path, color: color, radius: radius, offset: offset)
@@ -33,7 +33,7 @@ extension Draw {
     }
   }
   
-  private static func addInnerShadow(path: UIBezierPath, color: Color, radius: CGFloat, offset: CGSize) {
+  private static func addInnerShadow(path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: nil) { (context, rect, attributes) in
       CGContextAddPath(context, path.CGPath)
       CGContextClip(context)
@@ -51,10 +51,8 @@ extension Draw {
     }
   }
   
-  private static func addOuterShadow(path: UIBezierPath, color: Color, radius: CGFloat, offset: CGSize) {
+  private static func addOuterShadow(path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: nil) { (context, rect, attributes) in
-      let opaqueShadowColor = CGColorCreateCopyWithAlpha(color.CGColor, 1.0)
-      
       CGContextBeginTransparencyLayer(context, nil)
       CGContextSetShadowWithColor(context, offset, radius, color.CGColor)
       CGContextAddPath(context, path.CGPath)

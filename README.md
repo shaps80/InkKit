@@ -29,6 +29,13 @@ Image.circle(radius: 10) { (attributes) in
   attributes.dashPattern = [1, 4]
   attributes.lineWidth = 2
 }.drawAtPoint(CGPointMake(0, 0))
+
+Draw.addBorder(.Outer, path: path) { (attributes) in
+  attributes.lineWidth = 6
+  attributes.strokeColor = UIColor.whiteColor()
+}
+
+Draw.addShadow(.Inner, path: path, color: UIColor.blackColor(), radius: 5, offset: CGSize(width: 0, height: 5))
 ```
 
 ## Usage
@@ -54,19 +61,28 @@ UIGraphicsGetCurrentContext()?.draw(inRect: rect, drawing: { (context, rect, att
 
 This basically wraps getting the context, setting up its frame and save/restore calls. If you provide the additional DrawingAttributes block, it will also pre-configure your context with those options for you.
 
-### Primitives
+### Borders & Shadows
 
-For drawing primitives, like lines, paths, fills, strokes and gradients:
+Supports `.Outer`, `.Inner` and `.Center` borders, as well as `.Outer` and `.Inner` shadows.
+
+```swift
+static func addBorder(type:path:attributes:)
+static func addShadow(type:path:color:radius:offset:)
+```
+
+### Strokes
 
 ```swift
 static func strokeLine(startPoint:endPoint:startColor:endColor:angleInDegrees:attributes:)
 static func strokeLine(startPoint:endPoint:color:attributes:)
-
 static func strokePath(path:startColor:endColor:angleInDegrees:attributes:)
+```
+
+
+### Fills
+
+```swift
 static func fillPath(path:startColor:endColor:angleInDegrees:attributes:)
-
-static func drawGradientPath(path:startColor:endColor:angleInDegrees:stroke:attributes:)
-
 ```
 
 ### Geometry

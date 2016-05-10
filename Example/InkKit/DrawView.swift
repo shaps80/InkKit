@@ -61,14 +61,14 @@ final class DrawView: UIView {
     UIColor.lightGrayColor().setFill()
     path.fill()
     
-//    Draw.addShadow(.Outer, path: path, color: UIColor.blueColor(), radius: 5, offset: CGSize(width: 0, height: 0))
-//    Draw.addShadow(.Inner, path: path, color: UIColor.blackColor().colorWithAlphaComponent(0.5), radius: 5, offset: CGSize(width: 0, height: 5))
+    Draw.addShadow(.Outer, path: path, color: UIColor.blueColor(), radius: 5, offset: CGSize(width: 0, height: 0))
+    Draw.addShadow(.Inner, path: path, color: UIColor.blackColor().colorWithAlphaComponent(0.5), radius: 5, offset: CGSize(width: 0, height: 5))
   
     Draw.strokeLine(CGPoint(x: 0, y: 119.5), endPoint: CGPoint(x: rightRect.maxX, y: 119.5), color: UIColor.blackColor()) { (attributes) in
       attributes.lineWidth = 1
     }
     
-    Draw.addStroke(.Outer, path: path) { (attributes) in
+    Draw.addBorder(.Outer, path: path) { (attributes) in
       attributes.lineWidth = 6
       attributes.strokeColor = UIColor.whiteColor()
     }

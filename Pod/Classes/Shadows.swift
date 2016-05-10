@@ -15,6 +15,15 @@ public enum ShadowType {
 
 extension Draw {
   
+  /**
+   Draws a shadow from the specified paths edge
+   
+   - parameter type:   The type of shadow to draw
+   - parameter path:   The path to apply this shadow to
+   - parameter color:  The color for this shadow -- opacity is controlled through the color's opacity
+   - parameter radius: The blur radius of this shadow
+   - parameter offset: The offest of this shadow
+   */
   public static func addShadow(type: ShadowType, path: UIBezierPath, color: Color, radius: CGFloat, offset: CGSize) {
     switch type {
     case .Inner:

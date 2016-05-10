@@ -8,6 +8,13 @@
 
 import CoreGraphics
 
+/**
+ Defines the various border types available
+ 
+ - Inner:  The border will be drawn on the inside of the shapes edge
+ - Outer:  The border will be drawn on the outside of the shapes edge
+ - Center: The border will be drawn along the center of the shapes edge
+ */
 public enum BorderType {
   case Inner
   case Outer
@@ -16,18 +23,25 @@ public enum BorderType {
 
 extension Draw {
   
-  public static func addStroke(type: BorderType, path: UIBezierPath, attributes attributesBlock: AttributesBlock? = nil) {
+  /**
+   Draws a border along the shapes edge
+   
+   - parameter type:            The type of border to draw
+   - parameter path:            The path to apply this border to
+   - parameter attributesBlock: Any associated attributes for this drawing
+   */
+  public static func addBorder(type: BorderType, path: UIBezierPath, attributes attributesBlock: AttributesBlock? = nil) {
     switch type {
     case .Inner:
-      addInnerStroke(path, attributes: attributesBlock)
+      addInnerBorder(path, attributes: attributesBlock)
     case .Outer:
-      addOuterStroke(path, attributes: attributesBlock)
+      addOuterBorder(path, attributes: attributesBlock)
     case .Center:
-      addCenterStroke(path, attributes: attributesBlock)
+      addCenterBorder(path, attributes: attributesBlock)
     }
   }
   
-  private static func addInnerStroke(path: UIBezierPath, attributes attributesBlock: AttributesBlock? = nil) {
+  private static func addInnerBorder(path: UIBezierPath, attributes attributesBlock: AttributesBlock? = nil) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       CGContextAddPath(context, path.CGPath)
       CGContextClip(context)
@@ -38,7 +52,7 @@ extension Draw {
     }
   }
   
-  private static func addOuterStroke(path: UIBezierPath, attributes attributesBlock: AttributesBlock? = nil) {
+  private static func addOuterBorder(path: UIBezierPath, attributes attributesBlock: AttributesBlock? = nil) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       CGContextSetLineWidth(context, attributes.lineWidth * 2)
       CGContextAddPath(context, path.CGPath)
@@ -50,7 +64,7 @@ extension Draw {
     }
   }
   
-  private static func addCenterStroke(path: UIBezierPath, attributes attributesBlock: AttributesBlock? = nil) {
+  private static func addCenterBorder(path: UIBezierPath, attributes attributesBlock: AttributesBlock? = nil) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       CGContextAddPath(context, path.CGPath)
       CGContextStrokePath(context)

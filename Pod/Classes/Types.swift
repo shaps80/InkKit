@@ -179,9 +179,15 @@ public final class DrawingAttributes {
       strokeColor.setStroke()
     }
     
-    path.lineCapStyle = lineCap
-    path.lineJoinStyle = lineJoin
     path.lineWidth = lineWidth
+    
+    #if os(iOS)
+      path.lineCapStyle = lineCap
+      path.lineJoinStyle = lineJoin
+    #else
+      path.lineCapStyle = NSLineCapStyle(rawValue: UInt(lineCap.rawValue))!
+      path.lineJoinStyle = NSLineJoinStyle(rawValue: UInt(lineJoin.rawValue))!
+    #endif
   }
   
 }

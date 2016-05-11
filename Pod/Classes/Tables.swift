@@ -151,6 +151,9 @@ public struct Table {
 
 extension Table {
   
+  // this is iOS only for now -- since I need to add support for converting a CGPath to an NSBezierPath
+  #if os(iOS)
+  
   /**
    Returns a Bezier Path representation of the table -- you can use this to stroke the path using one of InkKit's other methods
    
@@ -193,5 +196,7 @@ extension Table {
     
     return BezierPath(CGPath: path)
   }
+  
+  #endif
   
 }

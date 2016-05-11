@@ -21,39 +21,48 @@ final class CanvasView: UIView {
   override func drawRect(bgFrame: CGRect) {
     super.drawRect(bgFrame)
     
-    let statusBarHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.height
-    let navBarHeight: CGFloat = 44
+    drawAnimatedFrames(bgFrame)
     
-    let margin: CGFloat = 0
-    let topGuide = statusBarHeight + navBarHeight
-    let barFrame = CGRect(x: 0, y: 0, width: bgFrame.width, height: topGuide)
-    let tableFrame = CGRect(x: 0, y: barFrame.maxY + margin, width: bgFrame.width, height: bgFrame.maxY - barFrame.height)
+    /*
+     The commented code below, is ALL that is actually required to render to final UI.
+     
+     If you uncomment it to see the result, don't forget to comment the drawAnimatedFrames() call above this comment.
+     */
     
     
-    // Table
-    
-    Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))
-    let table = Table(colCount: 6, rowCount: 9, bounds: tableFrame)
-    let path = table.path(includeComponents: [.Columns, .Rows])
-    
-    Draw.strokePath(path, startColor: UIColor(white: 1, alpha: 0.15), endColor: UIColor(white: 1, alpha: 0.05), angleInDegrees: 90)
-    
-    // Cell
-    
-    let rect = table.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 4, destinationRow: 6)
-    drawCell(rect, title: "4x6", includeBorder: true, includeShadow: true)
-    
-    // Navigation Bar
-    
-    Draw.addShadow(.Outer, path: UIBezierPath(rect: barFrame), color: UIColor(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
-    Draw.fillRect(barFrame, color: UIColor(hex: "ff0083"))
-    
-    let (_, navFrame) = barFrame.divide(20, fromEdge: .MinYEdge)
-    "InkKit".drawAlignedTo(navFrame, attributes: [
-      NSForegroundColorAttributeName: Color.whiteColor(),
-      NSFontAttributeName: UIFont(name: "Avenir-Book", size: 20)! ])
-    
-    backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
+//    let statusBarHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.height
+//    let navBarHeight: CGFloat = 44
+//    
+//    let margin: CGFloat = 0
+//    let topGuide = statusBarHeight + navBarHeight
+//    let barFrame = CGRect(x: 0, y: 0, width: bgFrame.width, height: topGuide)
+//    let tableFrame = CGRect(x: 0, y: barFrame.maxY + margin, width: bgFrame.width, height: bgFrame.maxY - barFrame.height)
+//    
+//    
+//    // Table
+//    
+//    Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))
+//    let table = Table(colCount: 6, rowCount: 9, bounds: tableFrame)
+//    let path = table.path(includeComponents: [.Columns, .Rows])
+//    
+//    Draw.strokePath(path, startColor: UIColor(white: 1, alpha: 0.15), endColor: UIColor(white: 1, alpha: 0.05), angleInDegrees: 90)
+//    
+//    // Cell
+//    
+//    let rect = table.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 4, destinationRow: 6)
+//    drawCell(rect, title: "4x6", includeBorder: true, includeShadow: true)
+//    
+//    // Navigation Bar
+//    
+//    Draw.addShadow(.Outer, path: UIBezierPath(rect: barFrame), color: UIColor(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
+//    Draw.fillRect(barFrame, color: UIColor(hex: "ff0083"))
+//    
+//    let (_, navFrame) = barFrame.divide(20, fromEdge: .MinYEdge)
+//    "InkKit".drawAlignedTo(navFrame, attributes: [
+//      NSForegroundColorAttributeName: Color.whiteColor(),
+//      NSFontAttributeName: UIFont(name: "Avenir-Book", size: 20)! ])
+//    
+//    backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
   }
   
   func drawAnimatedFrames(bgFrame: CGRect) {

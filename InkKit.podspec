@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = "1.2.0"
   s.summary          = "Drawing and Geometry made easy on iOS - now in Swift!"
   s.homepage         = "https://github.com/shaps80/InkKit"
-  s.screenshots      = "http://shaps.me/assets/img/blog/inkkit.png"
+  s.screenshots      = "http://shaps.me/assets/img/blog/InkKit.gif"
   s.license          = 'MIT'
   s.author           = { "Shaps" => "shapsuk@me.com" }
   s.source           = { :git => "https://github.com/shaps80/InkKit.git", :tag => s.version.to_s }

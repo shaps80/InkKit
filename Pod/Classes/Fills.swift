@@ -23,7 +23,7 @@ extension Draw {
     drawGradientPath(path, startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, stroke: false, attributes: attributesBlock)
   }
   
-  public static func fillPath(path: BezierPath, color: UIColor, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func fillPath(path: BezierPath, color: Color, attributes attributesBlock: AttributesBlock? = nil) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { context, rect, attributes in
       CGContextSetFillColorWithColor(context, color.CGColor)
       CGContextAddPath(context, path.CGPath)
@@ -31,10 +31,10 @@ extension Draw {
     }
   }
   
-  public static func fillRect(rect: CGRect, color: UIColor, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func fillRect(rect: CGRect, color: Color, attributes attributesBlock: AttributesBlock? = nil) {
     UIGraphicsGetCurrentContext()?.draw(inRect: rect, attributes: attributesBlock) { context, rect, attributes in
       CGContextSetFillColorWithColor(context, color.CGColor)
-      UIRectFill(rect)
+      CGContextFillRect(context, rect)
     }
   }
   

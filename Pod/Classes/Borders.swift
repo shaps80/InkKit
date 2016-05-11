@@ -30,7 +30,7 @@ extension Draw {
    - parameter path:            The path to apply this border to
    - parameter attributesBlock: Any associated attributes for this drawing
    */
-  public static func addBorder(type: BorderType, path: BezierPath, color: UIColor? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func addBorder(type: BorderType, path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     switch type {
     case .Inner:
       addInnerBorder(path, color: color, thickness: thickness, attributes: attributesBlock)
@@ -41,7 +41,7 @@ extension Draw {
     }
   }
   
-  private static func addInnerBorder(path: BezierPath, color: UIColor? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+  private static func addInnerBorder(path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       CGContextSetLineWidth(context, (thickness ?? attributes.lineWidth) * 2)
       color?.setStroke()
@@ -57,7 +57,7 @@ extension Draw {
     }
   }
   
-  private static func addOuterBorder(path: BezierPath, color: UIColor? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+  private static func addOuterBorder(path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       CGContextSetLineWidth(context, (thickness ?? attributes.lineWidth) * 2)
       color?.setStroke()
@@ -74,7 +74,7 @@ extension Draw {
     }
   }
   
-  private static func addCenterBorder(path: BezierPath, color: UIColor? = nil, thickness: CGFloat? = nil,  attributes attributesBlock: AttributesBlock? = nil) {
+  private static func addCenterBorder(path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil,  attributes attributesBlock: AttributesBlock? = nil) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       CGContextSetLineWidth(context, thickness ?? attributes.lineWidth)
       color?.setStroke()

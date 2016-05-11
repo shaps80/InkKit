@@ -19,10 +19,10 @@ extension Draw {
   }
   
   public static func strokeRect(rect: CGRect, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
-    strokePath(UIBezierPath(rect: rect), startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, attributes: attributesBlock)
+    strokePath(BezierPath(rect: rect), startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, attributes: attributesBlock)
   }
   
-  public static func strokePath(path: BezierPath, color: UIColor, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func strokePath(path: BezierPath, color: Color, attributes attributesBlock: AttributesBlock? = nil) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       CGContextAddPath(context, path.CGPath)
       CGContextStrokePath(context)

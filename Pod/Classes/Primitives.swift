@@ -8,6 +8,16 @@
 
 import CoreGraphics
 
+public struct TableComponents : OptionSetType {
+  public let rawValue: Int
+  public init(rawValue: Int) { self.rawValue = rawValue }
+  
+  public static var Outline: TableComponents { return TableComponents(rawValue: 1 << 0) }
+  public static var Columns: TableComponents { return TableComponents(rawValue: 1 << 1) }
+  public static var Rows:    TableComponents { return TableComponents(rawValue: 1 << 2) }
+}
+
+
 extension Draw {
   
   // MARK: Internal functions
@@ -20,7 +30,9 @@ extension Draw {
         CGContextReplacePathWithStrokedPath(context)
       }
       
-      CGContextClip(context)
+      if !CGContextIsPathEmpty(context) {
+        CGContextClip(context)
+      }
       
       let rect = CGPathGetBoundingBox(path.CGPath)
       let locations: [CGFloat] = [0, 1]

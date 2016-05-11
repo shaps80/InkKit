@@ -36,7 +36,10 @@ extension Draw {
   private static func addInnerShadow(path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
     UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: nil) { (context, rect, attributes) in
       CGContextAddPath(context, path.CGPath)
-      CGContextClip(context)
+      
+      if !CGContextIsPathEmpty(context) {
+        CGContextClip(context)
+      }
       
       let opaqueShadowColor = CGColorCreateCopyWithAlpha(color.CGColor, 1.0)
       

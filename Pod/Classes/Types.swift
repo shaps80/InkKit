@@ -163,7 +163,7 @@ public final class DrawingAttributes {
     
     CGContextSetLineCap(context, lineCap)
     CGContextSetLineJoin(context, lineJoin)
-    CGContextSetLineWidth(context, lineWidth / Screen.currentScreen().scale)
+    CGContextSetLineWidth(context, lineWidth)
   }
   
   public func apply(path: BezierPath) {
@@ -179,9 +179,9 @@ public final class DrawingAttributes {
       strokeColor.setStroke()
     }
     
-//    path.lineCapStyle = lineCap
-//    path.lineJoinStyle = lineJoin
-    path.lineWidth = lineWidth / Screen.currentScreen().scale
+    path.lineCapStyle = lineCap
+    path.lineJoinStyle = lineJoin
+    path.lineWidth = lineWidth
   }
   
 }

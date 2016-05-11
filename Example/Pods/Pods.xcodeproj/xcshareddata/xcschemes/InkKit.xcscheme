@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "72C57CB060559F6DA3CE05901DB3D5BA"
+               BlueprintIdentifier = "6D9289F9D96037DF4A29707ECAACBBD9"
                BuildableName = "InkKit.framework"
                BlueprintName = "InkKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "72C57CB060559F6DA3CE05901DB3D5BA"
+            BlueprintIdentifier = "6D9289F9D96037DF4A29707ECAACBBD9"
             BuildableName = "InkKit.framework"
             BlueprintName = "InkKit"
             ReferencedContainer = "container:Pods.xcodeproj">

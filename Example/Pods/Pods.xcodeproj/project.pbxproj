@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20A8CD59E4958A429099AD34A1B5B0F7 /* String+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58561E58D1953B18F2B77680ECB0AC49 /* String+Drawing.swift */; };
-		211B30253E47CFB9692053BBF7098849 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F005469ACCF24C16D1CE5B3759F0B2 /* Primitives.swift */; };
-		5423D22D1CE24DAE007220AB /* Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735EB2AD019C3E5745429EF77095967 /* Borders.swift */; };
-		593D5EF85962A6D30CD6B66B2C94EC1B /* Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8B98FA8F8C1814B0B683823B93130B /* Shadows.swift */; };
-		5BEAC897BA24CDC25B38DC83ACA0247C /* InkKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50CA305DE9B06F5E4B4C5DC06D8C18CF /* InkKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DC2248D4D659392D8A0DC6AF349B80E /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FE345EDD2AB79D25C01E01DAB0BA9A /* Geometry.swift */; };
-		84D7543C10EB09D37DB8B8D2F675A2A6 /* BezierPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2014DB1FC6D8B8AD9FF5B8CF5EFAD /* BezierPath+Extensions.swift */; };
-		9285476683511373CD8D35C0FAC42770 /* Image+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EADBEBE2D9036D5F86DB200E999C2E /* Image+Drawing.swift */; };
-		94890D0BF9B7694EE234C3C6805BF163 /* InkKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D662008D3D2390CA972A5950027A1E /* InkKit-dummy.m */; };
+		03D9C09160623088020DD5356EA43E3C /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DB881D40685EDD5382217AFAF08386 /* Drawing.swift */; };
+		2155AE7246E9678928C44A20066465D8 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C0FB5058F73BDB7A0CF0AEC79068C /* Geometry.swift */; };
+		360232989772BC2192FF94B32FD3758E /* Tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0B25F504FE5B2CE71301A792982DBE /* Tables.swift */; };
+		3E9ECA14E181C52111CF5EC03A1F9ACE /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC9EB3CB8FA63806B03CAE48DA42F2 /* Primitives.swift */; };
+		45C63CEB31B7956418746B9D8BD8EB20 /* BezierPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8F05D8158099029CD9C50B53FFE64 /* BezierPath+Extensions.swift */; };
+		489DAAFE6575B1E1690ED459CC500C68 /* String+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CC89E4CEC75C918DD2CE0C1E1D1EAB /* String+Drawing.swift */; };
+		621E85ADFD48E532C1A5BC916E5BFEBC /* InkKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D662008D3D2390CA972A5950027A1E /* InkKit-dummy.m */; };
+		62576ABEF4BD8AD3C221DDB6B645762D /* InkKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50CA305DE9B06F5E4B4C5DC06D8C18CF /* InkKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72C0C4C6E0E62FDC1172F581CD7A8FA0 /* Image+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE55ED30D99D507E759567A11FA23E2 /* Image+Drawing.swift */; };
+		7CF2223065A009D829EFC5EDD1D89917 /* Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D72D3442AD2D7663EBC22B7B873D96 /* Shadows.swift */; };
+		7D5758EA8C00DD04579C11402AFA8DD3 /* Strokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689CC39B63FA857C7EDC77E4104731ED /* Strokes.swift */; };
+		8A39B05067B442F7B579E7DAA133D29E /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062603EF5788971946B0E32BC2AB351 /* Color+Extensions.swift */; };
 		94F30DDA98DC2014758BDF3A88D55270 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		984FF520F058A283262617CB099CB3F2 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		9E6B18B38299E39D8CAF7CAFD003FCBD /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681EF539169ABB9DB176145FCD4417B /* Drawing.swift */; };
-		A2372888BCEA42178323EC7175426D95 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B5BD8CBF42102A0C49F00183B82A30 /* Types.swift */; };
-		A415E4845A29849502556133213AC0F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		AF5F0FEE158B13A2E34895CD766F5319 /* Fills.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C4EE97215E44C04001722344AC438 /* Fills.swift */; };
 		C322B47A0F9745A8519A6AE41BA13823 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		C53A43C7FCF5553512C9A1E575D8190E /* Fills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D1A1CA13679C885D1EB0E9B211AA0 /* Fills.swift */; };
-		FDB3A06BE7FC9B455627CB995CAEA8BD /* Strokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E16F81175BB475DF3A4ABED1A86CB7 /* Strokes.swift */; };
+		D52195470FD03ADA2DABF3C8E32414D1 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AB68FABFCCEA5CB6EF326B73B1969 /* Types.swift */; };
+		D957DD533E0D4345C6456F8E1CA27684 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		E43E0A25F0D776A620BD67D1D2B92ED8 /* Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1416B78CE15FA1EC20690E9DAD14B40 /* Borders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,59 +33,61 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 72C57CB060559F6DA3CE05901DB3D5BA;
+			remoteGlobalIDString = 6D9289F9D96037DF4A29707ECAACBBD9;
 			remoteInfo = InkKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0681EF539169ABB9DB176145FCD4417B /* Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
-		1735EB2AD019C3E5745429EF77095967 /* Borders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
 		216AEE91D9290B08C1756EFB114AB331 /* InkKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = InkKit.modulemap; sourceTree = "<group>"; };
 		23D662008D3D2390CA972A5950027A1E /* InkKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "InkKit-dummy.m"; sourceTree = "<group>"; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		50CA305DE9B06F5E4B4C5DC06D8C18CF /* InkKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "InkKit-umbrella.h"; sourceTree = "<group>"; };
-		54FE345EDD2AB79D25C01E01DAB0BA9A /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
-		58561E58D1953B18F2B77680ECB0AC49 /* String+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Drawing.swift"; sourceTree = "<group>"; };
-		69EADBEBE2D9036D5F86DB200E999C2E /* Image+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Image+Drawing.swift"; sourceTree = "<group>"; };
-		75B5BD8CBF42102A0C49F00183B82A30 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		54DB881D40685EDD5382217AFAF08386 /* Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		689CC39B63FA857C7EDC77E4104731ED /* Strokes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Strokes.swift; sourceTree = "<group>"; };
+		6AE55ED30D99D507E759567A11FA23E2 /* Image+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Image+Drawing.swift"; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
 		7EA0BB4E5BFD957A6593F7FDF98B4C6F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F78A546DFF0B2B0DF60358121F86FE0 /* InkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F7D1A1CA13679C885D1EB0E9B211AA0 /* Fills.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fills.swift; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
 		8F682EA906DAD8B31B2AE26969238E76 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96F005469ACCF24C16D1CE5B3759F0B2 /* Primitives.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
+		93CC89E4CEC75C918DD2CE0C1E1D1EAB /* String+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Drawing.swift"; sourceTree = "<group>"; };
 		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
 		9DDBDEA300BC402C09A604CEFCDC3963 /* InkKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = InkKit.xcconfig; sourceTree = "<group>"; };
+		9E0B25F504FE5B2CE71301A792982DBE /* Tables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Tables.swift; sourceTree = "<group>"; };
+		B13AB68FABFCCEA5CB6EF326B73B1969 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		B2DC9EB3CB8FA63806B03CAE48DA42F2 /* Primitives.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C4E16F81175BB475DF3A4ABED1A86CB7 /* Strokes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Strokes.swift; sourceTree = "<group>"; };
+		C062603EF5788971946B0E32BC2AB351 /* Color+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		C1416B78CE15FA1EC20690E9DAD14B40 /* Borders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		CF8B98FA8F8C1814B0B683823B93130B /* Shadows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Shadows.swift; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		DDD8F05D8158099029CD9C50B53FFE64 /* BezierPath+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BezierPath+Extensions.swift"; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEE2014DB1FC6D8B8AD9FF5B8CF5EFAD /* BezierPath+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BezierPath+Extensions.swift"; sourceTree = "<group>"; };
+		E99C0FB5058F73BDB7A0CF0AEC79068C /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		F3693E309C03A5551D2A7489419D8D27 /* InkKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "InkKit-prefix.pch"; sourceTree = "<group>"; };
+		F9D72D3442AD2D7663EBC22B7B873D96 /* Shadows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Shadows.swift; sourceTree = "<group>"; };
+		FC3C4EE97215E44C04001722344AC438 /* Fills.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fills.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		18C908BBAF74C2D205D8B1455BAE393B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A415E4845A29849502556133213AC0F1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2ACF3E1D38500A30DFE4759DFADBA9A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C322B47A0F9745A8519A6AE41BA13823 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C589C52B147D627D066FD29ED3DE10F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D957DD533E0D4345C6456F8E1CA27684 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +97,7 @@
 		3E79171DF80C2A72FC28A0483E0D79C8 /* InkKit */ = {
 			isa = PBXGroup;
 			children = (
-				9B714ABD53CA9CD6AB1B844E3F5E56F0 /* Pod */,
+				FF97B9B0E1DF732D16824FA947B22578 /* Pod */,
 				5DE34D5A7EFFEE3777991534882C36B3 /* Support Files */,
 			);
 			name = InkKit;
@@ -123,6 +127,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6AC82C1385A5F199C0A304D06739658E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DDD8F05D8158099029CD9C50B53FFE64 /* BezierPath+Extensions.swift */,
+				C1416B78CE15FA1EC20690E9DAD14B40 /* Borders.swift */,
+				C062603EF5788971946B0E32BC2AB351 /* Color+Extensions.swift */,
+				54DB881D40685EDD5382217AFAF08386 /* Drawing.swift */,
+				FC3C4EE97215E44C04001722344AC438 /* Fills.swift */,
+				E99C0FB5058F73BDB7A0CF0AEC79068C /* Geometry.swift */,
+				6AE55ED30D99D507E759567A11FA23E2 /* Image+Drawing.swift */,
+				B2DC9EB3CB8FA63806B03CAE48DA42F2 /* Primitives.swift */,
+				F9D72D3442AD2D7663EBC22B7B873D96 /* Shadows.swift */,
+				93CC89E4CEC75C918DD2CE0C1E1D1EAB /* String+Drawing.swift */,
+				689CC39B63FA857C7EDC77E4104731ED /* Strokes.swift */,
+				9E0B25F504FE5B2CE71301A792982DBE /* Tables.swift */,
+				B13AB68FABFCCEA5CB6EF326B73B1969 /* Types.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,32 +174,6 @@
 				65E3C68DB79F07666860B79D73B3EA88 /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		82C83C912788EFCEAFBF4B50E4DE7F68 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				EEE2014DB1FC6D8B8AD9FF5B8CF5EFAD /* BezierPath+Extensions.swift */,
-				1735EB2AD019C3E5745429EF77095967 /* Borders.swift */,
-				0681EF539169ABB9DB176145FCD4417B /* Drawing.swift */,
-				7F7D1A1CA13679C885D1EB0E9B211AA0 /* Fills.swift */,
-				54FE345EDD2AB79D25C01E01DAB0BA9A /* Geometry.swift */,
-				69EADBEBE2D9036D5F86DB200E999C2E /* Image+Drawing.swift */,
-				96F005469ACCF24C16D1CE5B3759F0B2 /* Primitives.swift */,
-				CF8B98FA8F8C1814B0B683823B93130B /* Shadows.swift */,
-				58561E58D1953B18F2B77680ECB0AC49 /* String+Drawing.swift */,
-				C4E16F81175BB475DF3A4ABED1A86CB7 /* Strokes.swift */,
-				75B5BD8CBF42102A0C49F00183B82A30 /* Types.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		9B714ABD53CA9CD6AB1B844E3F5E56F0 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				82C83C912788EFCEAFBF4B50E4DE7F68 /* Classes */,
-			);
-			path = Pod;
 			sourceTree = "<group>";
 		};
 		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
@@ -210,6 +208,14 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
+		FF97B9B0E1DF732D16824FA947B22578 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				6AC82C1385A5F199C0A304D06739658E /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -221,11 +227,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		376A0BFDAAA35024A2908ED297B32517 /* Headers */ = {
+		D57DB61ADA0A2185CD3BF5F6B9AB543D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BEAC897BA24CDC25B38DC83ACA0247C /* InkKit-umbrella.h in Headers */,
+				62576ABEF4BD8AD3C221DDB6B645762D /* InkKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,13 +256,13 @@
 			productReference = 8F682EA906DAD8B31B2AE26969238E76 /* Pods.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		72C57CB060559F6DA3CE05901DB3D5BA /* InkKit */ = {
+		6D9289F9D96037DF4A29707ECAACBBD9 /* InkKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92EFC0896CA81D16313E85AFC915BEAE /* Build configuration list for PBXNativeTarget "InkKit" */;
+			buildConfigurationList = C02AA56C7DCF7A2AD650C169D0D47813 /* Build configuration list for PBXNativeTarget "InkKit" */;
 			buildPhases = (
-				3E8EA84B47B5CA495434D2E780DE02DA /* Sources */,
-				18C908BBAF74C2D205D8B1455BAE393B /* Frameworks */,
-				376A0BFDAAA35024A2908ED297B32517 /* Headers */,
+				C1613622ECE5318E9D08094529C5645B /* Sources */,
+				C589C52B147D627D066FD29ED3DE10F8 /* Frameworks */,
+				D57DB61ADA0A2185CD3BF5F6B9AB543D /* Headers */,
 			);
 			buildRules = (
 			);
@@ -288,7 +294,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				72C57CB060559F6DA3CE05901DB3D5BA /* InkKit */,
+				6D9289F9D96037DF4A29707ECAACBBD9 /* InkKit */,
 				0352134241C5B1F5541541795EB135CC /* Pods */,
 			);
 		};
@@ -303,22 +309,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E8EA84B47B5CA495434D2E780DE02DA /* Sources */ = {
+		C1613622ECE5318E9D08094529C5645B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D7543C10EB09D37DB8B8D2F675A2A6 /* BezierPath+Extensions.swift in Sources */,
-				9E6B18B38299E39D8CAF7CAFD003FCBD /* Drawing.swift in Sources */,
-				C53A43C7FCF5553512C9A1E575D8190E /* Fills.swift in Sources */,
-				7DC2248D4D659392D8A0DC6AF349B80E /* Geometry.swift in Sources */,
-				9285476683511373CD8D35C0FAC42770 /* Image+Drawing.swift in Sources */,
-				5423D22D1CE24DAE007220AB /* Borders.swift in Sources */,
-				94890D0BF9B7694EE234C3C6805BF163 /* InkKit-dummy.m in Sources */,
-				211B30253E47CFB9692053BBF7098849 /* Primitives.swift in Sources */,
-				593D5EF85962A6D30CD6B66B2C94EC1B /* Shadows.swift in Sources */,
-				20A8CD59E4958A429099AD34A1B5B0F7 /* String+Drawing.swift in Sources */,
-				FDB3A06BE7FC9B455627CB995CAEA8BD /* Strokes.swift in Sources */,
-				A2372888BCEA42178323EC7175426D95 /* Types.swift in Sources */,
+				45C63CEB31B7956418746B9D8BD8EB20 /* BezierPath+Extensions.swift in Sources */,
+				E43E0A25F0D776A620BD67D1D2B92ED8 /* Borders.swift in Sources */,
+				8A39B05067B442F7B579E7DAA133D29E /* Color+Extensions.swift in Sources */,
+				03D9C09160623088020DD5356EA43E3C /* Drawing.swift in Sources */,
+				AF5F0FEE158B13A2E34895CD766F5319 /* Fills.swift in Sources */,
+				2155AE7246E9678928C44A20066465D8 /* Geometry.swift in Sources */,
+				72C0C4C6E0E62FDC1172F581CD7A8FA0 /* Image+Drawing.swift in Sources */,
+				621E85ADFD48E532C1A5BC916E5BFEBC /* InkKit-dummy.m in Sources */,
+				3E9ECA14E181C52111CF5EC03A1F9ACE /* Primitives.swift in Sources */,
+				7CF2223065A009D829EFC5EDD1D89917 /* Shadows.swift in Sources */,
+				489DAAFE6575B1E1690ED459CC500C68 /* String+Drawing.swift in Sources */,
+				7D5758EA8C00DD04579C11402AFA8DD3 /* Strokes.swift in Sources */,
+				360232989772BC2192FF94B32FD3758E /* Tables.swift in Sources */,
+				D52195470FD03ADA2DABF3C8E32414D1 /* Types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,69 +336,12 @@
 		6B76965BC9AEEF14A5F777FB94F32505 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = InkKit;
-			target = 72C57CB060559F6DA3CE05901DB3D5BA /* InkKit */;
+			target = 6D9289F9D96037DF4A29707ECAACBBD9 /* InkKit */;
 			targetProxy = E945CEEB8C225F3B88443B48CD16A269 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		177CD3950AD6E415E4A52F2D0347ABD3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DDBDEA300BC402C09A604CEFCDC3963 /* InkKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/InkKit/InkKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/InkKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/InkKit/InkKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = InkKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3CA0B1AE828C3524207822CE2076CD48 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DDBDEA300BC402C09A604CEFCDC3963 /* InkKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/InkKit/InkKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/InkKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/InkKit/InkKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = InkKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		421441C171177B31B3FDC9256E872866 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
@@ -414,6 +365,34 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		478A92B0562B233EA15B6F0B89180642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DDBDEA300BC402C09A604CEFCDC3963 /* InkKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/InkKit/InkKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/InkKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/InkKit/InkKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = InkKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,6 +473,35 @@
 			};
 			name = Debug;
 		};
+		E3E5E4C3466A9285D4D449AAED794EA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DDBDEA300BC402C09A604CEFCDC3963 /* InkKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/InkKit/InkKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/InkKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/InkKit/InkKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = InkKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -549,11 +557,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92EFC0896CA81D16313E85AFC915BEAE /* Build configuration list for PBXNativeTarget "InkKit" */ = {
+		C02AA56C7DCF7A2AD650C169D0D47813 /* Build configuration list for PBXNativeTarget "InkKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				177CD3950AD6E415E4A52F2D0347ABD3 /* Debug */,
-				3CA0B1AE828C3524207822CE2076CD48 /* Release */,
+				E3E5E4C3466A9285D4D449AAED794EA9 /* Debug */,
+				478A92B0562B233EA15B6F0B89180642 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,42 +1,69 @@
-<img src="Resources/icon.png" width=128 height=128 alt="InkKit Logo" />
- 
 # InkKit
 
 [![Version](https://img.shields.io/cocoapods/v/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
 [![License](https://img.shields.io/cocoapods/l/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
 [![Platform](https://img.shields.io/cocoapods/p/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
 
-## Example
+Everything you see here, was code-drawn with InkKit! 
 
-***Note: The code below will work for both iOS and OSX)***
+<table>
+  <tr>
+    <th width="30%">Drawing made simple!</th>
+    <th width="30%">InkKit In Action</th>
+  </tr>
+  <tr>
+    <td>Lets draw the screen on the right.</td>
+    <th rowspan="9"><img src="http://shaps.me/assets/img/blog/InkKit.gif"></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))
+let table = Table(colCount: 6, rowCount: 9, bounds: tableFrame)
+let path = table.path(includeComponents: [.Columns, .Rows])
+    
+Draw.strokePath(path, startColor: UIColor(white: 1, alpha: 0.15),
+    endColor: UIColor(white: 1, alpha: 0.05), angleInDegrees: 90)
+    
+let rect = table.boundsForRange(sourceColumn: 1, sourceRow: 1,
+                      destinationColumn: 4, destinationRow: 6)
+    
+drawCell(rect, title: "4x6", 
+  includeBorder: true, includeShadow: true)
+    
+Draw.addShadow(.Outer, path: UIBezierPath(rect: barFrame),
+           color: UIColor(white: 0, alpha: 0.4), radius: 5,
+                       offset: CGSize(width: 0, height: 1))
+    
+Draw.fillRect(barFrame, color: UIColor(hex: "ff0083"))
+    
+let (_, navFrame) = barFrame.divide(20, fromEdge: .MinYEdge)
+"InkKit".drawAlignedTo(navFrame, attributes: [
+  NSForegroundColorAttributeName: Color.whiteColor(),
+  NSFontAttributeName: UIFont(name: "Avenir-Book", size: 20)! 
+])
+    
+backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))  
+</tr></table>
 
-```swift
-let (leftRect, rightRect) = frame.divide(atDelta: 0.5, fromEdge: .MinXEdge, margin: 10)
-let start = Color.whiteColor()
-let end = Color.blackColor()
-let leftPath = BezierPath(rect: leftRect)
+## Change Log
 
-// fill the left rect with a 90º gradient
-Draw.fillPath(leftPath, startColor: start, endColor: end, angleInDegrees: 90)
+**v1.2.0**
 
-// draw some text, aligned to the right rect
-"InkKit is so awesome!".drawAlignedTo(rightRect, horizontal: .Center, vertical: .Middle)
+* Shadows
+* Borders
+* Tables
 
-// create an image of a circle (with a radius of 5pt) and draw it
-Image.circle(radius: 10) { (attributes) in
-  attributes.strokeColor = Color.blackColor()
-  attributes.fillColor = Color.redColor().colorWithAlphaComponent(0.5)
-  attributes.dashPattern = [1, 4]
-  attributes.lineWidth = 2
-}.drawAtPoint(CGPointMake(0, 0))
+**v1.1.0**
 
-Draw.addBorder(.Outer, path: path) { (attributes) in
-  attributes.lineWidth = 6
-  attributes.strokeColor = UIColor.whiteColor()
-}
+* Images
+* Strings
 
-Draw.addShadow(.Inner, path: path, color: UIColor.blackColor(), radius: 5, offset: CGSize(width: 0, height: 5))
-```
+**v1.0**
+
+* Fills
+* Strokes
+* Geometry
+
 
 ## Usage
 
@@ -55,11 +82,30 @@ Which would look like this in usage:
 ```swift
 UIGraphicsGetCurrentContext()?.draw(inRect: rect, drawing: { (context, rect, attributes) in
   Color.redColor.setFill()
-  CGContextFillRect(rect)
+  UIRectFill(rect)
 })
 ```
 
 This basically wraps getting the context, setting up its frame and save/restore calls. If you provide the additional DrawingAttributes block, it will also pre-configure your context with those options for you.
+
+### Tables
+
+```swift
+init(colCount:rowCount:bounds:)
+func positionForCell(atIndex:) -> (col: Int, row: Int)
+func boundsForCell(atIndex:) -> CGRect
+func boundsForRange(sourceColumn:sourceRow:destinationColumn:destinationRow:) -> CGRect
+func boundsForCell(col:row:) -> CGRect
+```
+
+A `Table` is a really great way for laying out your drawing without having to think about placement, rect translations, etc...
+
+I use them often for layout only, but sometimes its useful to be able to render them as well (like in the included demo).
+
+```swift
+// components is a bitmask [ .Outline, .Rows, .Columns ]
+func stroke(components:attributes:)
+```
 
 ### Borders & Shadows
 
@@ -130,9 +176,12 @@ func drawInRect(rect:withAttributes)
 
 To see it in action, checkout the included demo project which has some UI hooked up to show its usage.
 
-## Requirements
+## Platforms and Versions
 
-InkKit only depends on CoreGraphics and has no other external dependencies.
+InkKit is supported on the following platforms:
+
+* iOS 8.0 and greater 
+* OSX 10.11 and greater
 
 ## Installation
 

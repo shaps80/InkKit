@@ -10,6 +10,25 @@ import CoreGraphics
 
 extension Draw {
   
+  public static func strokeRect(rect: CGRect, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+    UIGraphicsGetCurrentContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
+      color?.setStroke()
+      CGContextAddRect(context, rect)
+      CGContextStrokeRect(context, rect)
+    }
+  }
+  
+  public static func strokeRect(rect: CGRect, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
+    strokePath(UIBezierPath(rect: rect), startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, attributes: attributesBlock)
+  }
+  
+  public static func strokePath(path: BezierPath, color: UIColor, attributes attributesBlock: AttributesBlock? = nil) {
+    UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
+      CGContextAddPath(context, path.CGPath)
+      CGContextStrokePath(context)
+    }
+  }
+  
   /**
    Strokes a line from startPoint to endPoint with a gradient. Note: The following is valid -- endPoint.x < startPoint.x || endPoint.y < startPoint.y
    
@@ -48,15 +67,13 @@ extension Draw {
    - parameter color:           The color for this line
    - parameter attributesBlock: Any additional attributes can be configured using this configuration block
    */
-  public static func strokeLine(startPoint: CGPoint, endPoint: CGPoint, color: Color = Color.blackColor(), attributes attributesBlock: AttributesBlock? = nil) {
+  public static func strokeLine(startPoint: CGPoint, endPoint: CGPoint, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     let rect = reversibleRect(fromPoint: startPoint, toPoint: endPoint)
     
-    UIGraphicsGetCurrentContext()?.draw(inRect: rect, attributes: attributesBlock, drawing: { (context, rect, attributes) in
-      color.setStroke()
-      CGContextMoveToPoint(context, startPoint.x + 0.5, startPoint.y + 0.5)
-      CGContextAddLineToPoint(context, endPoint.x + 0.5, endPoint.y + 0.5)
-      CGContextStrokePath(context)
-    })
+    UIGraphicsGetCurrentContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
+      color?.setStroke()
+      CGContextStrokeLineSegments(context, [ startPoint, endPoint ], 2)
+    }
   }
   
 }

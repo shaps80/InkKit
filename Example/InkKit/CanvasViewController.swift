@@ -20,6 +20,8 @@ final class CanvasView: UIView {
   
   override func drawRect(bgFrame: CGRect) {
     super.drawRect(bgFrame)
+    Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))
+    
     
     drawAnimatedFrames(bgFrame)
     
@@ -41,7 +43,6 @@ final class CanvasView: UIView {
 //    
 //    // Table
 //    
-//    Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))
 //    let table = Table(colCount: 6, rowCount: 9, bounds: tableFrame)
 //    let path = table.path(includeComponents: [.Columns, .Rows])
 //    
@@ -159,9 +160,8 @@ final class CanvasView: UIView {
     let rowCount = max(0, min(9, slider.value - 10))
     table = Table(colCount: Int(colCount), rowCount: Int(rowCount), bounds: rect.insetBy(dx: -1, dy: 0))
     
-    table.stroke([ .Outline, .Rows, .Columns ]) { (attributes) in
-      attributes.strokeColor = UIColor(white: 1, alpha: 0.15)
-    }
+    let path = table.path(includeComponents: [ .Outline, .Rows, .Columns ])
+    Draw.strokePath(path, startColor: UIColor(white: 1, alpha: 0.15), endColor: UIColor(white: 1, alpha: 0.05), angleInDegrees: 90)
     
     drawCell()
   }

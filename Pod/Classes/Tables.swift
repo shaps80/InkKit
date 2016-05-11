@@ -151,6 +151,13 @@ public struct Table {
 
 extension Table {
   
+  /**
+   Returns a Bezier Path representation of the table -- you can use this to stroke the path using one of InkKit's other methods
+   
+   - parameter components: The components to draw -- Outline, Columns, Rows
+   
+   - returns: A bezier path representation
+   */
   public func path(includeComponents components: TableComponents) -> BezierPath {
     let path = CGPathCreateMutable()
     
@@ -185,43 +192,6 @@ extension Table {
     }
     
     return BezierPath(CGPath: path)
-  }
-  
-  public func stroke(components: TableComponents, attributes attributesBlock: AttributesBlock? = nil) {
-    UIGraphicsGetCurrentContext()?.draw(inRect: bounds, attributes: attributesBlock) { (context, rect, attributes) in
-      if components.contains(.Columns) {
-        for (index, column) in self.columns.enumerate() {
-          if index == 0 { continue }
-          
-          var origin = column.bounds.origin
-          origin.y = column.bounds.maxY
-          
-          CGContextMoveToPoint(context, column.bounds.origin.x, column.bounds.origin.y)
-          CGContextAddLineToPoint(context, origin.x, origin.y)
-        }
-      }
-      
-      if components.contains(.Rows) {
-        if let column = self.columns.first {
-          for (index, row) in column.rows.enumerate() {
-            if index == 0 { continue }
-            
-            var origin = row.bounds.origin
-            origin.x = row.bounds.maxX
-            
-            CGContextMoveToPoint(context, column.bounds.origin.x, column.bounds.origin.y)
-            CGContextAddLineToPoint(context, origin.x, origin.y)
-            
-            print(self.path)
-          }
-        }
-      }
-      
-      if components.contains(.Outline) {
-        CGContextAddRect(context, rect)
-        CGContextStrokeRect(context, rect)
-      }
-    }
   }
   
 }

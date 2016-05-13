@@ -2,6 +2,7 @@
 
 [![Version](https://img.shields.io/cocoapods/v/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
 [![License](https://img.shields.io/cocoapods/l/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
+[![Language](https://img.shields.io/badge/language-swift-ff69b4.svg)](http://cocoadocs.org/docsets/InkKit)
 [![Platform](https://img.shields.io/cocoapods/p/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
 
 Everything you see here, was code-drawn with InkKit! In fact, other than some `CGRect` instances, this is ALL the code required to draw the image you see on the right ;)

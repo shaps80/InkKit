@@ -20,32 +20,40 @@ Everything you see here, was code-drawn with InkKit! In fact, other than some `C
 Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))
 let table = Table(colCount: 6, rowCount: 9, bounds: tableFrame)
 let path = table.path(includeComponents: [.Columns, .Rows])
-    
+
 Draw.strokePath(path, startColor: UIColor(white: 1, alpha: 0.15),
     endColor: UIColor(white: 1, alpha: 0.05), angleInDegrees: 90)
-    
+
 let rect = table.boundsForRange(sourceColumn: 1, sourceRow: 1,
                       destinationColumn: 4, destinationRow: 6)
-    
-drawCell(rect, title: "4x6", 
+
+drawCell(rect, title: "4x6",
   includeBorder: true, includeShadow: true)
-    
+
 Draw.addShadow(.Outer, path: UIBezierPath(rect: barFrame),
            color: UIColor(white: 0, alpha: 0.4), radius: 5,
                        offset: CGSize(width: 0, height: 1))
-    
+
 Draw.fillRect(barFrame, color: UIColor(hex: "ff0083"))
-    
+
 let (_, navFrame) = barFrame.divide(20, fromEdge: .MinYEdge)
 "InkKit".drawAlignedTo(navFrame, attributes: [
   NSForegroundColorAttributeName: Color.whiteColor(),
-  NSFontAttributeName: UIFont(name: "Avenir-Book", size: 20)! 
+  NSFontAttributeName: UIFont(name: "Avenir-Book", size: 20)!
 ])
-    
+
 backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))  
 </tr></table>
 
 ## Change Log
+
+**v1.3.0**
+
+* OSX Support
+* OSX Demo Project now included
+* ~~Table~~ renamed to Grid
+* ~~Table~~ renamed to GridComponents
+* Added convenience methods for working with paths
 
 **v1.2.0**
 
@@ -180,7 +188,7 @@ To see it in action, checkout the included demo project which has some UI hooked
 
 InkKit is supported on the following platforms:
 
-* iOS 8.0 and greater 
+* iOS 8.0 and greater
 * OSX 10.11 and greater
 
 ## Installation

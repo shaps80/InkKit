@@ -26,6 +26,13 @@ import AppKit
 
 extension NSAffineTransform {
   
+  /**
+   Convert a CGAffineTransform to an NSAffineTransform
+   
+   - parameter transform: The CGAffineTransform to convert
+   
+   - returns: An NSAffineTransform
+   */
   public static func fromCGAffineTransform(transform: CGAffineTransform) -> NSAffineTransform {
     let t = NSAffineTransform()
     

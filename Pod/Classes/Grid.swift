@@ -22,6 +22,25 @@
 
 import Foundation
 
+
+/**
+ *  Defines the components that make up a grid -- used for constructing a path from a grid
+ */
+public struct GridComponents : OptionSetType {
+  public let rawValue: Int
+  public init(rawValue: Int) { self.rawValue = rawValue }
+  
+  /// Represents the outline of the grid
+  public static var Outline: GridComponents { return GridComponents(rawValue: 1 << 0) }
+  
+  /// Represents the column separators of a grid
+  public static var Columns: GridComponents { return GridComponents(rawValue: 1 << 1) }
+  
+  /// Represents the row separators of a grid
+  public static var Rows:    GridComponents { return GridComponents(rawValue: 1 << 2) }
+}
+
+
 /**
  *  Represents an entire row in a table
  */
@@ -209,3 +228,4 @@ extension Grid {
   }
   
 }
+

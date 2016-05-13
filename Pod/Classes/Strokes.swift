@@ -24,6 +24,13 @@ import CoreGraphics
 
 extension Draw {
   
+  /**
+   Strokes the specified rect
+   
+   - parameter rect:            The rect to stroke
+   - parameter color:           The color for this stroke
+   - parameter attributesBlock: Any additional attributes can be configured using this configuration block
+   */
   public static func strokeRect(rect: CGRect, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
       color?.setStroke()
@@ -32,10 +39,26 @@ extension Draw {
     }
   }
   
+  /**
+   Strokes the specified rect with a gradient
+   
+   - parameter rect:            The rect to stroke
+   - parameter startColor:      The start color for this gradient
+   - parameter endColor:        The end color for this gradient
+   - parameter angleInDegrees:  The angle for this gradient
+   - parameter attributesBlock: Any additional attributes can be configured using this configuration block
+   */
   public static func strokeRect(rect: CGRect, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
     strokePath(BezierPath(rect: rect), startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, attributes: attributesBlock)
   }
   
+  /**
+   Strokes the specified path
+   
+   - parameter path:            The path to stroke
+   - parameter color:           The color for this stroke
+   - parameter attributesBlock: Any additional attributes can be configured using this configuration block
+   */
   public static func strokePath(path: BezierPath, color: Color, attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       CGContextAddPath(context, path.CGPath)

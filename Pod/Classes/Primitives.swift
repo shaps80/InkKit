@@ -22,16 +22,6 @@
 
 import CoreGraphics
 
-public struct GridComponents : OptionSetType {
-  public let rawValue: Int
-  public init(rawValue: Int) { self.rawValue = rawValue }
-  
-  public static var Outline: GridComponents { return GridComponents(rawValue: 1 << 0) }
-  public static var Columns: GridComponents { return GridComponents(rawValue: 1 << 1) }
-  public static var Rows:    GridComponents { return GridComponents(rawValue: 1 << 2) }
-}
-
-
 extension Draw {
   
   // MARK: Internal functions

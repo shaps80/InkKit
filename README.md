@@ -47,7 +47,7 @@ backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
 
 ## Change Log
 
-**v1.3.0**
+**v1.3.1**
 
 * OSX Support
 * OSX Demo Project now included

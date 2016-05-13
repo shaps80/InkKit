@@ -148,6 +148,11 @@ public final class DrawingAttributes {
   /// The line dash pattern
   public var dashPattern: [CGFloat]? = nil
   
+  /**
+   Applies the attributes to the specified CGContext
+   
+   - parameter context: The context to apply
+   */
   public func apply(context: CGContext) {
     if let pattern = dashPattern {
       CGContextSetLineDash(context, 0, pattern, pattern.count)
@@ -166,6 +171,11 @@ public final class DrawingAttributes {
     CGContextSetLineWidth(context, lineWidth)
   }
   
+  /**
+   Applies the attributes to the specified Bezier Path
+   
+   - parameter path: The path to apply
+   */
   public func apply(path: BezierPath) {
     if let pattern = dashPattern {
       path.setLineDash(pattern, count: pattern.count, phase: 0)

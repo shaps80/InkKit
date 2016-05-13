@@ -14,7 +14,8 @@ import CoreGraphics
 
   extension NSBezierPath {
     
-    var CGPath: CGPathRef {
+    /// Returns a CGPath representation of the bezier path
+    public var CGPath: CGPathRef {
       if self.elementCount == 0 {
         return CGPathCreateMutable()
       }
@@ -45,10 +46,22 @@ import CoreGraphics
       return CGPathCreateCopy(path)!
     }
     
+    /**
+     Matches iOS function for consistency
+     
+     - parameter point: The point to add a line to
+     */
     public func addLineToPoint(point: CGPoint) {
       lineToPoint(point)
     }
     
+    /**
+     Initializes a new NSBezierPath based on the specified CGPath
+     
+     - parameter CGPath: The CGPath to use for constructing this path
+     
+     - returns: A new path
+     */
     public convenience init(CGPath: CGPathRef) {
       self.init(rect: CGRectZero)
       
@@ -74,15 +87,20 @@ import CoreGraphics
 
 extension CGPath {
   
-  func forEach(@noescape body: @convention(block) (CGPathElement) -> Void) {
-    typealias Body = @convention(block) (CGPathElement) -> Void
+  /**
+   Enumerates over the path elements
+   
+   - parameter enumerator: The enumeration handler
+   */
+  public func forEach(@noescape enumerator: @convention(block) (CGPathElement) -> Void) {
+    typealias ElementEnumeration = @convention(block) (CGPathElement) -> Void
     
     func callback(info: UnsafeMutablePointer<Void>, element: UnsafePointer<CGPathElement>) {
-      let body = unsafeBitCast(info, Body.self)
-      body(element.memory)
+      let enumerator = unsafeBitCast(info, ElementEnumeration.self)
+      enumerator(element.memory)
     }
     
-    let unsafeBody = unsafeBitCast(body, UnsafeMutablePointer<Void>.self)
+    let unsafeBody = unsafeBitCast(enumerator, UnsafeMutablePointer<Void>.self)
     CGPathApply(self, unsafeBody, callback)
   }
   

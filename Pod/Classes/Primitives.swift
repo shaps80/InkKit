@@ -8,13 +8,13 @@
 
 import CoreGraphics
 
-public struct TableComponents : OptionSetType {
+public struct GridComponents : OptionSetType {
   public let rawValue: Int
   public init(rawValue: Int) { self.rawValue = rawValue }
   
-  public static var Outline: TableComponents { return TableComponents(rawValue: 1 << 0) }
-  public static var Columns: TableComponents { return TableComponents(rawValue: 1 << 1) }
-  public static var Rows:    TableComponents { return TableComponents(rawValue: 1 << 2) }
+  public static var Outline: GridComponents { return GridComponents(rawValue: 1 << 0) }
+  public static var Columns: GridComponents { return GridComponents(rawValue: 1 << 1) }
+  public static var Rows:    GridComponents { return GridComponents(rawValue: 1 << 2) }
 }
 
 

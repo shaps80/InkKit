@@ -7,12 +7,17 @@
 		<key>InkExampleiOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>541FFBC71CB5472C00967CB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5428D6481CE4FF3A0082D815</key>
 		<dict>
 			<key>primary</key>
 			<true/>

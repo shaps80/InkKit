@@ -36,9 +36,10 @@ extension Image {
    - parameter blendMode:  The blend mode to apply to this drawing
    - parameter alpha:      The alpha to apply to this drawing
    */
-  public func drawAlignedTo(rect: CGRect, horizontal: HorizontalAlignment = .Center, vertical: VerticalAlignment = .Middle, blendMode: CGBlendMode = .Normal, alpha: CGFloat = 1) {
+  public func drawAlignedTo(rect: CGRect, horizontal: HorizontalAlignment = .Center, vertical: VerticalAlignment = .Middle, blendMode: CGBlendMode = .SourceOut, alpha: CGFloat = 1) {
     let alignedRect = CGRectMake(0, 0, size.width, size.height).alignedTo(rect, horizontal: horizontal, vertical: vertical)
-    ink_drawInRect(alignedRect, blendMode: blendMode, alpha: alpha)
+    let fromRect = CGRect(x: 0, y: 0, width: alignedRect.width, height: alignedRect.height)
+    ink_drawInRect(alignedRect, fromRect: fromRect, blendMode: blendMode, alpha: alpha)
   }
   
   /**
@@ -49,16 +50,17 @@ extension Image {
    - parameter blendMode: The blend mode to apply to this drawing
    - parameter alpha:     The alpha to apply to this drawing
    */
-  public func drawScaledTo(rect: CGRect, scaleMode mode: ScaleMode, blendMode: CGBlendMode = .Normal, alpha: CGFloat = 1) {
+  public func drawScaledTo(rect: CGRect, scaleMode mode: ScaleMode, blendMode: CGBlendMode = .SourceOut, alpha: CGFloat = 1) {
     let scaledRect = CGRectMake(0, 0, size.width, size.height).scaledTo(rect, scaleMode: mode)
-    ink_drawInRect(scaledRect, blendMode: blendMode, alpha: alpha)
+    let fromRect = CGRect(x: 0, y: 0, width: scaledRect.width, height: scaledRect.height)
+    ink_drawInRect(scaledRect, fromRect: fromRect, blendMode: blendMode, alpha: alpha)
   }
   
-  private func ink_drawInRect(rect: CGRect, blendMode mode: CGBlendMode, alpha: CGFloat) {
+  private func ink_drawInRect(rect: CGRect, fromRect: CGRect, blendMode mode: CGBlendMode, alpha: CGFloat) {
     #if os(iOS)
       drawInRect(rect, blendMode: mode, alpha: alpha)
     #else
-      drawInRect(rect, fromRect: rect, operation: NSCompositingOperation(rawValue: UInt(mode.rawValue))!, fraction: alpha)
+      drawInRect(rect, fromRect: fromRect, operation: NSCompositingOperation(rawValue: UInt(mode.rawValue))!, fraction: alpha)
     #endif
   }
   

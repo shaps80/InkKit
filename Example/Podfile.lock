@@ -1,5 +1,5 @@
 PODS:
-  - InkKit (1.1.0)
+  - InkKit (1.3.0)
 
 DEPENDENCIES:
   - InkKit (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  InkKit: a1046bce1aa4e1996fbccb7ade603fa16fb53cd1
+  InkKit: 7bdc8ce7861821014535a2d6a915615abe55162c
 
 COCOAPODS: 0.39.0

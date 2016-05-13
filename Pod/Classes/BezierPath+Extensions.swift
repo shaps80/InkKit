@@ -26,11 +26,15 @@ import CoreGraphics
         var points = [NSPoint](count: 3, repeatedValue: NSZeroPoint)
         
         switch self.elementAtIndex(i, associatedPoints: &points) {
-        case .MoveToBezierPathElement:CGPathMoveToPoint(path, nil, points[0].x, points[0].y)
-        case .LineToBezierPathElement:CGPathAddLineToPoint(path, nil, points[0].x, points[0].y)
-        case .CurveToBezierPathElement:CGPathAddCurveToPoint(path, nil, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[2].y)
-        case .ClosePathBezierPathElement:CGPathCloseSubpath(path)
-        didClosePath = true;
+        case .MoveToBezierPathElement:
+          CGPathMoveToPoint(path, nil, points[0].x, points[0].y)
+        case .LineToBezierPathElement:
+          CGPathAddLineToPoint(path, nil, points[0].x, points[0].y)
+        case .CurveToBezierPathElement:
+          CGPathAddCurveToPoint(path, nil, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[2].y)
+        case .ClosePathBezierPathElement:
+          CGPathCloseSubpath(path)
+          didClosePath = true;
         }
       }
       
@@ -45,7 +49,44 @@ import CoreGraphics
       lineToPoint(point)
     }
     
+    public convenience init(CGPath: CGPathRef) {
+      self.init(rect: CGRectZero)
+      
+      CGPath.forEach {
+        switch $0.type {
+        case .AddCurveToPoint:
+          curveToPoint($0.points[0], controlPoint1: $0.points[1], controlPoint2: $0.points[2])
+        case .AddLineToPoint:
+          lineToPoint($0.points[0])
+        case .AddQuadCurveToPoint:
+          curveToPoint($0.points[0], controlPoint1: $0.points[1], controlPoint2: $0.points[1])
+        case .CloseSubpath:
+          closePath()
+        case .MoveToPoint:
+          moveToPoint($0.points[0])
+        }
+      }
+    }
+    
   }
   
 #endif
+
+extension CGPath {
+  
+  func forEach(@noescape body: @convention(block) (CGPathElement) -> Void) {
+    typealias Body = @convention(block) (CGPathElement) -> Void
+    
+    func callback(info: UnsafeMutablePointer<Void>, element: UnsafePointer<CGPathElement>) {
+      let body = unsafeBitCast(info, Body.self)
+      body(element.memory)
+    }
+    
+    let unsafeBody = unsafeBitCast(body, UnsafeMutablePointer<Void>.self)
+    CGPathApply(self, unsafeBody, callback)
+  }
+  
+}
+
+
 

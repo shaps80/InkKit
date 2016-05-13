@@ -28,7 +28,7 @@ public struct Column {
 /**
  *  Represents columns and rows that make up a table
  */
-public struct Table {
+public struct Grid {
   
   /// Returns the columns associated with this table
   public let columns: [Column]
@@ -149,19 +149,16 @@ public struct Table {
   
 }
 
-extension Table {
-  
-  // this is iOS only for now -- since I need to add support for converting a CGPath to an NSBezierPath
-  #if os(iOS)
+extension Grid {
   
   /**
-   Returns a Bezier Path representation of the table -- you can use this to stroke the path using one of InkKit's other methods
+   Returns a Bezier Path representation of the grid -- you can use this to stroke the path using one of InkKit's other methods
    
    - parameter components: The components to draw -- Outline, Columns, Rows
    
    - returns: A bezier path representation
    */
-  public func path(includeComponents components: TableComponents) -> BezierPath {
+  public func path(includeComponents components: GridComponents) -> BezierPath {
     let path = CGPathCreateMutable()
     
     if components.contains(.Columns) {
@@ -194,9 +191,8 @@ extension Table {
       CGPathAddRect(path, nil, bounds)
     }
     
-    return BezierPath(CGPath: path)
+    return BezierPath(CGPath: path) 
   }
   
-  #endif
-  
 }
+

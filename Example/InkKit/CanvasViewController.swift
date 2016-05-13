@@ -11,7 +11,7 @@ import InkKit
 
 final class CanvasView: UIView {
   
-  private var table: Table!
+  private var table: Grid!
   @IBOutlet var slider: UISlider!
   
   @IBAction func valueChanged(slider: UISlider) {
@@ -158,7 +158,7 @@ final class CanvasView: UIView {
   func drawTable(rect: CGRect) {
     let colCount = max(0, min(6, slider.value - 10))
     let rowCount = max(0, min(9, slider.value - 10))
-    table = Table(colCount: Int(colCount), rowCount: Int(rowCount), bounds: rect.insetBy(dx: -1, dy: 0))
+    table = Grid(colCount: Int(colCount), rowCount: Int(rowCount), bounds: rect.insetBy(dx: -1, dy: 0))
     
     let path = table.path(includeComponents: [ .Outline, .Rows, .Columns ])
     Draw.strokePath(path, startColor: UIColor(white: 1, alpha: 0.15), endColor: UIColor(white: 1, alpha: 0.05), angleInDegrees: 90)

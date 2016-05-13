@@ -29,6 +29,7 @@
 		5423D2271CE24B10007220AB /* Strokes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strokes.swift; sourceTree = "<group>"; };
 		5423D2291CE24B16007220AB /* Fills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fills.swift; sourceTree = "<group>"; };
 		5423D22B1CE24BA0007220AB /* Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
+		5428D6591CE5051B0082D815 /* InkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InkKit.framework; path = "../../../../../../../Developer/Xcode/DerivedData/InkKit-fbosphqlxmedrxgpczcgejmkgwbw/Build/Products/Debug-iphoneos/InkKit.framework"; sourceTree = "<group>"; };
 		542DA6411CB6BB5600489192 /* Pods_InkExampleOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_InkExampleOSX.framework; path = Pods/../build/Debug/Pods_InkExampleOSX.framework; sourceTree = "<group>"; };
 		54B30D781CE2752A00D16082 /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		54B30D7A1CE28C0D00D16082 /* Tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tables.swift; sourceTree = "<group>"; };
@@ -46,7 +47,7 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		61B331908E2AFCAF2F1C0977 /* Pods-InkExampleiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InkExampleiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-InkExampleiOS/Pods-InkExampleiOS.release.xcconfig"; sourceTree = "<group>"; };
-		6878296401089BA6392A2B1B /* InkKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = InkKit.podspec; path = ../InkKit.podspec; sourceTree = "<group>"; };
+		6878296401089BA6392A2B1B /* InkKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = InkKit.podspec; path = ../InkKit.podspec; sourceTree = "<group>"; };
 		779D9B1B7BD4E5982BA76874 /* Pods-InkExampleOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InkExampleOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InkExampleOSX/Pods-InkExampleOSX.debug.xcconfig"; sourceTree = "<group>"; };
 		7EF9FE2564F8A73F0C561B78 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		97B4D5496FCFC124F1627B9B /* Pods-InkKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InkKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InkKit_Tests/Pods-InkKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 		685B3B1F14216EB9BBE7F9A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5428D6591CE5051B0082D815 /* InkKit.framework */,
 				542DA6411CB6BB5600489192 /* Pods_InkExampleOSX.framework */,
 				54C2D6BD1CB6B70100C49A6E /* InkKit.framework */,
 				54C2D6BB1CB6B65200C49A6E /* InkKit.framework */,
@@ -363,7 +365,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -402,7 +403,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

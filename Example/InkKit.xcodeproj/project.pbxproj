@@ -75,19 +75,19 @@
 		541FFBAF1CB5327300967CB1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				54C2D6B81CB6B3FB00C49A6E /* BezierPath+Extensions.swift */,
 				5423D22B1CE24BA0007220AB /* Borders.swift */,
+				54B30D781CE2752A00D16082 /* Color+Extensions.swift */,
 				541FFBBC1CB544D400967CB1 /* Drawing.swift */,
 				5423D2291CE24B16007220AB /* Fills.swift */,
 				541FFBC01CB5456800967CB1 /* Geometry.swift */,
+				5428D68A1CE5D82A0082D815 /* Grid.swift */,
 				54C2D6901CB5724400C49A6E /* Image+Drawing.swift */,
 				541FFBD71CB5491200967CB1 /* Primitives.swift */,
 				5423D2251CE20095007220AB /* Shadows.swift */,
 				541FFBBE1CB544E000967CB1 /* String+Drawing.swift */,
 				5423D2271CE24B10007220AB /* Strokes.swift */,
 				541FFBC21CB545CF00967CB1 /* Types.swift */,
-				54C2D6B81CB6B3FB00C49A6E /* BezierPath+Extensions.swift */,
-				54B30D781CE2752A00D16082 /* Color+Extensions.swift */,
-				5428D68A1CE5D82A0082D815 /* Grid.swift */,
 			);
 			name = Classes;
 			path = ../Pod/Classes;

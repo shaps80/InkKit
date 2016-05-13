@@ -72,8 +72,7 @@ backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
 * Strokes
 * Geometry
 
-
-## Usage
+## API
 
 InkKit provides many useful convenience methods for drawing and geometry calculations.
 
@@ -182,7 +181,7 @@ func drawInRect(rect:withAttributes)
 
 ## Demo
 
-To see it in action, checkout the included demo project which has some UI hooked up to show its usage.
+To try it out yourself, download the [source](http://github.com/shaps80/InkKit) and run the included demo project.
 
 ## Platforms and Versions
 

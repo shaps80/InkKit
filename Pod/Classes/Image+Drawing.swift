@@ -64,6 +64,18 @@ extension Image {
     #endif
   }
   
+  // MARK: iOS Compatibility
+  
+  /**
+   Draws the image at the specified point
+   
+   - parameter point: The point to position this image's origin
+   */
+  public func drawAtPoint(point: CGPoint) {
+    let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+    drawAtPoint(point, fromRect: rect, operation: .CompositeSourceOut, fraction: 1.0)
+  }
+  
 }
 
 extension Image {

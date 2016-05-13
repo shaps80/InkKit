@@ -104,6 +104,7 @@ func positionForCell(atIndex:) -> (col: Int, row: Int)
 func boundsForCell(atIndex:) -> CGRect
 func boundsForRange(sourceColumn:sourceRow:destinationColumn:destinationRow:) -> CGRect
 func boundsForCell(col:row:) -> CGRect
+func enumerateCells(enumerator:(index:col:row:bounds:) -> Void)
 ```
 
 A `Grid` is a really great way for laying out your drawing without having to think about placement, rect translations, etc...

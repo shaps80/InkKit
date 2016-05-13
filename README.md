@@ -18,13 +18,13 @@ Everything you see here, was code-drawn with InkKit! In fact, other than some `C
   <tr>
     <td><div class="highlight highlight-source-swift"><pre>
 Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))
-let table = Table(colCount: 6, rowCount: 9, bounds: tableFrame)
-let path = table.path(includeComponents: [.Columns, .Rows])
+let grid = Grid(colCount: 6, rowCount: 9, bounds: gridFrame)
+let path = grid.path(includeComponents: [.Columns, .Rows])
 
 Draw.strokePath(path, startColor: UIColor(white: 1, alpha: 0.15),
     endColor: UIColor(white: 1, alpha: 0.05), angleInDegrees: 90)
 
-let rect = table.boundsForRange(sourceColumn: 1, sourceRow: 1,
+let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1,
                       destinationColumn: 4, destinationRow: 6)
 
 drawCell(rect, title: "4x6",
@@ -96,7 +96,7 @@ GraphicsContext()?.draw(inRect: rect, drawing: { (context, rect, attributes) in
 
 This basically wraps getting the context, setting up its frame and save/restore calls. If you provide the additional DrawingAttributes block, it will also pre-configure your context with those options for you.
 
-### Tables
+### Grid
 
 ```swift
 init(colCount:rowCount:bounds:)
@@ -106,7 +106,7 @@ func boundsForRange(sourceColumn:sourceRow:destinationColumn:destinationRow:) ->
 func boundsForCell(col:row:) -> CGRect
 ```
 
-A `Table` is a really great way for laying out your drawing without having to think about placement, rect translations, etc...
+A `Grid` is a really great way for laying out your drawing without having to think about placement, rect translations, etc...
 
 I use them often for layout only, but sometimes its useful to be able to render them as well (like in the included demo).
 

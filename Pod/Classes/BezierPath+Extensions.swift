@@ -47,15 +47,6 @@ import CoreGraphics
     }
     
     /**
-     Matches iOS function for consistency
-     
-     - parameter point: The point to add a line to
-     */
-    public func addLineToPoint(point: CGPoint) {
-      lineToPoint(point)
-    }
-    
-    /**
      Initializes a new NSBezierPath based on the specified CGPath
      
      - parameter CGPath: The CGPath to use for constructing this path
@@ -79,6 +70,29 @@ import CoreGraphics
           moveToPoint($0.points[0])
         }
       }
+    }
+    
+    // MARK: iOS Compatibility
+    
+    /**
+     Adds a line to the specified point
+     
+     - parameter point: The point to add a line to
+     */
+    public func addLineToPoint(point: CGPoint) {
+      lineToPoint(point)
+    }
+    
+    /**
+     Initializes a new path with rounded corners
+     
+     - parameter rect:         The rect to use for this path
+     - parameter cornerRadius: The corner radius to apply to this path
+     
+     - returns: A new path
+     */
+    public convenience init(roundedRect rect: CGRect, cornerRadius: CGFloat) {
+      self.init(roundedRect: rect, xRadius: cornerRadius, yRadius: cornerRadius)
     }
     
   }

@@ -16,8 +16,7 @@ Everything you see here, was code-drawn with InkKit! In fact, other than some `C
     <td>Lets draw the screen on the right.</td>
     <th rowspan="9"><img src="http://shaps.me/assets/img/blog/InkKit.gif"></th>
   </tr>
-  <tr>
-    <td><div class="highlight highlight-source-swift"><pre>
+  <tr><td><div class="highlight highlight-source-swift"><pre>
 Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))
 let grid = Grid(colCount: 6, rowCount: 9, bounds: gridFrame)
 let path = grid.path(includeComponents: [.Columns, .Rows])
@@ -44,7 +43,8 @@ let (_, navFrame) = barFrame.divide(20, fromEdge: .MinYEdge)
 ])
 
 backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))  
-</tr></table>
+</pre></div></td></tr>
+</table>
 
 ## Change Log
 

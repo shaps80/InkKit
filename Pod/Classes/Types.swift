@@ -19,7 +19,7 @@ import CoreGraphics
   public typealias Screen = NSScreen
   public typealias Font = NSFont
   
-  func UIGraphicsGetCurrentContext() -> CGContext? {
+  func GraphicsContext() -> CGContext? {
     return NSGraphicsContext.currentContext()!.CGContext
   }
   
@@ -32,6 +32,10 @@ import CoreGraphics
   public typealias BezierPath = UIBezierPath
   public typealias Screen = UIScreen
   public typealias Font = UIFont
+  
+  func GraphicsContext() -> CGContext? {
+    return UIGraphicsGetCurrentContext()
+  }
   
 #endif
 

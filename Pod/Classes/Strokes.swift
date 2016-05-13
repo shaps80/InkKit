@@ -11,7 +11,7 @@ import CoreGraphics
 extension Draw {
   
   public static func strokeRect(rect: CGRect, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
-    UIGraphicsGetCurrentContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
+    GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
       color?.setStroke()
       CGContextAddRect(context, rect)
       CGContextStrokeRect(context, rect)
@@ -23,7 +23,7 @@ extension Draw {
   }
   
   public static func strokePath(path: BezierPath, color: Color, attributes attributesBlock: AttributesBlock? = nil) {
-    UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
+    GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       CGContextAddPath(context, path.CGPath)
       CGContextStrokePath(context)
     }
@@ -70,7 +70,7 @@ extension Draw {
   public static func strokeLine(startPoint: CGPoint, endPoint: CGPoint, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     let rect = reversibleRect(fromPoint: startPoint, toPoint: endPoint)
     
-    UIGraphicsGetCurrentContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
+    GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
       color?.setStroke()
       CGContextStrokeLineSegments(context, [ startPoint, endPoint ], 2)
     }

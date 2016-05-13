@@ -34,7 +34,7 @@ extension Draw {
   }
   
   private static func addInnerShadow(path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
-    UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: nil) { (context, rect, attributes) in
+    GraphicsContext()?.draw(inRect: path.bounds, attributes: nil) { (context, rect, attributes) in
       CGContextAddPath(context, path.CGPath)
       
       if !CGContextIsPathEmpty(context) {
@@ -55,7 +55,7 @@ extension Draw {
   }
   
   private static func addOuterShadow(path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
-    UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: nil) { (context, rect, attributes) in
+    GraphicsContext()?.draw(inRect: path.bounds, attributes: nil) { (context, rect, attributes) in
       CGContextBeginTransparencyLayer(context, nil)
       CGContextSetShadowWithColor(context, offset, radius, color.CGColor)
       CGContextAddPath(context, path.CGPath)

@@ -80,7 +80,7 @@ func draw(inRect:attributes:drawing:)
 Which would look like this in usage:
 
 ```swift
-UIGraphicsGetCurrentContext()?.draw(inRect: rect, drawing: { (context, rect, attributes) in
+GraphicsContext()?.draw(inRect: rect, drawing: { (context, rect, attributes) in
   Color.redColor.setFill()
   UIRectFill(rect)
 })

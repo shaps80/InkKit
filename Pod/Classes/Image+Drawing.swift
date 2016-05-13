@@ -99,12 +99,12 @@ extension Image {
     #if os(OSX)
       let image = Image(size: size)
       image.lockFocus()
-      UIGraphicsGetCurrentContext()?.draw(inRect: rect, attributes: attributesBlock, drawing: drawing)
+      GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock, drawing: drawing)
       image.unlockFocus()
       return image
     #else
       UIGraphicsBeginImageContextWithOptions(CGSizeMake(size.width, size.height), false, scale)
-      UIGraphicsGetCurrentContext()?.draw(inRect: rect, attributes: attributesBlock, drawing: drawing)
+      GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock, drawing: drawing)
       let image = UIGraphicsGetImageFromCurrentImageContext()
       UIGraphicsEndImageContext()
       return image

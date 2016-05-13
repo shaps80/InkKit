@@ -23,7 +23,7 @@ extension Draw {
   // MARK: Internal functions
   
   static func drawGradientPath(path: BezierPath, startColor: Color, endColor: Color, angleInDegrees: CGFloat, stroke: Bool, attributes attributesBlock: AttributesBlock? = nil) {
-    UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock, drawing: { (context, rect, attributes) in
+    GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock, drawing: { (context, rect, attributes) in
       CGContextAddPath(context, path.CGPath)
       
       if stroke {

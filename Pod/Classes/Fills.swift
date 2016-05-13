@@ -24,7 +24,7 @@ extension Draw {
   }
   
   public static func fillPath(path: BezierPath, color: Color, attributes attributesBlock: AttributesBlock? = nil) {
-    UIGraphicsGetCurrentContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { context, rect, attributes in
+    GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { context, rect, attributes in
       CGContextSetFillColorWithColor(context, color.CGColor)
       CGContextAddPath(context, path.CGPath)
       CGContextFillPath(context)
@@ -32,7 +32,7 @@ extension Draw {
   }
   
   public static func fillRect(rect: CGRect, color: Color, attributes attributesBlock: AttributesBlock? = nil) {
-    UIGraphicsGetCurrentContext()?.draw(inRect: rect, attributes: attributesBlock) { context, rect, attributes in
+    GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock) { context, rect, attributes in
       CGContextSetFillColorWithColor(context, color.CGColor)
       CGContextFillRect(context, rect)
     }

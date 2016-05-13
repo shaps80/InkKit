@@ -43,14 +43,14 @@ final class CanvasView: UIView {
 //    
 //    // Table
 //    
-//    let table = Table(colCount: 6, rowCount: 9, bounds: tableFrame)
-//    let path = table.path(includeComponents: [.Columns, .Rows])
+//    let grid = Grid(colCount: 6, rowCount: 9, bounds: tableFrame)
+//    let path = grid.path(includeComponents: [.Columns, .Rows])
 //    
 //    Draw.strokePath(path, startColor: UIColor(white: 1, alpha: 0.15), endColor: UIColor(white: 1, alpha: 0.05), angleInDegrees: 90)
 //    
 //    // Cell
 //    
-//    let rect = table.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 4, destinationRow: 6)
+//    let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 4, destinationRow: 6)
 //    drawCell(rect, title: "4x6", includeBorder: true, includeShadow: true)
 //    
 //    // Navigation Bar

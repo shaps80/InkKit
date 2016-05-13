@@ -64,7 +64,9 @@ extension Image {
     #endif
   }
   
-  // MARK: iOS Compatibility
+  // MARK: OSX Compatibility
+  
+  #if os(OSX)
   
   /**
    Draws the image at the specified point
@@ -75,6 +77,8 @@ extension Image {
     let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
     drawAtPoint(point, fromRect: rect, operation: .CompositeSourceOut, fraction: 1.0)
   }
+  
+  #endif
   
 }
 

@@ -38,7 +38,15 @@ extension Draw {
    - parameter radius: The blur radius of this shadow
    - parameter offset: The offest of this shadow
    */
-  public static func addShadow(type: ShadowType, path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
+  public static func addShadow(type: ShadowType, path: BezierPath, color: Color, radius: CGFloat, offset shadowOffset: CGSize) {
+    var offset: CGSize
+    
+    #if os(OSX)
+      offset = CGSize(width: shadowOffset.width, height: shadowOffset.height * -1)
+    #else
+      offset = shadowOffset
+    #endif
+    
     switch type {
     case .Inner:
       addInnerShadow(path, color: color, radius: radius, offset: offset)

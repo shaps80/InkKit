@@ -79,7 +79,7 @@ public struct Grid {
    - returns: A new table
    */
   public init(colCount: Int, rowCount: Int, bounds: CGRect) {
-    self.bounds = CGRectIntegral(bounds)
+    self.bounds = bounds
     var columns = [Column]()
     
     guard colCount > 0 || rowCount > 0 else {
@@ -90,11 +90,11 @@ public struct Grid {
     for col in 0..<colCount {
       var rows = [Row]()
       let colWidth = self.bounds.width / CGFloat(colCount)
-      let colRect = CGRectIntegral(CGRect(x: self.bounds.minX + colWidth * CGFloat(col), y: self.bounds.minY, width: colWidth, height: self.bounds.height))
+      let colRect = CGRect(x: self.bounds.minX + colWidth * CGFloat(col), y: self.bounds.minY, width: colWidth, height: self.bounds.height)
       
       for row in 0..<rowCount {
         let rowHeight = self.bounds.height / CGFloat(rowCount)
-        let rowRect = CGRectIntegral(CGRect(x: self.bounds.minX, y: self.bounds.minY + rowHeight * CGFloat(row), width: self.bounds.width, height: rowHeight))
+        let rowRect = CGRect(x: self.bounds.minX, y: self.bounds.minY + rowHeight * CGFloat(row), width: self.bounds.width, height: rowHeight)
         
         let row = Row(bounds: rowRect)
         rows.append(row)
@@ -177,7 +177,29 @@ public struct Grid {
     rect.size.width = colWidth
     rect.size.height = bounds.height / CGFloat(column.rows.count)
     
-    return CGRectIntegral(rect)
+    return rect
+  }
+  
+  /**
+   Enumerates all cells in the grid
+   
+   - parameter enumerator: The enumerator to execute for each cell -- returns the index, column, row and bounding rectangle representing this cell
+   */
+  public func enumerateCells(enumerator: (index: Int, col: Int, row: Int, bounds: CGRect) -> Void) {
+    guard let column = columns.first else {
+      return
+    }
+    
+    let rowCount = column.rows.count
+    var index = 0
+    
+    for rowIndex in 0..<rowCount {
+      for colIndex in 0..<columns.count {
+        let rect = boundsForCell(col: colIndex, row: rowIndex)
+        enumerator(index: index, col: colIndex, row: rowIndex, bounds: rect)
+        index += 1
+      }
+    }
   }
   
 }

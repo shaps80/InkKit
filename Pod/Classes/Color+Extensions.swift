@@ -82,7 +82,7 @@ extension Color {
    */
   public convenience init(hex: String, alpha: CGFloat = 1) {
     var int = UInt32()
-    NSScanner(string: hex).scanHexInt(&int)
+    Scanner(string: hex).scanHexInt32(&int)
     let a, r, g, b: UInt32
     
     switch hex.characters.count {
@@ -127,7 +127,7 @@ extension Color {
    
    - returns: A new color
    */
-  public func colorWithDelta(delta: CGFloat = 0.1) -> Color {
+  public func colorWithDelta(_ delta: CGFloat = 0.1) -> Color {
     let d = max(min(delta, 1), -1)
     let values = HSB
     

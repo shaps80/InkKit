@@ -28,12 +28,12 @@ final class CanvasView: UIView {
   private var table: Grid!
   @IBOutlet var slider: UISlider!
   
-  @IBAction func valueChanged(slider: UISlider) {
+  @IBAction func valueChanged(_ slider: UISlider) {
     setNeedsDisplay()
   }
   
-  override func drawRect(bgFrame: CGRect) {
-    super.drawRect(bgFrame)
+  override func draw(_ bgFrame: CGRect) {
+    super.draw(bgFrame)
     Draw.fillRect(bgFrame, color: Color(hex: "1c3d64"))
     
     
@@ -80,8 +80,8 @@ final class CanvasView: UIView {
 //    backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
   }
   
-  func drawAnimatedFrames(bgFrame: CGRect) {
-    let statusBarHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.height
+  func drawAnimatedFrames(_ bgFrame: CGRect) {
+    let statusBarHeight: CGFloat = UIApplication.shared().statusBarFrame.height
     let navBarHeight: CGFloat = 44
     
     let margin: CGFloat = 0
@@ -102,13 +102,13 @@ final class CanvasView: UIView {
     }
     
     if slider.value > 27 {
-      slider.hidden = false
+      slider.isHidden = false
     }
   }
   
-  func drawPlaceholder(rect: CGRect) {
+  func drawPlaceholder(_ rect: CGRect) {
     "InkKit".drawAlignedTo(rect, attributes: [
-      NSForegroundColorAttributeName: Color.whiteColor(),
+      NSForegroundColorAttributeName: Color.white(),
       NSFontAttributeName: Font(name: "Avenir-Book", size: 60)!
     ])
   }
@@ -150,26 +150,26 @@ final class CanvasView: UIView {
     }
   }
   
-  func drawCell(rect: CGRect, title: String, includeBorder: Bool = false, includeShadow: Bool = false) {
+  func drawCell(_ rect: CGRect, title: String, includeBorder: Bool = false, includeShadow: Bool = false) {
     let path = BezierPath(roundedRect: rect, cornerRadius: 4)
     
-    Draw.fillPath(path, color: Color(hex: "ff0083").colorWithAlphaComponent(0.3))
+    Draw.fillPath(path, color: Color(hex: "ff0083").withAlphaComponent(0.3))
     
     if includeShadow {
-      Draw.addShadow(.Inner, path: path, color: Color(white: 0, alpha: 0.3), radius: 20, offset: CGSize(width: 0, height: 5))
+      Draw.addShadow(.inner, path: path, color: Color(white: 0, alpha: 0.3), radius: 20, offset: CGSize(width: 0, height: 5))
     }
     
     if includeBorder {
-      Draw.addBorder(.Inner, path: path, color: Color(hex: "ff0083"), thickness: 2)
+      Draw.addBorder(.inner, path: path, color: Color(hex: "ff0083"), thickness: 2)
     }
     
     title.drawAlignedTo(rect, attributes: [
-      NSForegroundColorAttributeName: Color.whiteColor(),
+      NSForegroundColorAttributeName: Color.white(),
       NSFontAttributeName: Font(name: "Avenir-Medium", size: 15)!
     ])
   }
   
-  func drawTable(rect: CGRect) {
+  func drawTable(_ rect: CGRect) {
     let colCount = max(0, min(6, slider.value - 10))
     let rowCount = max(0, min(9, slider.value - 10))
     table = Grid(colCount: Int(colCount), rowCount: Int(rowCount), bounds: rect.insetBy(dx: -1, dy: 0))
@@ -180,9 +180,9 @@ final class CanvasView: UIView {
     drawCell()
   }
   
-  func drawNavigationBar(rect: CGRect) {
+  func drawNavigationBar(_ rect: CGRect) {
     if slider.value > 8 {
-      Draw.addShadow(.Outer, path: BezierPath(rect: rect), color: Color(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
+      Draw.addShadow(.outer, path: BezierPath(rect: rect), color: Color(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
     }
     
     if slider.value > 7 {
@@ -190,26 +190,26 @@ final class CanvasView: UIView {
     }
     
     if slider.value > 9 {
-      let (_, navFrame) = rect.divide(20, fromEdge: .MinYEdge)
+      let (_, navFrame) = rect.divide(20, fromEdge: .minYEdge)
       "InkKit".drawAlignedTo(navFrame, attributes: [
-        NSForegroundColorAttributeName: Color.whiteColor(),
+        NSForegroundColorAttributeName: Color.white(),
         NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])
     }
     
     if slider.value > 10 {
-      backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
+      backIndicatorImage().draw(at: CGPoint(x: 22, y: 30))
     }
   }
   
   func backIndicatorImage() -> Image {
     return Image.draw(width: 12, height: 22, attributes: nil, drawing: { (context, rect, attributes) in
       attributes.lineWidth = 2
-      attributes.strokeColor = Color.whiteColor()
+      attributes.strokeColor = Color.white()
       
       let bezierPath = BezierPath()
-      bezierPath.moveToPoint(CGPointMake(rect.maxX, rect.minY))
-      bezierPath.addLineToPoint(CGPointMake(rect.maxX - 10, rect.midY))
-      bezierPath.addLineToPoint(CGPointMake(rect.maxX, rect.maxY))
+      bezierPath.move(to: CGPoint(x: rect.maxX, y: rect.minY))
+      bezierPath.addLine(to: CGPoint(x: rect.maxX - 10, y: rect.midY))
+      bezierPath.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
       attributes.apply(bezierPath)
       bezierPath.stroke()
     })
@@ -222,10 +222,10 @@ final class CanvasViewController: UIViewController {
   @IBOutlet var canvasView: CanvasView!
   
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return .LightContent
+    return .lightContent
   }
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     animate()
   }
@@ -238,7 +238,7 @@ final class CanvasViewController: UIViewController {
       return
     }
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+    DispatchQueue.main.after(when: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
       self.animate()
     }
   }

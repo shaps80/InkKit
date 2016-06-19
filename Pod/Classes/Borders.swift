@@ -30,9 +30,9 @@ import CoreGraphics
  - Center: The border will be drawn along the center of the shapes edge
  */
 public enum BorderType {
-  case Inner
-  case Outer
-  case Center
+  case inner
+  case outer
+  case center
 }
 
 extension Draw {
@@ -44,57 +44,57 @@ extension Draw {
    - parameter path:            The path to apply this border to
    - parameter attributesBlock: Any associated attributes for this drawing
    */
-  public static func addBorder(type: BorderType, path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func addBorder(_ type: BorderType, path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     switch type {
-    case .Inner:
+    case .inner:
       addInnerBorder(path, color: color, thickness: thickness, attributes: attributesBlock)
-    case .Outer:
+    case .outer:
       addOuterBorder(path, color: color, thickness: thickness, attributes: attributesBlock)
-    case .Center:
+    case .center:
       addCenterBorder(path, color: color, thickness: thickness, attributes: attributesBlock)
     }
   }
   
-  private static func addInnerBorder(path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+  private static func addInnerBorder(_ path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
-      CGContextSetLineWidth(context, (thickness ?? attributes.lineWidth) * 2)
+      context.setLineWidth((thickness ?? attributes.lineWidth) * 2)
       color?.setStroke()
       
-      CGContextAddPath(context, path.CGPath)
+      context.addPath(path.cgPath)
       
-      if !CGContextIsPathEmpty(context) {
-       CGContextClip(context) 
+      if !context.isPathEmpty {
+       context.clip() 
       }
       
-      CGContextAddPath(context, path.CGPath)
-      CGContextStrokePath(context)
+      context.addPath(path.cgPath)
+      context.strokePath()
     }
   }
   
-  private static func addOuterBorder(path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+  private static func addOuterBorder(_ path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
-      CGContextSetLineWidth(context, (thickness ?? attributes.lineWidth) * 2)
+      context.setLineWidth((thickness ?? attributes.lineWidth) * 2)
       color?.setStroke()
       
-      CGContextAddPath(context, path.CGPath)
-      CGContextStrokePath(context)
+      context.addPath(path.cgPath)
+      context.strokePath()
       
-      CGContextAddPath(context, path.CGPath)
-      CGContextFillPath(context)
+      context.addPath(path.cgPath)
+      context.fillPath()
       
-      if !CGContextIsPathEmpty(context) {
-        CGContextEOClip(context)
+      if !context.isPathEmpty {
+        context.eoClip()
       }
     }
   }
   
-  private static func addCenterBorder(path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil,  attributes attributesBlock: AttributesBlock? = nil) {
+  private static func addCenterBorder(_ path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil,  attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
-      CGContextSetLineWidth(context, thickness ?? attributes.lineWidth)
+      context.setLineWidth(thickness ?? attributes.lineWidth)
       color?.setStroke()
       
-      CGContextAddPath(context, path.CGPath)
-      CGContextStrokePath(context)
+      context.addPath(path.cgPath)
+      context.strokePath()
     }
   }
   

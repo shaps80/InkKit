@@ -31,11 +31,11 @@ extension Draw {
    - parameter color:           The color for this stroke
    - parameter attributesBlock: Any additional attributes can be configured using this configuration block
    */
-  public static func strokeRect(rect: CGRect, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func strokeRect(_ rect: CGRect, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
       color?.setStroke()
-      CGContextAddRect(context, rect)
-      CGContextStrokeRect(context, rect)
+      context.addRect(rect)
+      context.stroke(rect)
     }
   }
   
@@ -48,7 +48,7 @@ extension Draw {
    - parameter angleInDegrees:  The angle for this gradient
    - parameter attributesBlock: Any additional attributes can be configured using this configuration block
    */
-  public static func strokeRect(rect: CGRect, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func strokeRect(_ rect: CGRect, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
     strokePath(BezierPath(rect: rect), startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, attributes: attributesBlock)
   }
   
@@ -59,10 +59,10 @@ extension Draw {
    - parameter color:           The color for this stroke
    - parameter attributesBlock: Any additional attributes can be configured using this configuration block
    */
-  public static func strokePath(path: BezierPath, color: Color, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func strokePath(_ path: BezierPath, color: Color, attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
-      CGContextAddPath(context, path.CGPath)
-      CGContextStrokePath(context)
+      context.addPath(path.cgPath)
+      context.strokePath()
     }
   }
   
@@ -76,10 +76,10 @@ extension Draw {
    - parameter angleInDegrees:  The angle (in degrees) of the gradient for this line
    - parameter attributesBlock: Any additional attributes can be configured using this configuration block
    */
-  public static func strokeLine(startPoint: CGPoint, endPoint: CGPoint, startColor: Color, endColor: Color, angleInDegrees: CGFloat = 0, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func strokeLine(_ startPoint: CGPoint, endPoint: CGPoint, startColor: Color, endColor: Color, angleInDegrees: CGFloat = 0, attributes attributesBlock: AttributesBlock? = nil) {
     let path = BezierPath()
-    path.moveToPoint(startPoint)
-    path.addLineToPoint(endPoint)
+    path.move(to: startPoint)
+    path.addLine(to: endPoint)
     drawGradientPath(path, startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, stroke: true, attributes: attributesBlock)
   }
   
@@ -92,7 +92,7 @@ extension Draw {
    - parameter angleInDegrees:  The angle (in degrees) of the gradient
    - parameter attributesBlock: Any additional attributes can be configured using this configuration block
    */
-  public static func strokePath(path: BezierPath, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func strokePath(_ path: BezierPath, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
     drawGradientPath(path, startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, stroke: true, attributes: attributesBlock)
   }
   
@@ -104,12 +104,12 @@ extension Draw {
    - parameter color:           The color for this line
    - parameter attributesBlock: Any additional attributes can be configured using this configuration block
    */
-  public static func strokeLine(startPoint: CGPoint, endPoint: CGPoint, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func strokeLine(_ startPoint: CGPoint, endPoint: CGPoint, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     let rect = reversibleRect(fromPoint: startPoint, toPoint: endPoint)
     
     GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
       color?.setStroke()
-      CGContextStrokeLineSegments(context, [ startPoint, endPoint ], 2)
+      context.strokeLineSegments(between: [ startPoint, endPoint ], count: 2)
     }
   }
   

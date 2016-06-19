@@ -33,9 +33,9 @@ extension String {
    - parameter attributes:      The attributes to apply to this drawing
    - parameter constrainedSize: The constrained size, use this to get back a multi-line string
    */
-  public func drawAlignedTo(rect: CGRect, horizontal: HorizontalAlignment = .Center, vertical: VerticalAlignment = .Middle, attributes: [String: AnyObject]?, constrainedSize: CGSize? = nil) {
+  public func drawAlignedTo(_ rect: CGRect, horizontal: HorizontalAlignment = .center, vertical: VerticalAlignment = .middle, attributes: [String: AnyObject]?, constrainedSize: CGSize? = nil) {
     let size = sizeWithAttributes(attributes, constrainedSize: constrainedSize)
-    let alignmentRect = CGRectMake(0, 0, size.width, size.height).alignedTo(rect, horizontal: horizontal, vertical: vertical)
+    let alignmentRect = CGRect(x: 0, y: 0, width: size.width, height: size.height).alignedTo(rect, horizontal: horizontal, vertical: vertical)
     drawInRect(alignmentRect, withAttributes: attributes)
   }
   
@@ -47,14 +47,14 @@ extension String {
    
    - returns: The size of this string
    */
-  public func sizeWithAttributes(attributes: [String : AnyObject]?, constrainedSize: CGSize? = nil) -> CGSize {
+  public func sizeWithAttributes(_ attributes: [String : AnyObject]?, constrainedSize: CGSize? = nil) -> CGSize {
     if let size = constrainedSize {
       if #available(OSX 10.11, *) {
-        return NSAttributedString(string: self, attributes: attributes).boundingRectWithSize(size, options: .UsesLineFragmentOrigin, context: nil).size
+        return AttributedString(string: self, attributes: attributes).boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil).size
       }
     }
     
-    return NSAttributedString(string: self, attributes: attributes).size()
+    return AttributedString(string: self, attributes: attributes).size()
   }
   
   /**
@@ -63,8 +63,8 @@ extension String {
    - parameter point:      The point representing the origin of this string
    - parameter attributes: The attributes for this string
    */
-  public func drawAtPoint(point: CGPoint, withAttributes attributes: [String : AnyObject]?) {
-    (self as NSString).drawAtPoint(point, withAttributes: attributes)
+  public func drawAtPoint(_ point: CGPoint, withAttributes attributes: [String : AnyObject]?) {
+    (self as NSString).draw(at: point, withAttributes: attributes)
   }
   
   /**
@@ -73,8 +73,8 @@ extension String {
    - parameter rect:       The rect to draw into
    - parameter attributes: The attributes for this string
    */
-  public func drawInRect(rect: CGRect, withAttributes attributes: [String : AnyObject]?) {
-    (self as NSString).drawInRect(rect, withAttributes: attributes)
+  public func drawInRect(_ rect: CGRect, withAttributes attributes: [String : AnyObject]?) {
+    (self as NSString).draw(in: rect, withAttributes: attributes)
   }
 
 }

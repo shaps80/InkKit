@@ -35,10 +35,10 @@ extension CGContext {
     let attributes = DrawingAttributes()
     attributesBlock?(attributes: attributes)
     
-    CGContextSaveGState(self)
+    self.saveGState()
     attributes.apply(self)
     drawingBlock(context: self, rect: rect, attributes: attributes)
-    CGContextRestoreGState(self)
+    self.restoreGState()
   }
   
 }

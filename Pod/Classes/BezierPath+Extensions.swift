@@ -120,16 +120,16 @@ extension CGPath {
    
    - parameter enumerator: The enumeration handler
    */
-  public func forEach(@noescape enumerator: @convention(block) (CGPathElement) -> Void) {
+  public func forEach(_ enumerator: @noescape @convention(block) (CGPathElement) -> Void) {
     typealias ElementEnumeration = @convention(block) (CGPathElement) -> Void
     
-    func callback(info: UnsafeMutablePointer<Void>, element: UnsafePointer<CGPathElement>) {
-      let enumerator = unsafeBitCast(info, ElementEnumeration.self)
-      enumerator(element.memory)
+    func callback(_ info: UnsafeMutablePointer<Void>?, element: UnsafePointer<CGPathElement>) {
+      let enumerator = unsafeBitCast(info, to: ElementEnumeration.self)
+      enumerator(element.pointee)
     }
     
-    let unsafeBody = unsafeBitCast(enumerator, UnsafeMutablePointer<Void>.self)
-    CGPathApply(self, unsafeBody, callback)
+    let unsafeBody = unsafeBitCast(enumerator, to: UnsafeMutablePointer<Void>.self)
+    self.apply(info: unsafeBody, function: callback)
   }
   
 }

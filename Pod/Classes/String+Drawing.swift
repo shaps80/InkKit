@@ -49,7 +49,9 @@ extension String {
    */
   public func sizeWithAttributes(attributes: [String : AnyObject]?, constrainedSize: CGSize? = nil) -> CGSize {
     if let size = constrainedSize {
-      return NSAttributedString(string: self, attributes: attributes).boundingRectWithSize(size, options: .UsesLineFragmentOrigin, context: nil).size
+      if #available(OSX 10.11, *) {
+        return NSAttributedString(string: self, attributes: attributes).boundingRectWithSize(size, options: .UsesLineFragmentOrigin, context: nil).size
+      }
     }
     
     return NSAttributedString(string: self, attributes: attributes).size()

@@ -38,6 +38,9 @@ public struct GridComponents : OptionSetType {
   
   /// Represents the row separators of a grid
   public static var Rows:    GridComponents { return GridComponents(rawValue: 1 << 2) }
+  
+  /// Represents all components
+  public static var All:     GridComponents { return [ .Outline, .Columns, .Rows ] }
 }
 
 
@@ -250,4 +253,5 @@ extension Grid {
   }
   
 }
+
 

@@ -44,7 +44,33 @@ import CoreGraphics
  THE SOFTWARE.
  */
 
+public struct RGBValues {
+  public let red: CGFloat
+  public let blue: CGFloat
+  public let green: CGFloat
+  public let alpha: CGFloat
+}
+
+public struct HSBValues {
+  public let hue: CGFloat
+  public let saturation: CGFloat
+  public let brightness: CGFloat
+  public let alpha: CGFloat
+}
+
 extension Color {
+  
+  public var RGB: RGBValues {
+    var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+    getRed(&r, green: &g, blue: &b, alpha: &a)
+    return RGBValues(red: r, blue: b, green: g, alpha: a)
+  }
+  
+  public var HSB: HSBValues {
+    var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+    getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+    return HSBValues(hue: h, saturation: s, brightness: b, alpha: a)
+  }
   
   /**
    Initializes a new color with the specified HEX value
@@ -103,14 +129,17 @@ extension Color {
    */
   public func colorWithDelta(delta: CGFloat = 0.1) -> Color {
     let d = max(min(delta, 1), -1)
-    let (r, g, b, a) = rgbComponents
-    return Color(red: r + d, green: g + d, blue: b + d, alpha: a)
+    let values = HSB
+    
+    return Color(hue: values.hue + d,
+                 saturation: values.saturation + d,
+                 brightness: values.brightness + d,
+                 alpha: values.alpha)
   }
   
   private var rgbComponents:(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
-    var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
-    getRed(&r, green: &g, blue: &b, alpha: &a)
-    return (r, g, b, a)
+    let rgb = RGB
+    return (rgb.red, rgb.green, rgb.blue, rgb.alpha)
   }
   
 }

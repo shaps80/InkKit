@@ -25,39 +25,40 @@ import CoreGraphics
 #if os(OSX)
   
   import AppKit
+  
+  public typealias CGPathRef = CGPath
 
   extension NSBezierPath {
     
-    /// Returns a CGPath representation of the bezier path
-    public var CGPath: CGPathRef {
+    public var cgPath: CGPathRef {
       if self.elementCount == 0 {
-        return CGPathCreateMutable()
+        return CGMutablePath()
       }
       
-      let path = CGPathCreateMutable()
+      let path = CGMutablePath()
       var didClosePath = false
       
       for i in 0...self.elementCount-1 {
-        var points = [NSPoint](count: 3, repeatedValue: NSZeroPoint)
+        var points = [NSPoint](repeating: NSZeroPoint, count: 3)
         
-        switch self.elementAtIndex(i, associatedPoints: &points) {
-        case .MoveToBezierPathElement:
-          CGPathMoveToPoint(path, nil, points[0].x, points[0].y)
-        case .LineToBezierPathElement:
-          CGPathAddLineToPoint(path, nil, points[0].x, points[0].y)
-        case .CurveToBezierPathElement:
-          CGPathAddCurveToPoint(path, nil, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[2].y)
-        case .ClosePathBezierPathElement:
-          CGPathCloseSubpath(path)
+        switch self.element(at: i, associatedPoints: &points) {
+        case .moveToBezierPathElement:
+          path.moveTo(nil, x: points[0].x, y: points[0].y)
+        case .lineToBezierPathElement:
+          path.addLineTo(nil, x: points[0].x, y: points[0].y)
+        case .curveToBezierPathElement:
+          path.addCurve(nil, cp1x: points[0].x, cp1y: points[0].y, cp2x: points[1].x, cp2y: points[1].y, endingAtX: points[2].x, y: points[2].y)
+        case .closePathBezierPathElement:
+          path.closeSubpath()
           didClosePath = true;
         }
       }
       
       if !didClosePath {
-        CGPathCloseSubpath(path)
+        path.closeSubpath()
       }
       
-      return CGPathCreateCopy(path)!
+      return path.copy()!
     }
     
     /**
@@ -67,21 +68,21 @@ import CoreGraphics
      
      - returns: A new path
      */
-    public convenience init(CGPath: CGPathRef) {
-      self.init(rect: CGRectZero)
+    public convenience init(cgPath CGPath: CGPathRef) {
+      self.init(rect: CGRect.zero)
       
       CGPath.forEach {
         switch $0.type {
-        case .AddCurveToPoint:
-          curveToPoint($0.points[0], controlPoint1: $0.points[1], controlPoint2: $0.points[2])
-        case .AddLineToPoint:
-          lineToPoint($0.points[0])
-        case .AddQuadCurveToPoint:
-          curveToPoint($0.points[0], controlPoint1: $0.points[1], controlPoint2: $0.points[1])
-        case .CloseSubpath:
-          closePath()
-        case .MoveToPoint:
-          moveToPoint($0.points[0])
+        case .addCurveToPoint:
+          curve(to: $0.points[0], controlPoint1: $0.points[1], controlPoint2: $0.points[2])
+        case .addLineToPoint:
+          line(to: $0.points[0])
+        case .addQuadCurveToPoint:
+          curve(to: $0.points[0], controlPoint1: $0.points[1], controlPoint2: $0.points[1])
+        case .closeSubpath:
+          close()
+        case .moveToPoint:
+          move(to: $0.points[0])
         }
       }
     }
@@ -93,9 +94,10 @@ import CoreGraphics
      
      - parameter point: The point to add a line to
      */
-    public func addLineToPoint(point: CGPoint) {
-      lineToPoint(point)
+    public func addLine(to point: CGPoint) {
+      line(to: point)
     }
+    
     
     /**
      Initializes a new path with rounded corners
@@ -107,6 +109,19 @@ import CoreGraphics
      */
     public convenience init(roundedRect rect: CGRect, cornerRadius: CGFloat) {
       self.init(roundedRect: rect, xRadius: cornerRadius, yRadius: cornerRadius)
+    }
+    
+    // MARK: Deprecations!
+    
+    /// Returns a CGPath representation of the bezier path
+    @available(*, unavailable, renamed: "cgPath")
+    public var CGPath: CGPathRef {
+      fatalError()
+    }
+    
+    @available(*, unavailable, renamed: "addLine(to:)")
+    public func addLineToPoint(point: CGPoint) {
+      addLine(to: point)
     }
     
   }

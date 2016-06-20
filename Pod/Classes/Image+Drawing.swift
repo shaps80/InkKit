@@ -74,7 +74,7 @@ extension Image {
     #if os(iOS)
       draw(in: rect, blendMode: mode, alpha: alpha)
     #else
-      drawInRect(rect, fromRect: fromRect, operation: NSCompositingOperation(rawValue: UInt(mode.rawValue))!, fraction: alpha)
+      draw(in: rect, from: fromRect, operation: NSCompositingOperation(rawValue: UInt(mode.rawValue))!, fraction: alpha)
     #endif
   }
   
@@ -89,7 +89,7 @@ extension Image {
    */
   public func drawAtPoint(point: CGPoint) {
     let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-    drawAtPoint(point, fromRect: rect, operation: .CompositeSourceOut, fraction: 1.0)
+    draw(at: point, from: rect, operation: .sourceOut, fraction: 1.0)
   }
   
   #endif

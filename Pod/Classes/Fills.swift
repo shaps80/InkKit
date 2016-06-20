@@ -33,8 +33,13 @@ extension Draw {
    - parameter angleInDegrees:  The angle (in degrees) of the gradient
    - parameter attributesBlock: Any additional attributes can be configured using this configuration block
    */
-  public static func fillPath(_ path: BezierPath, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
+  public static func fill(path: BezierPath, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
     drawGradientPath(path, startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, stroke: false, attributes: attributesBlock)
+  }
+  
+  @available(*, unavailable, renamed: "fill(path:startColor:endColor:angleInDegrees:attributes:)")
+  public static func fillPath(_ path: BezierPath, startColor: Color, endColor: Color, angleInDegrees: CGFloat, attributes attributesBlock: AttributesBlock? = nil) {
+    fill(path: path, startColor: startColor, endColor: endColor, angleInDegrees: angleInDegrees, attributes: attributesBlock)
   }
   
   /**

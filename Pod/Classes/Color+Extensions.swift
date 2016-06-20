@@ -127,7 +127,7 @@ extension Color {
    
    - returns: A new color
    */
-  public func colorWithDelta(_ delta: CGFloat = 0.1) -> Color {
+  public func color(withDelta delta: CGFloat = 0.1) -> Color {
     let d = max(min(delta, 1), -1)
     let values = HSB
     

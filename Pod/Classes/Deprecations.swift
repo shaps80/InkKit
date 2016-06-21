@@ -19,6 +19,11 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
   return radians(from: degrees)
 }
 
+@available(*, unavailable, renamed: "reversibleRect(from:to:)")
+public func reversibleRect(fromPoint: CGPoint, toPoint: CGPoint) -> CGRect {
+  return reversibleRect(from: fromPoint, to: toPoint)
+}
+
 extension DrawingAttributes {
   
   @available(*, unavailable, renamed: "apply(to:)")
@@ -117,6 +122,7 @@ extension Grid {
 
 extension CGRect {
   
+  @available(*, unavailable, renamed: "divide(at:from:margin:)")
   public func divide(atDelta delta: CGFloat, fromEdge edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
     return divide(at: delta, from: edge, margin: margin)
   }

@@ -105,7 +105,7 @@ extension Draw {
    - parameter attributesBlock: Any additional attributes can be configured using this configuration block
    */
   public static func strokeLine(from: CGPoint, to: CGPoint, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
-    let rect = reversibleRect(fromPoint: from, toPoint: to)
+    let rect = reversibleRect(from: from, to: to)
     
     GraphicsContext()?.draw(in: rect, attributes: attributesBlock) { (context, rect, attributes) in
       color?.setStroke()

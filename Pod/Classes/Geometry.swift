@@ -30,23 +30,24 @@ import CoreGraphics
  
  - returns: The resulting rect
  */
-public func reversibleRect(fromPoint: CGPoint, toPoint: CGPoint) -> CGRect {
+public func reversibleRect(from: CGPoint, to: CGPoint) -> CGRect {
   var rect = CGRect.zero
   
-  if fromPoint.x < toPoint.x {
-    rect.origin.x = fromPoint.x
-    rect.size.width = toPoint.x - fromPoint.x
+  
+  if from.x < to.x {
+    rect.origin.x = from.x
+    rect.size.width = to.x - from.x
   } else {
-    rect.origin.x = toPoint.x
-    rect.size.width = fromPoint.x - toPoint.x
+    rect.origin.x = to.x
+    rect.size.width = from.x - to.x
   }
   
-  if fromPoint.y < toPoint.y {
-    rect.origin.y = fromPoint.y
-    rect.size.height = toPoint.y - fromPoint.y
+  if from.y < to.y {
+    rect.origin.y = from.y
+    rect.size.height = to.y - from.y
   } else {
-    rect.origin.y = toPoint.y
-    rect.size.height = fromPoint.y - toPoint.y
+    rect.origin.y = to.y
+    rect.size.height = from.y - to.y
   }
   
   return rect

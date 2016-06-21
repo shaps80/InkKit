@@ -42,7 +42,7 @@ extension Draw {
     var shadowOffset: CGSize
     
     #if os(OSX)
-      shadowOffset = CGSize(width: shadowOffset.width, height: shadowOffset.height * -1)
+      shadowOffset = CGSize(width: offset.width, height: offset.height * -1)
     #else
       shadowOffset = offset
     #endif

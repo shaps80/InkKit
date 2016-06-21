@@ -129,7 +129,7 @@ extension Image {
     #if os(OSX)
       let image = Image(size: size)
       image.lockFocus()
-      GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock, drawing: drawing)
+      GraphicsContext()?.draw(in: rect, attributes: attributesBlock, drawing: drawing)
       image.unlockFocus()
       return image
     #else

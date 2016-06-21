@@ -22,8 +22,6 @@
 
 import CoreGraphics
 
-public typealias CGPathRef = CGPath
-
 #if os(OSX)
   
   import AppKit

@@ -19,15 +19,6 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
   return radians(from: degrees)
 }
 
-extension UIScreen {
-  
-  @available(*, unavailable, renamed: "current")
-  public static func currentScreen() -> Screen {
-    return current()
-  }
-  
-}
-
 extension DrawingAttributes {
   
   @available(*, unavailable, renamed: "apply(to:)")
@@ -226,15 +217,6 @@ public class Draw {
   
 }
 
-extension UIBezierPath {
-  
-  @available(*, unavailable, renamed: "addLine(to:)")
-  public func addLineToPoint(point: CGPoint) {
-    addLine(to: point)
-  }
-  
-}
-
 extension CGContext {
   
   @available(*, unavailable, renamed: "draw(in:attributes:drawing:)")
@@ -243,3 +225,27 @@ extension CGContext {
   }
   
 }
+
+#if os(iOS)
+  
+  extension UIScreen {
+    
+    @available(*, unavailable, renamed: "current")
+    public static func currentScreen() -> Screen {
+      return current()
+    }
+    
+  }
+  
+  extension UIBezierPath {
+    
+    @available(*, unavailable, renamed: "addLine(to:)")
+    public func addLineToPoint(point: CGPoint) {
+      addLine(to: point)
+    }
+    
+  }
+  
+  
+#endif
+

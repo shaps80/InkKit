@@ -37,7 +37,7 @@ final class CanvasView: UIView {
     Draw.fill(rect: bgFrame, color: Color(hex: "1c3d64"))
     
     
-//    drawAnimatedFrames(bgFrame)
+//    drawAnimatedFrames(in: bgFrame)
     
     /*
      The commented code below, is ALL that is actually required to render to final UI.
@@ -81,7 +81,7 @@ final class CanvasView: UIView {
     backIndicatorImage().draw(at: CGPoint(x: 22, y: 30))
   }
   
-  func drawAnimatedFrames(_ bgFrame: CGRect) {
+  func drawAnimatedFrames(in bgFrame: CGRect) {
     let statusBarHeight: CGFloat = UIApplication.shared().statusBarFrame.height
     let navBarHeight: CGFloat = 44
     

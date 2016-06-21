@@ -34,7 +34,7 @@ final class CanvasView: UIView {
   
   override func draw(_ bgFrame: CGRect) {
     super.draw(bgFrame)
-    Draw.fillRect(bgFrame, color: Color(hex: "1c3d64"))
+    Draw.fill(rect: bgFrame, color: Color(hex: "1c3d64"))
     
     
 //    drawAnimatedFrames(bgFrame)
@@ -57,24 +57,24 @@ final class CanvasView: UIView {
     // Grid
     
     let grid = Grid(colCount: 6, rowCount: 9, bounds: gridFrame)
-    let path = grid.path(includeComponents: [.Columns, .Rows])
+    let path = grid.path(include: [.columns, .rows])
     
-    Draw.strokePath(path, startColor: Color(white: 1, alpha: 0.15), endColor: Color(white: 1, alpha: 0.05), angleInDegrees: 90)
+    Draw.stroke(path: path, startColor: Color(white: 1, alpha: 0.15), endColor: Color(white: 1, alpha: 0.05), angleInDegrees: 90)
     
     // Cell
     
     let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 4, destinationRow: 6)
-    drawCell(rect, title: "4x6", includeBorder: true, includeShadow: true)
+    drawCell(in: rect, title: "4x6", includeBorder: true, includeShadow: true)
     
-    Draw.fillPath(BezierPath(), startColor: UIColor.white(), endColor: UIColor.black(), angleInDegrees: 90)
+    Draw.fill(path: BezierPath(), startColor: UIColor.white(), endColor: UIColor.black(), angleInDegrees: 90)
     
     // Navigation Bar
     
-    Draw.addShadow(.outer, path: BezierPath(rect: barFrame), color: Color(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
-    Draw.fillRect(barFrame, color: Color(hex: "ff0083"))
+    Draw.add(shadow: .outer, path: BezierPath(rect: barFrame), color: Color(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
+    Draw.fill(rect: barFrame, color: Color(hex: "ff0083"))
     
     let (_, navFrame) = barFrame.divide(20, fromEdge: .minYEdge)
-    "InkKit".drawAlignedTo(navFrame, attributes: [
+    "InkKit".draw(alignedTo: navFrame, attributes: [
       NSForegroundColorAttributeName: Color.white(),
       NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])
     
@@ -91,15 +91,15 @@ final class CanvasView: UIView {
     let gridFrame = CGRect(x: 0, y: barFrame.maxY + margin, width: bgFrame.width, height: bgFrame.maxY - barFrame.height)
     
     if slider.value < 5 {
-      drawPlaceholder(bgFrame)
+      drawPlaceholder(in: bgFrame)
     }
     
     if slider.value >= 11 {
-      drawGrid(gridFrame)
+      drawGrid(in: gridFrame)
     }
     
     if slider.value >= 6 {
-      drawNavigationBar(barFrame)
+      drawNavigationBar(in: barFrame)
     }
     
     if slider.value > 27 {
@@ -107,8 +107,8 @@ final class CanvasView: UIView {
     }
   }
   
-  func drawPlaceholder(_ rect: CGRect) {
-    "InkKit".drawAlignedTo(rect, attributes: [
+  func drawPlaceholder(in rect: CGRect) {
+    "InkKit".draw(alignedTo: rect, attributes: [
       NSForegroundColorAttributeName: Color.white(),
       NSFontAttributeName: Font(name: "Avenir-Book", size: 60)!
     ])
@@ -117,82 +117,82 @@ final class CanvasView: UIView {
   func drawCell() {
     if slider.value > 20 && slider.value < 21 {
       let rect = grid.boundsForCell	(col: 1, row: 1)
-      drawCell(rect, title: "1x1")
+      drawCell(in: rect, title: "1x1")
     }
     
     if slider.value >= 21 && slider.value < 22 {
       let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 2, destinationRow: 1)
-      drawCell(rect, title: "2x1")
+      drawCell(in: rect, title: "2x1")
     } else
     
     if slider.value >= 22 && slider.value < 23 {
       let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 2, destinationRow: 2)
-      drawCell(rect, title: "2x2")
+      drawCell(in: rect, title: "2x2")
     }
     
     if slider.value >= 23 && slider.value < 24 {
       let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 2, destinationRow: 2)
-      drawCell(rect, title: "2x2", includeBorder: true, includeShadow: false)
+      drawCell(in: rect, title: "2x2", includeBorder: true, includeShadow: false)
     }
     
     if slider.value >= 24 && slider.value < 25 {
       let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 2, destinationRow: 2)
-      drawCell(rect, title: "2x2", includeBorder: true, includeShadow: true)
+      drawCell(in: rect, title: "2x2", includeBorder: true, includeShadow: true)
     }
     
     if slider.value >= 25 && slider.value < 26 {
       let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 4, destinationRow: 2)
-      drawCell(rect, title: "4x2", includeBorder: true, includeShadow: true)
+      drawCell(in: rect, title: "4x2", includeBorder: true, includeShadow: true)
     }
     
     if slider.value >= 26 {
       let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 4, destinationRow: 6)
-      drawCell(rect, title: "4x6", includeBorder: true, includeShadow: true)
+      drawCell(in: rect, title: "4x6", includeBorder: true, includeShadow: true)
     }
   }
   
-  func drawCell(_ rect: CGRect, title: String, includeBorder: Bool = false, includeShadow: Bool = false) {
+  func drawCell(in rect: CGRect, title: String, includeBorder: Bool = false, includeShadow: Bool = false) {
     let path = BezierPath(roundedRect: rect, cornerRadius: 4)
     
-    Draw.fillPath(path, color: Color(hex: "ff0083").withAlphaComponent(0.3))
+    Draw.fill(path: path, color: Color(hex: "ff0083").withAlphaComponent(0.3))
     
     if includeShadow {
-      Draw.addShadow(.inner, path: path, color: Color(white: 0, alpha: 0.3), radius: 20, offset: CGSize(width: 0, height: 5))
+      Draw.add(shadow: .inner, path: path, color: Color(white: 0, alpha: 0.3), radius: 20, offset: CGSize(width: 0, height: 5))
     }
     
     if includeBorder {
-      Draw.addBorder(.inner, path: path, color: Color(hex: "ff0083"), thickness: 2)
+      Draw.add(border: .inner, path: path, color: Color(hex: "ff0083"), thickness: 2)
     }
     
-    title.drawAlignedTo(rect, attributes: [
+    title.draw(alignedTo: rect, attributes: [
       NSForegroundColorAttributeName: Color.white(),
       NSFontAttributeName: Font(name: "Avenir-Medium", size: 15)!
     ])
   }
   
-  func drawGrid(_ rect: CGRect) {
+  func drawGrid(in rect: CGRect) {
     let colCount = max(0, min(6, slider.value - 10))
     let rowCount = max(0, min(9, slider.value - 10))
     grid = Grid(colCount: Int(colCount), rowCount: Int(rowCount), bounds: rect.insetBy(dx: -1, dy: 0))
     
-    let path = grid.path(includeComponents: [ .Outline, .Rows, .Columns ])
-    Draw.strokePath(path, startColor: Color(white: 1, alpha: 0.15), endColor: Color(white: 1, alpha: 0.05), angleInDegrees: 90)
+    let path = grid.path(include: [ .outline, .rows, .columns ])
+    Draw.stroke(path: path, startColor: Color(white: 1, alpha: 0.15), endColor: Color(white: 1, alpha: 0.05), angleInDegrees: 90)
     
     drawCell()
   }
   
-  func drawNavigationBar(_ rect: CGRect) {
+  func drawNavigationBar(in rect: CGRect) {
     if slider.value > 8 {
-      Draw.addShadow(.outer, path: BezierPath(rect: rect), color: Color(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
+      Draw.add(shadow: .outer, path: BezierPath(rect: rect), color: Color(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
     }
     
     if slider.value > 7 {
-      Draw.fillRect(rect, color: Color(hex: "ff0083"))
+      Draw.fill(rect: rect, color: Color(hex: "ff0083"))
     }
     
     if slider.value > 9 {
       let (_, navFrame) = rect.divide(20, fromEdge: .minYEdge)
-      "InkKit".drawAlignedTo(navFrame, attributes: [
+      "InkKit".draw(alignedTo: navFrame, attributes: [
         NSForegroundColorAttributeName: Color.white(),
         NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])
     }
@@ -211,7 +211,7 @@ final class CanvasView: UIView {
       bezierPath.move(to: CGPoint(x: rect.maxX, y: rect.minY))
       bezierPath.addLine(to: CGPoint(x: rect.maxX - 10, y: rect.midY))
       bezierPath.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-      attributes.apply(bezierPath)
+      attributes.apply(to: bezierPath)
       bezierPath.stroke()
     })
   }

@@ -38,25 +38,25 @@ extension Draw {
    - parameter radius: The blur radius of this shadow
    - parameter offset: The offest of this shadow
    */
-  public static func addShadow(_ type: ShadowType, path: BezierPath, color: Color, radius: CGFloat, offset shadowOffset: CGSize) {
-    var offset: CGSize
+  public static func add(shadow type: ShadowType, path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
+    var shadowOffset: CGSize
     
     #if os(OSX)
-      offset = CGSize(width: shadowOffset.width, height: shadowOffset.height * -1)
+      shadowOffset = CGSize(width: shadowOffset.width, height: shadowOffset.height * -1)
     #else
-      offset = shadowOffset
+      shadowOffset = offset
     #endif
     
     switch type {
     case .inner:
-      addInnerShadow(path, color: color, radius: radius, offset: offset)
+      addInnerShadow(path, color: color, radius: radius, offset: shadowOffset)
     case .outer:
-      addOuterShadow(path, color: color, radius: radius, offset: offset)
+      addOuterShadow(path, color: color, radius: radius, offset: shadowOffset)
     }
   }
   
   private static func addInnerShadow(_ path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
-    GraphicsContext()?.draw(inRect: path.bounds, attributes: nil) { (context, rect, attributes) in
+    GraphicsContext()?.draw(in: path.bounds, attributes: nil) { (context, rect, attributes) in
       context.addPath(path.cgPath)
       
       if !context.isPathEmpty {
@@ -77,7 +77,7 @@ extension Draw {
   }
   
   private static func addOuterShadow(_ path: BezierPath, color: Color, radius: CGFloat, offset: CGSize) {
-    GraphicsContext()?.draw(inRect: path.bounds, attributes: nil) { (context, rect, attributes) in
+    GraphicsContext()?.draw(in: path.bounds, attributes: nil) { (context, rect, attributes) in
       context.beginTransparencyLayer(auxiliaryInfo: nil)
       context.setShadow(offset: offset, blur: radius, color: color.cgColor)
       context.addPath(path.cgPath)

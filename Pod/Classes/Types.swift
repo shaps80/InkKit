@@ -22,6 +22,8 @@
 
 import CoreGraphics
 
+public typealias CGPathRef = CGPath
+
 #if os(OSX)
   
   import AppKit
@@ -60,7 +62,7 @@ import CoreGraphics
  
  - returns: The angle in radians
  */
-public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
+public func radians(from degrees: CGFloat) -> CGFloat {
   return degrees * CGFloat(M_PI) / 180
 }
 
@@ -72,7 +74,7 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
       return backingScaleFactor
     }
     
-    public static func currentScreen() -> Screen {
+    public static func current() -> Screen {
       return NSScreen.main()!
     }
     
@@ -82,7 +84,7 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
   
   extension UIScreen {
    
-    public static func currentScreen() -> Screen {
+    public static func current() -> Screen {
       return UIScreen.main()
     }
     
@@ -170,7 +172,7 @@ public final class DrawingAttributes {
    
    - parameter context: The context to apply
    */
-  public func apply(_ context: CGContext) {
+  public func apply(to context: CGContext) {
     if let pattern = dashPattern {
       context.setLineDash(phase: 0, lengths: pattern, count: pattern.count)
     }
@@ -193,7 +195,7 @@ public final class DrawingAttributes {
    
    - parameter path: The path to apply
    */
-  public func apply(_ path: BezierPath) {
+  public func apply(to path: BezierPath) {
     if let pattern = dashPattern {
       path.setLineDash(pattern, count: pattern.count, phase: 0)
     }
@@ -218,4 +220,3 @@ public final class DrawingAttributes {
   }
   
 }
-

@@ -111,17 +111,13 @@ import CoreGraphics
       self.init(roundedRect: rect, xRadius: cornerRadius, yRadius: cornerRadius)
     }
     
-    // MARK: Deprecations!
+  }
+  
+  extension BezierPath {
     
-    /// Returns a CGPath representation of the bezier path
     @available(*, unavailable, renamed: "cgPath")
     public var CGPath: CGPathRef {
       fatalError()
-    }
-    
-    @available(*, unavailable, renamed: "addLine(to:)")
-    public func addLineToPoint(point: CGPoint) {
-      addLine(to: point)
     }
     
   }

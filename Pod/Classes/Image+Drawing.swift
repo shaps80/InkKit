@@ -32,10 +32,10 @@ extension Image {
    
    - returns: An image of a circle
    */
-  public static func circle(_ radius: CGFloat, attributes attributesBlock: AttributesBlock) -> Image {
+  public static func circle(radius: CGFloat, attributes attributesBlock: AttributesBlock) -> Image {
     return Image.draw(width: radius * 2, height: radius * 2, attributes: attributesBlock, drawing: { (context, rect, attributes) in
       let path = BezierPath(ovalIn: rect.insetBy(dx: 1, dy: 1))
-      attributes.apply(path)
+      attributes.apply(to: path)
       path.fill()
       path.stroke()
     })
@@ -50,8 +50,8 @@ extension Image {
    - parameter blendMode:  The blend mode to apply to this drawing
    - parameter alpha:      The alpha to apply to this drawing
    */
-  public func drawAlignedTo(_ rect: CGRect, horizontal: HorizontalAlignment = .center, vertical: VerticalAlignment = .middle, blendMode: CGBlendMode = .sourceOut, alpha: CGFloat = 1) {
-    let alignedRect = CGRect(x: 0, y: 0, width: size.width, height: size.height).alignedTo(rect, horizontal: horizontal, vertical: vertical)
+  public func draw(alignedTo rect: CGRect, horizontal: HorizontalAlignment = .center, vertical: VerticalAlignment = .middle, blendMode: CGBlendMode = .sourceOut, alpha: CGFloat = 1) {
+    let alignedRect = CGRect(x: 0, y: 0, width: size.width, height: size.height).aligned(to: rect, horizontal: horizontal, vertical: vertical)
     let fromRect = CGRect(x: 0, y: 0, width: alignedRect.width, height: alignedRect.height)
     ink_drawInRect(alignedRect, fromRect: fromRect, blendMode: blendMode, alpha: alpha)
   }
@@ -64,8 +64,8 @@ extension Image {
    - parameter blendMode: The blend mode to apply to this drawing
    - parameter alpha:     The alpha to apply to this drawing
    */
-  public func drawScaledTo(_ rect: CGRect, scaleMode mode: ScaleMode, blendMode: CGBlendMode = .sourceOut, alpha: CGFloat = 1) {
-    let scaledRect = CGRect(x: 0, y: 0, width: size.width, height: size.height).scaledTo(rect, scaleMode: mode)
+  public func draw(scaledTo rect: CGRect, scaleMode: ScaleMode, blendMode: CGBlendMode = .sourceOut, alpha: CGFloat = 1) {
+    let scaledRect = CGRect(x: 0, y: 0, width: size.width, height: size.height).scaled(to: rect, scaleMode: scaleMode)
     let fromRect = CGRect(x: 0, y: 0, width: scaledRect.width, height: scaledRect.height)
     ink_drawInRect(scaledRect, fromRect: fromRect, blendMode: blendMode, alpha: alpha)
   }
@@ -87,7 +87,7 @@ extension Image {
    
    - parameter point: The point to position this image's origin
    */
-  public func drawAtPoint(point: CGPoint) {
+  public func draw(at point: CGPoint) {
     let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
     draw(at: point, from: rect, operation: .sourceOut, fraction: 1.0)
   }
@@ -109,7 +109,7 @@ extension Image {
    
    - returns: A new image
    */
-  public static func draw(width: CGFloat, height: CGFloat, scale: CGFloat = Screen.currentScreen().scale, attributes attributesBlock: AttributesBlock?, drawing: DrawingBlock) -> Image {
+  public static func draw(width: CGFloat, height: CGFloat, scale: CGFloat = Screen.current().scale, attributes attributesBlock: AttributesBlock?, drawing: DrawingBlock) -> Image {
     return draw(size: CGSize(width: width, height: height), attributes: attributesBlock, drawing: drawing)
   }
   
@@ -123,7 +123,7 @@ extension Image {
    
    - returns: A new image
    */
-  public static func draw(size: CGSize, scale: CGFloat = Screen.currentScreen().scale, attributes attributesBlock: AttributesBlock?, drawing: DrawingBlock) -> Image {
+  public static func draw(size: CGSize, scale: CGFloat = Screen.current().scale, attributes attributesBlock: AttributesBlock?, drawing: DrawingBlock) -> Image {
     let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
     
     #if os(OSX)
@@ -134,7 +134,7 @@ extension Image {
       return image
     #else
       UIGraphicsBeginImageContextWithOptions(CGSize(width: size.width, height: size.height), false, scale)
-      GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock, drawing: drawing)
+      GraphicsContext()?.draw(in: rect, attributes: attributesBlock, drawing: drawing)
       let image = UIGraphicsGetImageFromCurrentImageContext()
       UIGraphicsEndImageContext()
       return image!

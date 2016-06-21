@@ -31,16 +31,16 @@ public struct GridComponents : OptionSet {
   public init(rawValue: Int) { self.rawValue = rawValue }
   
   /// Represents the outline of the grid
-  public static var Outline: GridComponents { return GridComponents(rawValue: 1 << 0) }
+  public static var outline: GridComponents { return GridComponents(rawValue: 1 << 0) }
   
   /// Represents the column separators of a grid
-  public static var Columns: GridComponents { return GridComponents(rawValue: 1 << 1) }
+  public static var columns: GridComponents { return GridComponents(rawValue: 1 << 1) }
   
   /// Represents the row separators of a grid
-  public static var Rows:    GridComponents { return GridComponents(rawValue: 1 << 2) }
+  public static var rows:    GridComponents { return GridComponents(rawValue: 1 << 2) }
   
   /// Represents all components
-  public static var All:     GridComponents { return [ .Outline, .Columns, .Rows ] }
+  public static var all:     GridComponents { return [ .outline, columns, .rows ] }
 }
 
 
@@ -117,7 +117,8 @@ public struct Grid {
    
    - returns: The column and row representing this index
    */
-  public func positionForCell(atIndex index: Int) -> (col: Int, row: Int) {
+  // cellForRowAt
+  public func positionForCell(at index: Int) -> (col: Int, row: Int) {
     let row = Int(ceil(CGFloat(index) / CGFloat(columns.count)))
     let col = Int(CGFloat(index % columns.count))
     return (col, row)
@@ -130,8 +131,8 @@ public struct Grid {
    
    - returns: The bounding rectangle
    */
-  public func boundsForCell(atIndex index: Int) -> CGRect {
-    let (col, row) = positionForCell(atIndex: index)
+  public func boundsForCell(at index: Int) -> CGRect {
+    let (col, row) = positionForCell(at: index)
     return boundsForCell(col: col, row: row)
   }
   
@@ -215,10 +216,10 @@ extension Grid {
    
    - returns: A bezier path representation
    */
-  public func path(includeComponents components: GridComponents) -> BezierPath {
+  public func path(include components: GridComponents) -> BezierPath {
     let path = CGMutablePath()
     
-    if components.contains(.Columns) {
+    if components.contains(.columns) {
       for (index, column) in self.columns.enumerated() {
         if index == 0 { continue }
         
@@ -230,7 +231,7 @@ extension Grid {
       }
     }
     
-    if components.contains(.Rows) {
+    if components.contains(.rows) {
       if let column = self.columns.first {
         for (index, row) in column.rows.enumerated() {
           if index == 0 { continue }
@@ -244,7 +245,7 @@ extension Grid {
       }
     }
     
-    if components.contains(.Outline) {
+    if components.contains(.outline) {
       path.addRect(nil, rect: bounds)
     }
     

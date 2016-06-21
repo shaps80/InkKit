@@ -5,6 +5,12 @@
 [![Language](https://img.shields.io/badge/language-swift-ff69b4.svg)](http://cocoadocs.org/docsets/InkKit)
 [![Platform](https://img.shields.io/cocoapods/p/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
 
+#### Note
+> In order to use the Swift 3.0 version add the following to your Podfile
+> `pod 'InkKit', :git => 'https://github.com/shaps80/InkKit.git', :branch => 'Swift3.0'`
+
+--- 
+
 Everything you see here, was code-drawn with InkKit! In fact, other than some `CGRect` instances, this is ALL the code required to draw the image you see on the right ;)
 
 <table>
@@ -52,10 +58,6 @@ backIndicatorImage().draw(at: CGPoint(x: 22, y: 30))
 
 * Swift 3.0 Support
 * Updated API to support Swift 3.0 guidelines
-
-In order to use the Swift 3.0 version add the following to your Podfile
-
-`pod 'InkKit', :git => 'https://github.com/shaps80/InkKit.git', :branch => 'Swift3.0'`
 
 **v1.3.1**
 

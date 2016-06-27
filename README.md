@@ -48,7 +48,9 @@ let (_, navFrame) = barFrame.divide(20, fromEdge: .MinYEdge)
   NSFontAttributeName: UIFont(name: "Avenir-Book", size: 20)!
 ])
 
-backIndicatorImage().draw(at: CGPoint(x: 22, y: 30))  
+backIndicatorImage()
+  .with(tint: .white())
+  .draw(at: CGPoint(x: 22, y: 30))  
 </pre></div></td></tr>
 </table>
 

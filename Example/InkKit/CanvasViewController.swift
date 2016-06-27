@@ -36,8 +36,7 @@ final class CanvasView: UIView {
     super.draw(bgFrame)
     Draw.fill(rect: bgFrame, color: Color(hex: "1c3d64"))
     
-    
-//    drawAnimatedFrames(in: bgFrame)
+    drawAnimatedFrames(in: bgFrame)
     
     /*
      The commented code below, is ALL that is actually required to render to final UI.
@@ -45,40 +44,41 @@ final class CanvasView: UIView {
      If you uncomment it to see the result, don't forget to comment the drawAnimatedFrames() call above this comment.
      */
     
-    
-    let statusBarHeight: CGFloat = UIApplication.shared().statusBarFrame.height
-    let navBarHeight: CGFloat = 44
-    
-    let margin: CGFloat = 0
-    let topGuide = statusBarHeight + navBarHeight
-    let barFrame = CGRect(x: 0, y: 0, width: bgFrame.width, height: topGuide)
-    let gridFrame = CGRect(x: 0, y: barFrame.maxY + margin, width: bgFrame.width, height: bgFrame.maxY - barFrame.height)
-    
-    // Grid
-    
-    let grid = Grid(colCount: 6, rowCount: 9, bounds: gridFrame)
-    let path = grid.path(include: [.columns, .rows])
-    
-    Draw.stroke(path: path, startColor: Color(white: 1, alpha: 0.15), endColor: Color(white: 1, alpha: 0.05), angleInDegrees: 90)
-    
-    // Cell
-    
-    let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 4, destinationRow: 6)
-    drawCell(in: rect, title: "4x6", includeBorder: true, includeShadow: true)
-    
-    Draw.fill(path: BezierPath(), startColor: UIColor.white(), endColor: UIColor.black(), angleInDegrees: 90)
-    
-    // Navigation Bar
-    
-    Draw.add(shadow: .outer, path: BezierPath(rect: barFrame), color: Color(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
-    Draw.fill(rect: barFrame, color: Color(hex: "ff0083"))
-    
-    let (_, navFrame) = barFrame.divide(20, fromEdge: .minYEdge)
-    "InkKit".draw(alignedTo: navFrame, attributes: [
-      NSForegroundColorAttributeName: Color.white(),
-      NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])
-    
-    backIndicatorImage().draw(at: CGPoint(x: 22, y: 30))
+//    let statusBarHeight: CGFloat = UIApplication.shared().statusBarFrame.height
+//    let navBarHeight: CGFloat = 44
+//    
+//    let margin: CGFloat = 0
+//    let topGuide = statusBarHeight + navBarHeight
+//    let barFrame = CGRect(x: 0, y: 0, width: bgFrame.width, height: topGuide)
+//    let gridFrame = CGRect(x: 0, y: barFrame.maxY + margin, width: bgFrame.width, height: bgFrame.maxY - barFrame.height)
+//    
+//    // Grid
+//    
+//    let grid = Grid(colCount: 6, rowCount: 9, bounds: gridFrame)
+//    let path = grid.path(include: [.columns, .rows])
+//    
+//    Draw.stroke(path: path, startColor: Color(white: 1, alpha: 0.15), endColor: Color(white: 1, alpha: 0.05), angleInDegrees: 90)
+//    
+//    // Cell
+//    
+//    let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1, destinationColumn: 4, destinationRow: 6)
+//    drawCell(in: rect, title: "4x6", includeBorder: true, includeShadow: true)
+//    
+//    Draw.fill(path: BezierPath(), startColor: UIColor.white(), endColor: UIColor.black(), angleInDegrees: 90)
+//    
+//    // Navigation Bar
+//    
+//    Draw.add(shadow: .outer, path: BezierPath(rect: barFrame), color: Color(white: 0, alpha: 0.4), radius: 5, offset: CGSize(width: 0, height: 1))
+//    Draw.fill(rect: barFrame, color: Color(hex: "ff0083"))
+//    
+//    let (_, navFrame) = barFrame.divide(20, fromEdge: .minYEdge)
+//    "InkKit".draw(alignedTo: navFrame, attributes: [
+//      NSForegroundColorAttributeName: Color.white(),
+//      NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])
+//    
+//    backIndicatorImage()
+//      .with(tint: .white())
+//      .draw(at: CGPoint(x: 22, y: 30))
   }
   
   func drawAnimatedFrames(in bgFrame: CGRect) {
@@ -198,14 +198,15 @@ final class CanvasView: UIView {
     }
     
     if slider.value > 10 {
-      backIndicatorImage().draw(at: CGPoint(x: 22, y: 30))
+      backIndicatorImage()
+        .with(tint: .white())
+        .draw(at: CGPoint(x: 22, y: 30))
     }
   }
   
   func backIndicatorImage() -> Image {
     return Image.draw(width: 12, height: 22, attributes: nil, drawing: { (context, rect, attributes) in
       attributes.lineWidth = 2
-      attributes.strokeColor = Color.white()
       
       let bezierPath = BezierPath()
       bezierPath.move(to: CGPoint(x: rect.maxX, y: rect.minY))

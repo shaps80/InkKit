@@ -92,10 +92,10 @@ public func radians(from degrees: CGFloat) -> CGFloat {
 
 
 /// Defines a drawing block
-public typealias DrawingBlock = (context: CGContext, rect: CGRect, attributes: DrawingAttributes) -> Void
+public typealias DrawingBlock = @noescape (context: CGContext, rect: CGRect, attributes: DrawingAttributes) -> Void
 
 /// Defines an attributes configuration block
-public typealias AttributesBlock = (attributes: DrawingAttributes) -> Void
+public typealias AttributesBlock = @noescape (attributes: DrawingAttributes) -> Void
 
 /**
  Defines content scaling

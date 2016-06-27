@@ -25,6 +25,30 @@ import CoreGraphics
 extension Image {
   
   /**
+   Returns the current image with a tintColor applied, using the specified blend mode
+   
+   - parameter color:     The tint color to apply
+   - parameter blendMode: The blend mode to apply for this tint
+   
+   - returns: The tinted image
+   */
+  public func with(tint color: UIColor, blendMode: CGBlendMode = .color) -> UIImage {
+    return Image.draw(size: size, attributes: nil) { (context, rect, attributes) in
+      context.translate(x: 0, y: self.size.height)
+      context.scale(x: 1.0, y: -1.0)
+      
+      context.setBlendMode(blendMode)
+      color.setFill()
+      context.fill(rect)
+      context.setBlendMode(.destinationIn)
+      
+      if let image = self.cgImage {
+        context.draw(in: rect, image: image)
+      }
+    }
+  }
+  
+  /**
    Returns an image representing a cirle. To modify its color, stroke, etc... use the attributesBlock
    
    - parameter radius:          The radius of the cirle to draw

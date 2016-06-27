@@ -9,6 +9,8 @@
 > In order to use the Swift 3.0 version add the following to your Podfile
 > 
 > `pod 'InkKit', :git => 'https://github.com/shaps80/InkKit.git', :branch => 'Swift3.0'`
+> 
+> Note: This is a beta release (unstable) and is constantly changing.
 
 --- 
 

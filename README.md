@@ -7,6 +7,7 @@
 
 #### Note
 > In order to use the Swift 3.0 version add the following to your Podfile
+> 
 > `pod 'InkKit', :git => 'https://github.com/shaps80/InkKit.git', :branch => 'Swift3.0'`
 
 --- 
@@ -60,6 +61,7 @@ backIndicatorImage()
 
 * Swift 3.0 Support
 * Updated API to support Swift 3.0 guidelines
+* Image.with(tint:blendMode:) -- Tinting images made easy!
 
 **v1.3.1**
 

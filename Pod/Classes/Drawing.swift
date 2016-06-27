@@ -31,12 +31,12 @@ extension CGContext {
    - parameter attributesBlock: An optional attributes block for providing additional drawing options
    - parameter drawingBlock:    The drawing block to perform execute for performing all drawing operations
    */
-  public func draw(inRect rect: CGRect, attributes attributesBlock: AttributesBlock?, drawing drawingBlock: DrawingBlock) {
+  public func draw(in rect: CGRect, attributes attributesBlock: AttributesBlock?, drawing drawingBlock: DrawingBlock) {
     let attributes = DrawingAttributes()
     attributesBlock?(attributes: attributes)
     
     self.saveGState()
-    attributes.apply(self)
+    attributes.apply(to: self)
     drawingBlock(context: self, rect: rect, attributes: attributes)
     self.restoreGState()
   }

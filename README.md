@@ -23,32 +23,34 @@ Everything you see here, was code-drawn with InkKit! In fact, other than some `C
     <th rowspan="9"><img src="http://shaps.me/assets/img/blog/InkKit.gif"></th>
   </tr>
   <tr><td><div class="highlight highlight-source-swift"><pre>
-Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))
+Draw.fill(rect: bgFrame, color: UIColor(hex: "1c3d64"))
 let grid = Grid(colCount: 6, rowCount: 9, bounds: gridFrame)
-let path = grid.path(includeComponents: [.Columns, .Rows])
+let path = grid.path(include: [.columns, .rows])
 
-Draw.strokePath(path, startColor: UIColor(white: 1, alpha: 0.15),
+Draw.stroke(path: path, startColor: UIColor(white: 1, alpha: 0.15),
     endColor: UIColor(white: 1, alpha: 0.05), angleInDegrees: 90)
 
 let rect = grid.boundsForRange(sourceColumn: 1, sourceRow: 1,
                       destinationColumn: 4, destinationRow: 6)
 
-drawCell(rect, title: "4x6",
+drawCell(in: rect, title: "4x6",
   includeBorder: true, includeShadow: true)
 
-Draw.addShadow(.Outer, path: UIBezierPath(rect: barFrame),
+Draw.add(shadow: .Outer, path: UIBezierPath(rect: barFrame),
            color: UIColor(white: 0, alpha: 0.4), radius: 5,
                        offset: CGSize(width: 0, height: 1))
 
-Draw.fillRect(barFrame, color: UIColor(hex: "ff0083"))
+Draw.fill(rect: barFrame, color: UIColor(hex: "ff0083"))
 
 let (_, navFrame) = barFrame.divide(20, fromEdge: .MinYEdge)
-"InkKit".drawAlignedTo(navFrame, attributes: [
+"InkKit".draw(alignedTo: navFrame, attributes: [
   NSForegroundColorAttributeName: Color.whiteColor(),
   NSFontAttributeName: UIFont(name: "Avenir-Book", size: 20)!
 ])
 
-backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))  
+backIndicatorImage()
+  .with(tint: .white())
+  .draw(at: CGPoint(x: 22, y: 30))  
 </pre></div></td></tr>
 </table>
 
@@ -93,13 +95,13 @@ InkKit provides many useful convenience methods for drawing and geometry calcula
 If the convenience methods below don't solve your needs, you can start by using the new methods added directly to `CGContext` itself:
 
 ```swift
-func draw(inRect:attributes:drawing:)
+func draw(in:attributes:drawing:)
 ```
 
 Which would look like this in usage:
 
 ```swift
-GraphicsContext()?.draw(inRect: rect, drawing: { (context, rect, attributes) in
+GraphicsContext()?.draw(in: rect, drawing: { (context, rect, attributes) in
   Color.redColor.setFill()
   UIRectFill(rect)
 })
@@ -111,11 +113,11 @@ This basically wraps getting the context, setting up its frame and save/restore 
 
 ```swift
 init(colCount:rowCount:bounds:)
-func positionForCell(atIndex:) -> (col: Int, row: Int)
-func boundsForCell(atIndex:) -> CGRect
+func positionForCell(at:) -> (col: Int, row: Int)
+func boundsForCell(at:) -> CGRect
 func boundsForRange(sourceColumn:sourceRow:destinationColumn:destinationRow:) -> CGRect
 func boundsForCell(col:row:) -> CGRect
-func enumerateCells(enumerator:(index:col:row:bounds:) -> Void)
+func enumerateCells(_ enumerator:(index:col:row:bounds:) -> Void)
 ```
 
 A `Grid` is a really great way for laying out your drawing without having to think about placement, rect translations, etc...
@@ -123,32 +125,32 @@ A `Grid` is a really great way for laying out your drawing without having to thi
 I use them often for layout only, but sometimes its useful to be able to render them as well (like in the included demo).
 
 ```swift
-// components is a bitmask [ .Outline, .Rows, .Columns ]
+// components is a bitmask [ .outline, .rows, .columns ]
 func stroke(components:attributes:)
 ```
 
 ### Borders & Shadows
 
-Supports `.Outer`, `.Inner` and `.Center` borders, as well as `.Outer` and `.Inner` shadows.
+Supports `.outer`, `.inner` and `.center` borders, as well as `.outer` and `.inner` shadows.
 
 ```swift
-static func addBorder(type:path:attributes:)
-static func addShadow(type:path:color:radius:offset:)
+static func add(border:path:attributes:)
+static func add(shadow:path:color:radius:offset:)
 ```
 
 ### Strokes
 
 ```swift
-static func strokeLine(startPoint:endPoint:startColor:endColor:angleInDegrees:attributes:)
-static func strokeLine(startPoint:endPoint:color:attributes:)
-static func strokePath(path:startColor:endColor:angleInDegrees:attributes:)
+static func strokeLine(from:to:startColor:endColor:angleInDegrees:attributes:)
+static func strokeLine(from:to:color:attributes:)
+static func stroke(path:startColor:endColor:angleInDegrees:attributes:)
 ```
 
 
 ### Fills
 
 ```swift
-static func fillPath(path:startColor:endColor:angleInDegrees:attributes:)
+static func fill(path:startColor:endColor:angleInDegrees:attributes:)
 ```
 
 ### Geometry
@@ -156,16 +158,16 @@ static func fillPath(path:startColor:endColor:angleInDegrees:attributes:)
 Many of the drawing methods use the geometry additions below, but they can also be useful for your own projects:
 
 ```swift
-func divide(atDelta:fromEdge:margin:) -> (slice, remainder)
-func insetBy(edgeInsets:) -> CGRect
-mutating func insetInPlace(edgeInsets:)
-func alignedTo(rect:horizontal:vertical:) -> CGRect
-func scaledTo(rect:scaleMode:) -> CGRect
+func divide(at:fromEdge:margin:) -> (slice, remainder)
+func inset(by:) -> CGRect 			
+mutating func insetInPlace(by:)		
+func aligned(to:horizontal:vertical:) -> CGRect
+func scaled(to:rect:scaleMode:) -> CGRect
 
 func gradientPoints(forAngleInDegrees:) -> (start, end)
-func scaledTo(size:scaleMode:) -> CGSize
+func scaled(to:scaleMode:) -> CGSize
 
-func reversibleRect(fromPoint:toPoint:) -> CGRect
+func reversibleRect(from:to:) -> CGRect
 ```
 
 ### Images
@@ -173,8 +175,8 @@ func reversibleRect(fromPoint:toPoint:) -> CGRect
 There are also additional draw methods for images:
 
 ```swift
-func drawAlignedTo(rect:horizontal:vertical:blendMode:alpha:)
-func drawScaledTo(rect:scaleMode:blendMode:alpha:)
+func draw(alignedTo:horizontal:vertical:blendMode:alpha:)
+func draw(scaledTo:scaleMode:blendMode:alpha:)
 
 static func circle(radius:attributes:) -> Image
 static func draw(width:height:scale:attributes:drawing:) -> Image
@@ -186,15 +188,15 @@ static func draw(size:scale:attributes:drawing:) -> Image
 Finally, we even have some easy draw methods for strings:
 
 ```swift
-func drawAlignedTo(rect:horizontal:vertical:attributes:constrainedSize:)
-func sizeWithAttributes(attributes:constrainedSize:) -> CGSize
-func drawAtPoint(point:attributes:)
-func drawInRect(rect:withAttributes)
+func draw(alignedTo:horizontal:vertical:constrainedSize:attributes:)
+func sizeWith(attributes:constrainedSize:) -> CGSize
+func draw(at:attributes:)
+func draw(in:attributes)
 ```
 
 ## Demo
 
-To try it out yourself, download the [source](http://github.com/shaps80/InkKit) and run the included demo project.
+To try it out yourself, download the [source](http://github.com/shaps80/InkKit) and run the included demo projects. There is also an OSX Demo project!
 
 ## Platforms and Versions
 

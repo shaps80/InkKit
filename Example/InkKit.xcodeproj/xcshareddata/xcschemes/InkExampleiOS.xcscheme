@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C74A4BEF80CB2FCEA300A247E9EBF88"
+               BlueprintIdentifier = "DC89CC87EFF36CF8E1B9D956B09B2B36"
                BuildableName = "InkKit.framework"
                BlueprintName = "InkKit"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

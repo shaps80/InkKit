@@ -28,13 +28,12 @@ import CoreGraphics
   
   public typealias Color = NSColor
   public typealias Image = NSImage
-  public typealias EdgeInsets = NSEdgeInsets
   public typealias BezierPath = NSBezierPath
   public typealias Screen = NSScreen
   public typealias Font = NSFont
   
   func GraphicsContext() -> CGContext? {
-    return NSGraphicsContext.currentContext()!.CGContext
+    return NSGraphicsContext.current()!.cgContext
   }
   
 #else
@@ -61,7 +60,7 @@ import CoreGraphics
  
  - returns: The angle in radians
  */
-public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
+public func radians(from degrees: CGFloat) -> CGFloat {
   return degrees * CGFloat(M_PI) / 180
 }
 
@@ -73,8 +72,8 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
       return backingScaleFactor
     }
     
-    public static func currentScreen() -> Screen {
-      return NSScreen.mainScreen()!
+    public static func current() -> Screen {
+      return NSScreen.main()!
     }
     
   }
@@ -83,7 +82,7 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
   
   extension UIScreen {
    
-    public static func currentScreen() -> Screen {
+    public static func current() -> Screen {
       return UIScreen.main()
     }
     
@@ -93,10 +92,10 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
 
 
 /// Defines a drawing block
-public typealias DrawingBlock = (context: CGContext, rect: CGRect, attributes: DrawingAttributes) -> Void
+public typealias DrawingBlock = @noescape (context: CGContext, rect: CGRect, attributes: DrawingAttributes) -> Void
 
 /// Defines an attributes configuration block
-public typealias AttributesBlock = (attributes: DrawingAttributes) -> Void
+public typealias AttributesBlock = @noescape (attributes: DrawingAttributes) -> Void
 
 /**
  Defines content scaling
@@ -171,7 +170,7 @@ public final class DrawingAttributes {
    
    - parameter context: The context to apply
    */
-  public func apply(_ context: CGContext) {
+  public func apply(to context: CGContext) {
     if let pattern = dashPattern {
       context.setLineDash(phase: 0, lengths: pattern, count: pattern.count)
     }
@@ -194,7 +193,7 @@ public final class DrawingAttributes {
    
    - parameter path: The path to apply
    */
-  public func apply(_ path: BezierPath) {
+  public func apply(to path: BezierPath) {
     if let pattern = dashPattern {
       path.setLineDash(pattern, count: pattern.count, phase: 0)
     }
@@ -219,12 +218,3 @@ public final class DrawingAttributes {
   }
   
 }
-
-/// Defines a Draw class -- extensions are used to populate this class with static methods -- its provided purely for namespacing
-public class Draw { }
-
-@available(*, unavailable, renamed:"Grid")
-public struct Table { }
-
-@available(*, unavailable, renamed:"GridComponents")
-public struct TableComponents { }

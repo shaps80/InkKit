@@ -26,8 +26,8 @@ extension Draw {
   
   // MARK: Internal functions
   
-  static func drawGradientPath(_ path: BezierPath, startColor: Color, endColor: Color, angleInDegrees: CGFloat, stroke: Bool, attributes attributesBlock: AttributesBlock? = nil) {
-    GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock, drawing: { (context, rect, attributes) in
+  static func draw(gradient path: BezierPath, startColor: Color, endColor: Color, angleInDegrees: CGFloat, stroke: Bool, attributes attributesBlock: AttributesBlock? = nil) {
+    GraphicsContext()?.draw(in: path.bounds, attributes: attributesBlock, drawing: { (context, rect, attributes) in
       context.addPath(path.cgPath)
       
       if stroke {

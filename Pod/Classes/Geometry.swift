@@ -30,23 +30,24 @@ import CoreGraphics
  
  - returns: The resulting rect
  */
-public func reversibleRect(fromPoint: CGPoint, toPoint: CGPoint) -> CGRect {
+public func reversibleRect(from: CGPoint, to: CGPoint) -> CGRect {
   var rect = CGRect.zero
   
-  if fromPoint.x < toPoint.x {
-    rect.origin.x = fromPoint.x
-    rect.size.width = toPoint.x - fromPoint.x
+  
+  if from.x < to.x {
+    rect.origin.x = from.x
+    rect.size.width = to.x - from.x
   } else {
-    rect.origin.x = toPoint.x
-    rect.size.width = fromPoint.x - toPoint.x
+    rect.origin.x = to.x
+    rect.size.width = from.x - to.x
   }
   
-  if fromPoint.y < toPoint.y {
-    rect.origin.y = fromPoint.y
-    rect.size.height = toPoint.y - fromPoint.y
+  if from.y < to.y {
+    rect.origin.y = from.y
+    rect.size.height = to.y - from.y
   } else {
-    rect.origin.y = toPoint.y
-    rect.size.height = fromPoint.y - toPoint.y
+    rect.origin.y = to.y
+    rect.size.height = from.y - to.y
   }
   
   return rect
@@ -63,7 +64,7 @@ extension CGRect {
    
    - returns: The resulting rects
    */
-  public func divide(atDelta delta: CGFloat, fromEdge edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
+  public func divide(at delta: CGFloat, from edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
     var (rect1, rect2) = divide(width * delta, fromEdge: edge)
     rect1.size.width -= margin / 2
     rect2.size.width -= margin / 2
@@ -78,9 +79,9 @@ extension CGRect {
    
    - returns: The resulting rect
    */
-  public func insetBy(_ edgeInsets: EdgeInsets) -> CGRect {
+  public func inset(by edgeInsets: EdgeInsets) -> CGRect {
     var rect = self
-    rect.insetInPlace(edgeInsets)
+    rect.insetInPlace(by: edgeInsets)
     return rect
   }
   
@@ -89,7 +90,7 @@ extension CGRect {
    
    - parameter edgeInsets: The edge insets to use for determing each edge's inset
    */
-  public mutating func insetInPlace(_ edgeInsets: EdgeInsets) {
+  public mutating func insetInPlace(by edgeInsets: EdgeInsets) {
     size.width -= (edgeInsets.right + edgeInsets.left)
     size.height -= (edgeInsets.bottom + edgeInsets.top)
     origin.x += edgeInsets.left
@@ -105,7 +106,7 @@ extension CGRect {
    
    - returns: The resulting rect
    */
-  public func alignedTo(_ rect: CGRect, horizontal: HorizontalAlignment, vertical: VerticalAlignment) -> CGRect {
+  public func aligned(to rect: CGRect, horizontal: HorizontalAlignment, vertical: VerticalAlignment) -> CGRect {
     var x: CGFloat, y: CGFloat
     
     switch horizontal {
@@ -137,19 +138,19 @@ extension CGRect {
    
    - returns: The resulting rect
    */
-  public func scaledTo(_ rect: CGRect, scaleMode mode: ScaleMode) -> CGRect {
+  public func scaled(to rect: CGRect, scaleMode: ScaleMode) -> CGRect {
     var x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat
     
-    switch mode {
+    switch scaleMode {
     case .scaleToFill:
       w = rect.width
       h = rect.height
     case .scaleAspectFit:
-      let scaledSize = self.size.scaledTo(rect.size, scaleMode: mode)
+      let scaledSize = self.size.scaled(to: rect.size, mode: scaleMode)
       w = scaledSize.width
       h = scaledSize.height
     case .scaleAspectFill:
-      let newSize = self.size.scaledTo(rect.size, scaleMode: mode)
+      let newSize = self.size.scaled(to: rect.size, mode: scaleMode)
       w = newSize.width
       h = newSize.height
     case .center:
@@ -176,7 +177,7 @@ extension CGSize {
    - returns: The start and end points correlating to this angle
    */
   public func gradientPoints(forAngleInDegrees angle: CGFloat) -> (start: CGPoint, end: CGPoint) {
-    let degree = radians(fromDegrees: angle)
+    let degree = radians(from: angle)
     
     let center = CGPoint(x: width / 2, y: height / 2)
     let start = CGPoint(x: center.x - cos(degree) * width / 2, y: center.y - sin(degree) * height / 2)
@@ -193,7 +194,7 @@ extension CGSize {
    
    - returns: The resulting size
    */
-  public func scaledTo(_ size: CGSize, scaleMode mode: ScaleMode) -> CGSize {
+  public func scaled(to size: CGSize, mode: ScaleMode) -> CGSize {
     var w: CGFloat, h: CGFloat
     
     switch mode {

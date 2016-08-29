@@ -64,12 +64,21 @@ extension CGRect {
    
    - returns: The resulting rects
    */
-  public func divide(at delta: CGFloat, from edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
-    var (rect1, rect2) = divide(at: width * delta, from: edge)
-    rect1.size.width -= margin / 2
-    rect2.size.width -= margin / 2
-    rect2.origin.x += margin / 2
-    return (rect1, rect2)
+  public func divided(atDelta delta: CGFloat, from edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
+    switch edge {
+    case .minXEdge, .maxXEdge:
+      var (rect1, rect2) = divided(atDistance: width * delta, from: edge)
+      rect1.size.width -= margin / 2
+      rect2.size.width -= margin / 2
+      rect2.origin.x += margin / 2
+      return (rect1, rect2)
+    case .minYEdge, .maxYEdge:
+      var (rect1, rect2) = divided(atDistance: height * delta, from: edge)
+      rect1.size.height -= margin / 2
+      rect2.size.height -= margin / 2
+      rect2.origin.y += margin / 2
+      return (rect1, rect2)
+    }
   }
   
   /**

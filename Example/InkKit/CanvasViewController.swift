@@ -191,7 +191,7 @@ final class CanvasView: UIView {
     }
     
     if slider.value > 9 {
-      let (_, navFrame) = rect.divide(at: 20, from: .minYEdge)
+      let (_, navFrame) = rect.divided(atDelta: 20, from: .minYEdge)
       "InkKit".draw(alignedTo: navFrame, attributes: [
         NSForegroundColorAttributeName: Color.white,
         NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])

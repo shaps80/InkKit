@@ -124,7 +124,7 @@ extension CGRect {
   
   @available(*, unavailable, renamed: "divide(at:from:margin:)")
   public func divide(atDelta delta: CGFloat, fromEdge edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
-    return divide(at: delta, from: edge, margin: margin)
+    return divided(atDelta: delta, from: edge, margin: margin)
   }
   
   

@@ -81,7 +81,7 @@ final class CanvasView: UIView {
   }
   
   func drawAnimatedFrames(_ bgFrame: CGRect) {
-    let statusBarHeight: CGFloat = UIApplication.shared().statusBarFrame.height
+    let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
     let navBarHeight: CGFloat = 44
     
     let margin: CGFloat = 0
@@ -108,7 +108,7 @@ final class CanvasView: UIView {
   
   func drawPlaceholder(_ rect: CGRect) {
     "InkKit".drawAlignedTo(rect, attributes: [
-      NSForegroundColorAttributeName: Color.white(),
+      NSForegroundColorAttributeName: Color.white,
       NSFontAttributeName: Font(name: "Avenir-Book", size: 60)!
     ])
   }
@@ -164,7 +164,7 @@ final class CanvasView: UIView {
     }
     
     title.drawAlignedTo(rect, attributes: [
-      NSForegroundColorAttributeName: Color.white(),
+      NSForegroundColorAttributeName: Color.white,
       NSFontAttributeName: Font(name: "Avenir-Medium", size: 15)!
     ])
   }
@@ -190,9 +190,9 @@ final class CanvasView: UIView {
     }
     
     if slider.value > 9 {
-      let (_, navFrame) = rect.divide(20, fromEdge: .minYEdge)
+      let (_, navFrame) = rect.divide(atDelta: 20, fromEdge: .minYEdge)
       "InkKit".drawAlignedTo(navFrame, attributes: [
-        NSForegroundColorAttributeName: Color.white(),
+        NSForegroundColorAttributeName: Color.white,
         NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])
     }
     
@@ -204,7 +204,7 @@ final class CanvasView: UIView {
   func backIndicatorImage() -> Image {
     return Image.draw(width: 12, height: 22, attributes: nil, drawing: { (context, rect, attributes) in
       attributes.lineWidth = 2
-      attributes.strokeColor = Color.white()
+      attributes.strokeColor = Color.white
       
       let bezierPath = BezierPath()
       bezierPath.move(to: CGPoint(x: rect.maxX, y: rect.minY))
@@ -221,7 +221,7 @@ final class CanvasViewController: UIViewController {
   
   @IBOutlet var canvasView: CanvasView!
   
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+  override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
   
@@ -238,7 +238,7 @@ final class CanvasViewController: UIViewController {
       return
     }
     
-    DispatchQueue.main.after(when: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { 
       self.animate()
     }
   }

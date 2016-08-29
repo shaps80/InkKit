@@ -160,7 +160,7 @@ final class CanvasView: UIView {
     }
     
     if includeBorder {
-      Draw.addBorder(.inner, path: path, color: Color(hex: "ff0083"), thickness: 2)
+      Draw.border(type: .inner, path: path, color: Color(hex: "ff0083"), thickness: 2)
     }
     
     title.drawAlignedTo(rect, attributes: [

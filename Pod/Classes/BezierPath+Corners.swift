@@ -8,6 +8,14 @@
 
 import UIKit
 
+/**
+ Defines available corner styles
+ 
+ - none:    The corner will appear as a normal rect corner
+ - convex:  The corner will appear externally rounded
+ - concave: The corner will appear internally rounded
+ - line:    The corner will appear with a flat line
+ */
 public enum RectCornerStyle {
   case none
   case convex(radius: CGFloat)
@@ -15,15 +23,29 @@ public enum RectCornerStyle {
   case line(radius: CGFloat)
 }
 
+/**
+ *  Defines a struct for defining a paths corner styles
+ */
 public struct RectCorners {
+  /// The corner style for the top left corner
   public var topLeft: RectCornerStyle
+  /// The corner style for the top right corner
   public var topRight: RectCornerStyle
+  /// The corner style for the bottom right corner
   public var bottomRight: RectCornerStyle
+  /// The corner style for the bottom left corner
   public var bottomLeft: RectCornerStyle
 }
 
 extension RectCorners {
   
+  /**
+   Initializes and configures all corners with the same style
+   
+   - parameter all: The style to apply for all corners
+   
+   - returns: A new corners struct
+   */
   public init(allCorners all: RectCornerStyle) {
     topLeft = all
     topRight = all
@@ -31,6 +53,13 @@ extension RectCorners {
     bottomRight = all
   }
   
+  /**
+   Initializes and configures the top corners style. The bottom corners will have a style of .none
+   
+   - parameter top: The top corners style
+   
+   - returns: A new corners struct
+   */
   public init(topCorners top: RectCornerStyle) {
     topLeft = top
     topRight = top
@@ -38,6 +67,13 @@ extension RectCorners {
     bottomRight = .none
   }
   
+  /**
+   Initializes and configures the bottom corners style. The top corners will have a style of .none
+   
+   - parameter bottom: The bottom corners style
+   
+   - returns: A new corners struct
+   */
   public init(bottomCorners bottom: RectCornerStyle) {
     topLeft = .none
     topRight = .none
@@ -45,6 +81,13 @@ extension RectCorners {
     bottomRight = bottom
   }
   
+  /**
+   Initializes and configures the left corners style. The right corners will have a style of .none
+   
+   - parameter left: The left corners style
+   
+   - returns: A new corners struct
+   */
   public init(leftCorners left: RectCornerStyle) {
     topLeft = left
     bottomLeft = left
@@ -52,6 +95,13 @@ extension RectCorners {
     bottomRight = .none
   }
   
+  /**
+   Initializes and configures the right corners style. The left corners will have a style of .none
+   
+   - parameter right: The right corners style
+   
+   - returns: A new corners struct
+   */
   public init(rightCorners right: RectCornerStyle) {
     topLeft = .none
     bottomLeft = .none
@@ -63,6 +113,14 @@ extension RectCorners {
 
 extension BezierPath {
   
+  /**
+   Initializes a new path with the specified corner styles
+   
+   - parameter rect:    The rect to use for this path
+   - parameter corners: The corner styles to apply for this path
+   
+   - returns: A new path
+   */
   public convenience init(rect: CGRect, corners: RectCorners) {
     self.init()
     addTopLeftCorner(rect: rect, style: corners.topLeft)

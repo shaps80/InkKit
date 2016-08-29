@@ -33,11 +33,11 @@ extension CGContext {
    */
   public func draw(in rect: CGRect, attributes attributesBlock: AttributesBlock?, drawing drawingBlock: DrawingBlock) {
     let attributes = DrawingAttributes()
-    attributesBlock?(attributes: attributes)
+    attributesBlock?(attributes)
     
     self.saveGState()
     attributes.apply(to: self)
-    drawingBlock(context: self, rect: rect, attributes: attributes)
+    drawingBlock(self, rect, attributes)
     self.restoreGState()
   }
   

@@ -30,8 +30,10 @@
 		54AEBE0F1D1871B900A6A5BE /* Deprecations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deprecations.swift; sourceTree = "<group>"; };
 		54B30D781CE2752A00D16082 /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		54B30D7C1CE362DE00D16082 /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		54B44CEF1D748CC500AB8B6D /* BezierPath+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BezierPath+Corners.swift"; sourceTree = "<group>"; };
+		54B44CF01D748CCE00AB8B6D /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		54C2D6901CB5724400C49A6E /* Image+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Drawing.swift"; sourceTree = "<group>"; };
-		54C2D6B81CB6B3FB00C49A6E /* BezierPath+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierPath+Extensions.swift"; sourceTree = "<group>"; };
+		54C2D6B81CB6B3FB00C49A6E /* BezierPath+MacOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierPath+MacOS.swift"; sourceTree = "<group>"; };
 		54C2D6BB1CB6B65200C49A6E /* InkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InkKit.framework; path = "Pods/../build/Debug-iphoneos/InkKit.framework"; sourceTree = "<group>"; };
 		54C2D6BD1CB6B70100C49A6E /* InkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InkKit.framework; path = "Pods/../build/Debug-iphoneos/InkKit.framework"; sourceTree = "<group>"; };
 		596CCE2045BADF5227B457D4 /* Pods_InkExampleiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InkExampleiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				54AEBE0F1D1871B900A6A5BE /* Deprecations.swift */,
-				54C2D6B81CB6B3FB00C49A6E /* BezierPath+Extensions.swift */,
+				54B44CEF1D748CC500AB8B6D /* BezierPath+Corners.swift */,
+				54C2D6B81CB6B3FB00C49A6E /* BezierPath+MacOS.swift */,
 				5423D22B1CE24BA0007220AB /* Borders.swift */,
 				54B30D781CE2752A00D16082 /* Color+Extensions.swift */,
 				541FFBBC1CB544D400967CB1 /* Drawing.swift */,
@@ -78,6 +81,7 @@
 				541FFBBE1CB544E000967CB1 /* String+Drawing.swift */,
 				5423D2271CE24B10007220AB /* Strokes.swift */,
 				541FFBC21CB545CF00967CB1 /* Types.swift */,
+				54B44CF01D748CCE00AB8B6D /* Math.swift */,
 			);
 			name = Classes;
 			path = ../Pod/Classes;
@@ -163,12 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "InkExampleiOS" */;
 			buildPhases = (
-				EACAB2D2E0553747B0B08C32 /* 📦 Check Pods Manifest.lock */,
+				EACAB2D2E0553747B0B08C32 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				766B56857395DE817044330A /* 📦 Embed Pods Frameworks */,
-				BF5E85364413B7EC2853DE0C /* 📦 Copy Pods Resources */,
+				766B56857395DE817044330A /* [CP] Embed Pods Frameworks */,
+				BF5E85364413B7EC2853DE0C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,14 +233,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		766B56857395DE817044330A /* 📦 Embed Pods Frameworks */ = {
+		766B56857395DE817044330A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +248,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InkExampleiOS/Pods-InkExampleiOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BF5E85364413B7EC2853DE0C /* 📦 Copy Pods Resources */ = {
+		BF5E85364413B7EC2853DE0C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,14 +263,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InkExampleiOS/Pods-InkExampleiOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EACAB2D2E0553747B0B08C32 /* 📦 Check Pods Manifest.lock */ = {
+		EACAB2D2E0553747B0B08C32 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

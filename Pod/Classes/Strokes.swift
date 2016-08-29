@@ -109,7 +109,7 @@ extension Draw {
     
     GraphicsContext()?.draw(in: rect, attributes: attributesBlock) { (context, rect, attributes) in
       color?.setStroke()
-      context.strokeLineSegments(between: [ from, to ], count: 2)
+      context.strokeLineSegments(between: [ from, to ])
     }
   }
   

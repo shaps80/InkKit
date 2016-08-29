@@ -82,7 +82,7 @@ final class CanvasView: UIView {
   }
   
   func drawAnimatedFrames(in bgFrame: CGRect) {
-    let statusBarHeight: CGFloat = UIApplication.shared().statusBarFrame.height
+    let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
     let navBarHeight: CGFloat = 44
     
     let margin: CGFloat = 0
@@ -109,7 +109,7 @@ final class CanvasView: UIView {
   
   func drawPlaceholder(in rect: CGRect) {
     "InkKit".draw(alignedTo: rect, attributes: [
-      NSForegroundColorAttributeName: Color.white(),
+      NSForegroundColorAttributeName: Color.white,
       NSFontAttributeName: Font(name: "Avenir-Book", size: 60)!
     ])
   }
@@ -165,7 +165,7 @@ final class CanvasView: UIView {
     }
     
     title.draw(alignedTo: rect, attributes: [
-      NSForegroundColorAttributeName: Color.white(),
+      NSForegroundColorAttributeName: Color.white,
       NSFontAttributeName: Font(name: "Avenir-Medium", size: 15)!
     ])
   }
@@ -191,15 +191,15 @@ final class CanvasView: UIView {
     }
     
     if slider.value > 9 {
-      let (_, navFrame) = rect.divide(20, fromEdge: .minYEdge)
+      let (_, navFrame) = rect.divide(at: 20, from: .minYEdge)
       "InkKit".draw(alignedTo: navFrame, attributes: [
-        NSForegroundColorAttributeName: Color.white(),
+        NSForegroundColorAttributeName: Color.white,
         NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])
     }
     
     if slider.value > 10 {
       backIndicatorImage()
-        .with(tint: .white())
+        .with(tint: .white)
         .draw(at: CGPoint(x: 22, y: 30))
     }
   }
@@ -223,7 +223,7 @@ final class CanvasViewController: UIViewController {
   
   @IBOutlet var canvasView: CanvasView!
   
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+  override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
   
@@ -240,7 +240,7 @@ final class CanvasViewController: UIViewController {
       return
     }
     
-    DispatchQueue.main.after(when: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { () -> Void in
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
       self.animate()
     }
   }

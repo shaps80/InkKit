@@ -34,17 +34,15 @@ extension Image {
    */
   public func with(tint color: UIColor, blendMode: CGBlendMode = .color) -> UIImage {
     return Image.draw(size: size, attributes: nil) { (context, rect, attributes) in
-      context.translate(x: 0, y: self.size.height)
-      context.scale(x: 1.0, y: -1.0)
+      context.translateBy(x: 0, y: self.size.height)
+      context.scaleBy(x: 1.0, y: -1.0)
       
       context.setBlendMode(blendMode)
       color.setFill()
       context.fill(rect)
       context.setBlendMode(.destinationIn)
       
-      if let image = self.cgImage {
-        context.draw(in: rect, image: image)
-      }
+      self.draw(in: rect)
     }
   }
   

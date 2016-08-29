@@ -83,7 +83,7 @@ public func radians(from degrees: CGFloat) -> CGFloat {
   extension UIScreen {
    
     public static func current() -> Screen {
-      return UIScreen.main()
+      return UIScreen.main
     }
     
   }
@@ -92,10 +92,10 @@ public func radians(from degrees: CGFloat) -> CGFloat {
 
 
 /// Defines a drawing block
-public typealias DrawingBlock = @noescape (context: CGContext, rect: CGRect, attributes: DrawingAttributes) -> Void
+public typealias DrawingBlock = (_ context: CGContext, _ rect: CGRect, _ attributes: DrawingAttributes) -> Void
 
 /// Defines an attributes configuration block
-public typealias AttributesBlock = @noescape (attributes: DrawingAttributes) -> Void
+public typealias AttributesBlock = (_ attributes: DrawingAttributes) -> Void
 
 /**
  Defines content scaling
@@ -172,7 +172,7 @@ public final class DrawingAttributes {
    */
   public func apply(to context: CGContext) {
     if let pattern = dashPattern {
-      context.setLineDash(phase: 0, lengths: pattern, count: pattern.count)
+      context.setLineDash(phase: 0, lengths: pattern)
     }
     
     if let fillColor = fillColor {

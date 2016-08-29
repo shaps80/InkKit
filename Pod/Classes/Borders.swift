@@ -82,7 +82,7 @@ extension Draw {
       context.fillPath()
       
       if !context.isPathEmpty {
-        context.eoClip()
+        context.clip(using: .evenOdd)
       }
     }
   }

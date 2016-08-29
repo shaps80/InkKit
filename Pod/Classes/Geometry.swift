@@ -65,7 +65,7 @@ extension CGRect {
    - returns: The resulting rects
    */
   public func divide(at delta: CGFloat, from edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
-    var (rect1, rect2) = divide(width * delta, fromEdge: edge)
+    var (rect1, rect2) = divide(at: width * delta, from: edge)
     rect1.size.width -= margin / 2
     rect2.size.width -= margin / 2
     rect2.origin.x += margin / 2

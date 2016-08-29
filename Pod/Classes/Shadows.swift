@@ -63,7 +63,7 @@ extension Draw {
         context.clip()
       }
       
-      let opaqueShadowColor = CGColor(copyWithAlphaColor: color.cgColor, alpha: 1.0)
+      let opaqueShadowColor = color.cgColor.copy(alpha: 1)
       
       context.setAlpha(color.cgColor.alpha)
       context.beginTransparencyLayer(auxiliaryInfo: nil)

@@ -58,6 +58,10 @@ backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
 
 * Swift 3.0 Support
 * Updated API to support Swift 3.0 guidelines
+* Shear Transforms
+* Perspective Transforms
+* Radians from Degrees function (and inverse)
+
 
 **v1.3.1**
 

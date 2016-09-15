@@ -124,8 +124,8 @@ extension CGPath {
     typealias ElementEnumeration = @convention(block) (CGPathElement) -> Void
     
     func callback(_ info: UnsafeMutablePointer<Void>?, element: UnsafePointer<CGPathElement>) {
-      let enumerator = unsafeBitCast(info, to: ElementEnumeration.self)
-      enumerator(element.pointee)
+      let enumerator = unsafeBitCast(info, ElementEnumeration.self)
+      enumerator(element.pointer)
     }
     
     let unsafeBody = unsafeBitCast(enumerator, to: UnsafeMutablePointer<Void>.self)

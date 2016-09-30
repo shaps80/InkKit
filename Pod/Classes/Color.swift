@@ -242,7 +242,7 @@ extension Color {
         }
         
         public var nsColor: NSColor {
-            return NSColor(cgColor: cgColor)
+            return NSColor(cgColor: cgColor)!
         }
     }
 #endif

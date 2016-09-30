@@ -32,7 +32,7 @@ import CoreGraphics
   public typealias Font = NSFont
   
   func GraphicsContext() -> CGContext? {
-    return NSGraphicsContext.currentContext()!.CGContext
+    return NSGraphicsContext.current()!.cgContext
   }
   
 #else
@@ -71,7 +71,7 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
     }
     
     public static func currentScreen() -> Screen {
-      return NSScreen.mainScreen()!
+      return NSScreen.main()!
     }
     
   }

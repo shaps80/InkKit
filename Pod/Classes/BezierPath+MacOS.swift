@@ -72,10 +72,10 @@ import CoreGraphics
      
      - returns: A new path
      */
-    public convenience init(CGPath: CGPath) {
+    public convenience init(cgPath: CGPath) {
       self.init(rect: .zero)
       
-      CGPath.forEach {
+      cgPath.forEach {
         switch $0.type {
         case .addCurveToPoint:
           curve(to: $0.points[0], controlPoint1: $0.points[1], controlPoint2: $0.points[2])

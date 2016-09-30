@@ -213,3 +213,23 @@ extension BezierPath {
   
 }
 
+#if os(OSX)
+  
+  extension BezierPath {
+    
+    open func addLine(to point: CGPoint) {
+      line(to: point)
+    }
+    
+    open func addCurve(to endPoint: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint) {
+      curve(to: endPoint, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
+    }
+    
+    open func addArc(withCenter center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool) {
+      appendArc(withCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
+    }
+    
+  }
+  
+#endif
+

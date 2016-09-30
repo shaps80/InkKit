@@ -11,7 +11,6 @@
 		0CB566ADEF01DA7D8DE7927DAD8ACEEC /* Fills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276602A4C5FAD3F2E6C9B4A109D2EF0 /* Fills.swift */; };
 		13F135F319FFF85928983589F48CF8A1 /* Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31CD564BFB74F64256F77C0EFDF79B /* Shadows.swift */; };
 		1673FD26F634418620F6192682EC315B /* BezierPath+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972C209EC001AF878F081C886E537FD /* BezierPath+Corners.swift */; };
-		17443F5EB80F25F2B5B5F55046C01B2A /* BezierPath+MacOS.swift.orig in Sources */ = {isa = PBXBuildFile; fileRef = 01439084759D1043C1A0C11D8898CE83 /* BezierPath+MacOS.swift.orig */; };
 		197C98EEA568771EF78DB70F52CE2F26 /* Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F89E348CAED513C8C91D1404D66F78 /* Borders.swift */; };
 		39DB5E2C365CFEB343053A173D90D74A /* String+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CABF91A89A57005FA3E16B1F0F2846F /* String+Drawing.swift */; };
 		4A69AFEF4C8D5BF14A630F12AF6DC7BA /* Transforms+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C7851D373CC13778BDD5D1B84977C1 /* Transforms+Extensions.swift */; };
@@ -52,7 +51,7 @@
 		2765D511F7D18FFA24F1DF99A7EA399D /* BezierPath+MacOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BezierPath+MacOS.swift"; sourceTree = "<group>"; };
 		3276602A4C5FAD3F2E6C9B4A109D2EF0 /* Fills.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fills.swift; sourceTree = "<group>"; };
 		3574B39CB5596A31C0D4381718010557 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; tabWidth = 2; };
-		3831CBAE4F38C37DBA042AD05C176FC0 /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		3831CBAE4F38C37DBA042AD05C176FC0 /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		3B941D89D69DF444CB39FF3A0AAB019B /* Pods-InkExampleiOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InkExampleiOS-dummy.m"; sourceTree = "<group>"; };
 		3EBC189213BCCBBEEDCC8D8FBDBC7BB8 /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		40F89E348CAED513C8C91D1404D66F78 /* Borders.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -153,7 +152,9 @@
 				B1DB07493EDD7D09B742C2AC7FDD8E81 /* Products */,
 				0AC2DF918648489FA013BC7007ECA66E /* Targets Support Files */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		B1DB07493EDD7D09B742C2AC7FDD8E81 /* Products */ = {
 			isa = PBXGroup;
@@ -330,7 +331,6 @@
 			files = (
 				1673FD26F634418620F6192682EC315B /* BezierPath+Corners.swift in Sources */,
 				C2E88D26B1D2F9A314C4012DE426FC30 /* BezierPath+MacOS.swift in Sources */,
-				17443F5EB80F25F2B5B5F55046C01B2A /* BezierPath+MacOS.swift.orig in Sources */,
 				197C98EEA568771EF78DB70F52CE2F26 /* Borders.swift in Sources */,
 				5A83C71BD797AE453E315EE6B45C84C3 /* Color.swift in Sources */,
 				F75967C5BB090AB1EAFB789AAAADD288 /* Drawing.swift in Sources */,

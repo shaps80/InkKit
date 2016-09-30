@@ -54,6 +54,11 @@ public func reversibleRect(fromPoint: CGPoint, toPoint: CGPoint) -> CGRect {
 
 extension CGRect {
   
+  @available(*, unavailable, renamed: "divided(atDelta:from:margin:)")
+  public func divide(atDelta delta: CGFloat, fromEdge edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
+    return divided(atDelta: delta, from: edge, margin: margin)
+  }
+  
   /**
    Returns two rects, divided by a delta where 0 is the min value and 1 is the max value, from the specified edge
    
@@ -63,11 +68,23 @@ extension CGRect {
    
    - returns: The resulting rects
    */
-  public func divide(atDelta delta: CGFloat, fromEdge edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
-    var (rect1, rect2) = divide(atDelta: width * delta, fromEdge: edge)
-    rect1.size.width -= margin / 2
-    rect2.size.width -= margin / 2
-    rect2.origin.x += margin / 2
+  public func divided(atDelta delta: CGFloat, from edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
+    let edges: [CGRectEdge] = [.minXEdge, .maxXEdge]
+    let isHorizontal = edges.contains(edge)
+    var (rect1, rect2): (CGRect, CGRect)
+    
+    if isHorizontal {
+      (rect1, rect2) = divided(atDistance: width * delta, from: edge)
+      rect1.size.width -= margin / 2
+      rect2.size.width -= margin / 2
+      rect2.origin.x += margin / 2
+    } else {
+      (rect1, rect2) = divided(atDistance: height * delta, from: edge)
+      rect1.size.height -= margin / 2
+      rect2.size.height -= margin / 2
+      rect2.origin.y += margin / 2
+    }
+    
     return (rect1, rect2)
   }
   

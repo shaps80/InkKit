@@ -30,6 +30,7 @@ final class CanvasView: UIView {
   
   @IBAction func valueChanged(_ slider: UISlider) {
     setNeedsDisplay()
+
   }
   
   override func draw(_ bgFrame: CGRect) {
@@ -195,7 +196,7 @@ final class CanvasView: UIView {
     }
     
     if slider.value > 9 {
-      let (_, navFrame) = rect.divide(atDelta: 20, fromEdge: .minYEdge)
+      let (_, navFrame) = rect.divided(atDistance: 20, from: .minYEdge)
       "InkKit".drawAlignedTo(navFrame, attributes: [
         NSForegroundColorAttributeName: Color.white.uiColor,
         NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])

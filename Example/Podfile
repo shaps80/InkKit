@@ -4,3 +4,7 @@ use_frameworks!
 target 'InkExampleiOS' do
   pod 'InkKit', :path => '../'
 end
+
+target 'InkExampleOSX' do
+  pod 'InkKit', :path => '../'
+end

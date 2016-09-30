@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>InkExampleOSX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>InkExampleiOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>5428D6481CE4FF3A0082D815</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>545937141D9E9BC200644DCE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

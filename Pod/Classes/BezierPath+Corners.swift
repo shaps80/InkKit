@@ -6,7 +6,11 @@
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
-import UIKit
+#if os(iOS)
+  import UIKit
+#else
+  import AppKit
+#endif
 
 /**
  Defines available corner styles

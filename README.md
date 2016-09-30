@@ -61,6 +61,7 @@ backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
 * Shear Transforms
 * Perspective Transforms
 * Radians from Degrees function (and inverse)
+* Corner Radius with Concave, Convex and Line support
 * New Color value-type
 
 

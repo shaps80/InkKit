@@ -27,7 +27,6 @@ import CoreGraphics
   import AppKit
   
   public typealias Image = NSImage
-  public typealias EdgeInsets = NSEdgeInsets
   public typealias BezierPath = NSBezierPath
   public typealias Screen = NSScreen
   public typealias Font = NSFont

@@ -6,10 +6,10 @@
 [![Platform](https://img.shields.io/cocoapods/p/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
 
 #### Note
-> In order to use the Swift 3.0 version add the following to your Podfile
-> `pod 'InkKit', :git => 'https://github.com/shaps80/InkKit.git', :branch => 'Swift3.0'`
+> If you require Swift 2.2 still, fix your version of InkKit to:
+> `pod 'InkKit', '1.3.1'
 
---- 
+---
 
 Everything you see here, was code-drawn with InkKit! In fact, other than some `CGRect` instances, this is ALL the code required to draw the image you see on the right ;)
 

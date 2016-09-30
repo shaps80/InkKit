@@ -11,6 +11,7 @@
 		5459371A1D9E9BC200644DCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545937191D9E9BC200644DCE /* ViewController.swift */; };
 		5459371C1D9E9BC200644DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5459371B1D9E9BC200644DCE /* Assets.xcassets */; };
 		5459371F1D9E9BC200644DCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5459371D1D9E9BC200644DCE /* Main.storyboard */; };
+		545937271D9EBCBB00644DCE /* GraphicsRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545937261D9EBCBB00644DCE /* GraphicsRenderer.swift */; };
 		54B30D7D1CE362DE00D16082 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B30D7C1CE362DE00D16082 /* CanvasViewController.swift */; };
 		54D95B8C1D7480F8005AA315 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D95B8B1D7480F8005AA315 /* Math.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		5459371B1D9E9BC200644DCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5459371E1D9E9BC200644DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		545937201D9E9BC200644DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		545937261D9EBCBB00644DCE /* GraphicsRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicsRenderer.swift; sourceTree = "<group>"; };
 		54B30D7C1CE362DE00D16082 /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		54C2D6901CB5724400C49A6E /* Image+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Drawing.swift"; sourceTree = "<group>"; };
 		54C2D6B81CB6B3FB00C49A6E /* BezierPath+MacOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierPath+MacOS.swift"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				54B30D7C1CE362DE00D16082 /* CanvasViewController.swift */,
+				545937261D9EBCBB00644DCE /* GraphicsRenderer.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				545937271D9EBCBB00644DCE /* GraphicsRenderer.swift in Sources */,
 				54B30D7D1CE362DE00D16082 /* CanvasViewController.swift in Sources */,
 				54D95B8C1D7480F8005AA315 /* Math.swift in Sources */,
 			);
@@ -466,7 +470,7 @@
 				DEVELOPMENT_TEAM = V2CWYL9AN8;
 				INFOPLIST_FILE = InkExampleOSX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.snippex.osx.InkExampleOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -488,7 +492,7 @@
 				DEVELOPMENT_TEAM = V2CWYL9AN8;
 				INFOPLIST_FILE = InkExampleOSX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.snippex.osx.InkExampleOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -590,6 +594,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InkKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.snippex.ios.$(PRODUCT_NAME:rfc1034identifier).demo";
@@ -605,6 +610,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InkKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.snippex.ios.$(PRODUCT_NAME:rfc1034identifier).demo";

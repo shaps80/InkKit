@@ -56,6 +56,8 @@ backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
 
 **v2.0.0**
 
+Note: Since this is a Swift 3 release, I decided to also clean up the API and remove all deprecation warnings. InkKit 2.0 should be considered a new API.
+
 * Swift 3.0 Support
 * Updated API to support Swift 3.0 guidelines
 * Shear Transforms

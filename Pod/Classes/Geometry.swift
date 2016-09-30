@@ -54,11 +54,6 @@ public func reversibleRect(fromPoint: CGPoint, toPoint: CGPoint) -> CGRect {
 
 extension CGRect {
   
-  @available(*, unavailable, renamed: "divided(atDelta:from:margin:)")
-  public func divide(atDelta delta: CGFloat, fromEdge edge: CGRectEdge, margin: CGFloat = 0) -> (slice: CGRect, remainder: CGRect) {
-    return divided(atDelta: delta, from: edge, margin: margin)
-  }
-  
   /**
    Returns two rects, divided by a delta where 0 is the min value and 1 is the max value, from the specified edge
    

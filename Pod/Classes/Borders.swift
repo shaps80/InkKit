@@ -44,11 +44,6 @@ extension Draw {
    - parameter path:            The path to apply this border to
    - parameter attributesBlock: Any associated attributes for this drawing
    */
-  @available(*, unavailable, renamed: "border(type:path:color:thickness:attributes:)")
-  public static func addBorder(_ type: BorderType, path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
-    border(type: type, path: path, color: color, thickness: thickness, attributes: attributesBlock)
-  }
-  
   public static func border(type: BorderType, path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     switch type {
     case .inner:

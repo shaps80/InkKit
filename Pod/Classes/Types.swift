@@ -220,8 +220,3 @@ public final class DrawingAttributes {
 /// Defines a Draw class -- extensions are used to populate this class with static methods -- its provided purely for namespacing
 public class Draw { }
 
-@available(*, unavailable, renamed:"Grid")
-public struct Table { }
-
-@available(*, unavailable, renamed:"GridComponents")
-public struct TableComponents { }

@@ -7,7 +7,7 @@
 
 #### Note
 > If you require Swift 2.2 still, fix your version of InkKit to:
-> `pod 'InkKit', '1.3.1'
+`pod 'InkKit', '1.3.1'
 
 ---
 
@@ -61,6 +61,7 @@ backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
 * Shear Transforms
 * Perspective Transforms
 * Radians from Degrees function (and inverse)
+* New Color value-type
 
 
 **v1.3.1**
@@ -90,7 +91,7 @@ backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))
 
 ## API
 
-InkKit provides many useful convenience methods for drawing and geometry calculations.
+InkKit provides many useful convenience methods for drawing and geometry calculations. Its also cross platform working across iOS & MacOS
 
 ### Core
 

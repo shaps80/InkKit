@@ -187,7 +187,7 @@ public struct Grid {
    
    - parameter enumerator: The enumerator to execute for each cell -- returns the index, column, row and bounding rectangle representing this cell
    */
-  public func enumerateCells(_ enumerator: (index: Int, col: Int, row: Int, bounds: CGRect) -> Void) {
+  public func enumerateCells(_ enumerator: (_ index: Int, _ col: Int, _ row: Int, _ bounds: CGRect) -> Void) {
     guard let column = columns.first else {
       return
     }
@@ -198,7 +198,7 @@ public struct Grid {
     for rowIndex in 0..<rowCount {
       for colIndex in 0..<columns.count {
         let rect = boundsForCell(col: colIndex, row: rowIndex)
-        enumerator(index: index, col: colIndex, row: rowIndex, bounds: rect)
+        enumerator(index, colIndex, rowIndex, rect)
         index += 1
       }
     }
@@ -225,8 +225,8 @@ extension Grid {
         var origin = column.bounds.origin
         origin.y = column.bounds.maxY
         
-        path.moveTo(nil, x: column.bounds.origin.x, y: column.bounds.origin.y)
-        path.addLineTo(nil, x: origin.x, y: origin.y)
+        path.move(to: CGPoint(x: column.bounds.origin.x, y: column.bounds.origin.y))
+        path.addLine(to: CGPoint(x: origin.x, y: origin.y))
       }
     }
     
@@ -238,14 +238,14 @@ extension Grid {
           var origin = row.bounds.origin
           origin.x = row.bounds.maxX
           
-          path.moveTo(nil, x: column.bounds.origin.x, y: row.bounds.origin.y)
-          path.addLineTo(nil, x: origin.x, y: origin.y)
+          path.move(to: CGPoint(x: column.bounds.origin.x, y: row.bounds.origin.y))
+          path.addLine(to: CGPoint(x: origin.x, y: origin.y))
         }
       }
     }
     
     if components.contains(.Outline) {
-      path.addRect(nil, rect: bounds)
+      path.addRect(bounds)
     }
     
     return BezierPath(cgPath: path) 

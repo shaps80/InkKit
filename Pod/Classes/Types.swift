@@ -26,7 +26,6 @@ import CoreGraphics
   
   import AppKit
   
-  public typealias Color = NSColor
   public typealias Image = NSImage
   public typealias EdgeInsets = NSEdgeInsets
   public typealias BezierPath = NSBezierPath
@@ -40,7 +39,6 @@ import CoreGraphics
 #else
   
   import UIKit
-  public typealias Color = UIColor
   public typealias Image = UIImage
   public typealias EdgeInsets = UIEdgeInsets
   public typealias BezierPath = UIBezierPath
@@ -84,7 +82,7 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
   extension UIScreen {
    
     public static func currentScreen() -> Screen {
-      return UIScreen.main()
+      return UIScreen.main
     }
     
   }
@@ -93,10 +91,10 @@ public func radians(fromDegrees degrees: CGFloat) -> CGFloat {
 
 
 /// Defines a drawing block
-public typealias DrawingBlock = (context: CGContext, rect: CGRect, attributes: DrawingAttributes) -> Void
+public typealias DrawingBlock = (_ context: CGContext, _ rect: CGRect, _ attributes: DrawingAttributes) -> Void
 
 /// Defines an attributes configuration block
-public typealias AttributesBlock = (attributes: DrawingAttributes) -> Void
+public typealias AttributesBlock = (_ attributes: DrawingAttributes) -> Void
 
 /**
  Defines content scaling
@@ -173,15 +171,15 @@ public final class DrawingAttributes {
    */
   public func apply(_ context: CGContext) {
     if let pattern = dashPattern {
-      context.setLineDash(phase: 0, lengths: pattern, count: pattern.count)
+      context.setLineDash(phase: 0, lengths: pattern)
     }
     
     if let fillColor = fillColor {
-      fillColor.setFill()
+      context.setFillColor(fillColor.cgColor)
     }
     
     if let strokeColor = strokeColor {
-      strokeColor.setStroke()
+      context.setStrokeColor(strokeColor.cgColor)
     }
     
     context.setLineCap(lineCap)
@@ -200,11 +198,11 @@ public final class DrawingAttributes {
     }
     
     if let fillColor = fillColor {
-      fillColor.setFill()
+      GraphicsContext()?.setFillColor(fillColor.cgColor)
     }
     
     if let strokeColor = strokeColor {
-      strokeColor.setStroke()
+      GraphicsContext()?.setStrokeColor(strokeColor.cgColor)
     }
     
     path.lineWidth = lineWidth

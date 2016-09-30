@@ -44,7 +44,12 @@ extension Draw {
    - parameter path:            The path to apply this border to
    - parameter attributesBlock: Any associated attributes for this drawing
    */
+  @available(*, unavailable, renamed: "border(type:path:color:thickness:attributes:)")
   public static func addBorder(_ type: BorderType, path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
+    border(type: type, path: path, color: color, thickness: thickness, attributes: attributesBlock)
+  }
+  
+  public static func border(type: BorderType, path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     switch type {
     case .inner:
       addInnerBorder(path, color: color, thickness: thickness, attributes: attributesBlock)
@@ -58,7 +63,10 @@ extension Draw {
   private static func addInnerBorder(_ path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       context.setLineWidth((thickness ?? attributes.lineWidth) * 2)
-      color?.setStroke()
+
+      if let color = color {
+        context.setStrokeColor(color.cgColor)
+      }
       
       context.addPath(path.cgPath)
       
@@ -74,7 +82,10 @@ extension Draw {
   private static func addOuterBorder(_ path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       context.setLineWidth((thickness ?? attributes.lineWidth) * 2)
-      color?.setStroke()
+      
+      if let color = color {
+        context.setStrokeColor(color.cgColor)
+      }
       
       context.addPath(path.cgPath)
       context.strokePath()
@@ -83,7 +94,7 @@ extension Draw {
       context.fillPath()
       
       if !context.isPathEmpty {
-        context.eoClip()
+        context.clip(using: .evenOdd)
       }
     }
   }
@@ -91,7 +102,10 @@ extension Draw {
   private static func addCenterBorder(_ path: BezierPath, color: Color? = nil, thickness: CGFloat? = nil,  attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: path.bounds, attributes: attributesBlock) { (context, rect, attributes) in
       context.setLineWidth(thickness ?? attributes.lineWidth)
-      color?.setStroke()
+      
+      if let color = color {
+        context.setStrokeColor(color.cgColor)
+      }
       
       context.addPath(path.cgPath)
       context.strokePath()

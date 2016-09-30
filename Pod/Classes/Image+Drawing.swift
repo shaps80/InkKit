@@ -32,7 +32,7 @@ extension Image {
    
    - returns: An image of a circle
    */
-  public static func circle(_ radius: CGFloat, attributes attributesBlock: AttributesBlock) -> Image {
+  public static func circle(_ radius: CGFloat, attributes attributesBlock: @escaping AttributesBlock) -> Image {
     return Image.draw(width: radius * 2, height: radius * 2, attributes: attributesBlock, drawing: { (context, rect, attributes) in
       let path = BezierPath(ovalIn: rect.insetBy(dx: 1, dy: 1))
       attributes.apply(path)

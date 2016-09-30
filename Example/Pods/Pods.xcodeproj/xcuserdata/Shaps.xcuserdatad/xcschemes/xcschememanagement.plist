@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-InkExampleiOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0352134241C5B1F5541541795EB135CC</key>
+		<key>24025EEEF3154ECE77502041E3BF2A24</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C74A4BEF80CB2FCEA300A247E9EBF88</key>
+		<key>B0DAD3B290748CC8849FC4F4DAFF03CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7D3E981F8BE1344B352A138BE17EEDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

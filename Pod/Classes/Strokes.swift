@@ -33,7 +33,11 @@ extension Draw {
    */
   public static func strokeRect(_ rect: CGRect, color: Color? = nil, attributes attributesBlock: AttributesBlock? = nil) {
     GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
-      color?.setStroke()
+      
+      if let color = color {
+        context.setStrokeColor(color.cgColor)
+      }
+      
       context.addRect(rect)
       context.stroke(rect)
     }
@@ -108,8 +112,11 @@ extension Draw {
     let rect = reversibleRect(fromPoint: startPoint, toPoint: endPoint)
     
     GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock) { (context, rect, attributes) in
-      color?.setStroke()
-      context.strokeLineSegments(between: [ startPoint, endPoint ], count: 2)
+      if let color = color {
+        context.setStrokeColor(color.cgColor)
+      }
+      
+      context.strokeLineSegments(between: [ startPoint, endPoint ])
     }
   }
   

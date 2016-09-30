@@ -41,7 +41,7 @@ extension Draw {
       let rect = path.cgPath.boundingBox
       let locations: [CGFloat] = [0, 1]
       let colorSpace = CGColorSpaceCreateDeviceRGB()
-      let colors = [startColor.cgColor, endColor.cgColor]
+      let colors = [startColor.cgColor, endColor.cgColor] as CFArray
       let gradient = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locations)
       var (start, end) = rect.size.gradientPoints(forAngleInDegrees: angleInDegrees)
       

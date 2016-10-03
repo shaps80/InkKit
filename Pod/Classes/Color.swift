@@ -220,6 +220,23 @@ extension Color {
     
 }
 
+extension Color {
+  
+    public func set() {
+        setFill()
+        setStroke()
+    }
+    
+    public func setFill() {
+        CGContext.current?.setFillColor(cgColor)
+    }
+    
+    public func setStroke() {
+        CGContext.current?.setStrokeColor(cgColor)
+    }
+  
+}
+
 
 #if os(iOS)
     import UIKit

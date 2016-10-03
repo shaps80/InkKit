@@ -22,34 +22,6 @@
 
 import CoreGraphics
 
-#if os(OSX)
-  
-  import AppKit
-  
-  public typealias Image = NSImage
-  public typealias BezierPath = NSBezierPath
-  public typealias Screen = NSScreen
-  public typealias Font = NSFont
-  
-  func GraphicsContext() -> CGContext? {
-    return NSGraphicsContext.current()!.cgContext
-  }
-  
-#else
-  
-  import UIKit
-  public typealias Image = UIImage
-  public typealias EdgeInsets = UIEdgeInsets
-  public typealias BezierPath = UIBezierPath
-  public typealias Screen = UIScreen
-  public typealias Font = UIFont
-  
-  func GraphicsContext() -> CGContext? {
-    return UIGraphicsGetCurrentContext()
-  }
-  
-#endif
-
 
 /**
  Returns the radian angle value for the specified degrees
@@ -168,7 +140,7 @@ public final class DrawingAttributes {
    
    - parameter context: The context to apply
    */
-  public func apply(_ context: CGContext) {
+  public func apply(to context: CGContext) {
     if let pattern = dashPattern {
       context.setLineDash(phase: 0, lengths: pattern)
     }
@@ -191,19 +163,13 @@ public final class DrawingAttributes {
    
    - parameter path: The path to apply
    */
-  public func apply(_ path: BezierPath) {
+  public func apply(to path: BezierPath) {
     if let pattern = dashPattern {
       path.setLineDash(pattern, count: pattern.count, phase: 0)
     }
     
-    if let fillColor = fillColor {
-      GraphicsContext()?.setFillColor(fillColor.cgColor)
-    }
-    
-    if let strokeColor = strokeColor {
-      GraphicsContext()?.setStrokeColor(strokeColor.cgColor)
-    }
-    
+    fillColor?.setFill()
+    strokeColor?.setStroke()
     path.lineWidth = lineWidth
     
     #if os(iOS)

@@ -90,9 +90,9 @@ extension CGRect {
    
    - returns: The resulting rect
    */
-  public func insetBy(_ edgeInsets: EdgeInsets) -> CGRect {
+  public func insetBy(insets: EdgeInsets) -> CGRect {
     var rect = self
-    rect.insetInPlace(edgeInsets)
+    rect.insetInPlace(insets: insets)
     return rect
   }
   
@@ -101,11 +101,11 @@ extension CGRect {
    
    - parameter edgeInsets: The edge insets to use for determing each edge's inset
    */
-  public mutating func insetInPlace(_ edgeInsets: EdgeInsets) {
-    size.width -= (edgeInsets.right + edgeInsets.left)
-    size.height -= (edgeInsets.bottom + edgeInsets.top)
-    origin.x += edgeInsets.left
-    origin.y += edgeInsets.top
+  public mutating func insetInPlace(insets: EdgeInsets) {
+    size.width -= (insets.right + insets.left)
+    size.height -= (insets.bottom + insets.top)
+    origin.x += insets.left
+    origin.y += insets.top
   }
   
   /**
@@ -117,7 +117,7 @@ extension CGRect {
    
    - returns: The resulting rect
    */
-  public func alignedTo(_ rect: CGRect, horizontal: HorizontalAlignment, vertical: VerticalAlignment) -> CGRect {
+  public func alignedTo(rect: CGRect, horizontal: HorizontalAlignment, vertical: VerticalAlignment) -> CGRect {
     var x: CGFloat, y: CGFloat
     
     switch horizontal {
@@ -149,7 +149,7 @@ extension CGRect {
    
    - returns: The resulting rect
    */
-  public func scaledTo(_ rect: CGRect, scaleMode mode: ScaleMode) -> CGRect {
+  public func scaledTo(rect: CGRect, scaleMode mode: ScaleMode) -> CGRect {
     var x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat
     
     switch mode {
@@ -157,11 +157,11 @@ extension CGRect {
       w = rect.width
       h = rect.height
     case .scaleAspectFit:
-      let scaledSize = self.size.scaledTo(rect.size, scaleMode: mode)
+      let scaledSize = self.size.scaledTo(size: rect.size, scaleMode: mode)
       w = scaledSize.width
       h = scaledSize.height
     case .scaleAspectFill:
-      let newSize = self.size.scaledTo(rect.size, scaleMode: mode)
+      let newSize = self.size.scaledTo(size: rect.size, scaleMode: mode)
       w = newSize.width
       h = newSize.height
     case .center:
@@ -205,7 +205,7 @@ extension CGSize {
    
    - returns: The resulting size
    */
-  public func scaledTo(_ size: CGSize, scaleMode mode: ScaleMode) -> CGSize {
+  public func scaledTo(size: CGSize, scaleMode mode: ScaleMode) -> CGSize {
     var w: CGFloat, h: CGFloat
     
     switch mode {

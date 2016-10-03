@@ -36,7 +36,7 @@ extension CGContext {
     attributesBlock?(attributes)
     
     self.saveGState()
-    attributes.apply(self)
+    attributes.apply(to: self)
     drawingBlock(self, rect, attributes)
     self.restoreGState()
   }

@@ -107,7 +107,7 @@ func draw(inRect:attributes:drawing:)
 Which would look like this in usage:
 
 ```swift
-GraphicsContext()?.draw(inRect: rect, drawing: { (context, rect, attributes) in
+CGContext.current?.draw(inRect: rect, drawing: { (context, rect, attributes) in
   Color.redColor.setFill()
   UIRectFill(rect)
 })

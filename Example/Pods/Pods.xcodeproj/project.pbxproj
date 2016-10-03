@@ -7,69 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03D55C97F1D4780BFAF250E1D555056B /* Transform+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3F71F7F3B713E1F145CFD61F48841 /* Transform+Extensions.swift */; };
-		11D50DEE1D62E886B54A8026495A4676 /* Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BC9E9200FA06E223AB15C8397856D6 /* Shadows.swift */; };
+		03EE3DD7FFFA63B5F2B3F0A960AF5E32 /* String+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9827E3BE899600840D3F01F2F37526 /* String+Drawing.swift */; };
+		0BD3E7BD2F19412164E03A25083D9FAE /* Transforms+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C2752F04702796E621C69060A34F3 /* Transforms+Extensions.swift */; };
+		11B6FC94C536D726B219AEAF1F9682F1 /* String+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9827E3BE899600840D3F01F2F37526 /* String+Drawing.swift */; };
 		122DD5CD9B08FAF2668137DE3D72DACB /* RendererDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FE58BB4854C4BA7007FF13EB54904 /* RendererDrawable.swift */; };
-		156C0783CC198A826014E4E307F35026 /* String+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE129B7DBDC2D0AB1557B08461A82F4 /* String+Drawing.swift */; };
-		178D8EB6DCD3B9178AFD738DA63E2561 /* Strokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1B7975239068BAA5CC57A83EC8295 /* Strokes.swift */; };
-		19CCC115BA6CF22925F18555FCBC3D1E /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586327703BF7AFED7F837CB51D1EA709 /* Math.swift */; };
-		2072430E7DACCC28BE9D516073002B9F /* GraphicsRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69D302B69F2C4D9F1C78B2E41540952 /* GraphicsRenderer.framework */; };
-		2CC2FCF3B1495F0E69A076E56AB0D2B4 /* BezierPath+MacOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1218105EC2BDC648EDD8D535E2ED62 /* BezierPath+MacOS.swift */; };
-		2E7DA4B0A20167AAD1632A933A0539BC /* BezierPath+MacOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1218105EC2BDC648EDD8D535E2ED62 /* BezierPath+MacOS.swift */; };
-		36B35085B58EB0968D7470E0DA1CBD7B /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8CBDF354456770E59BAD328585B184 /* Primitives.swift */; };
-		39CF92368D92FE29B9D596904CF5FB75 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D2572DD1968BE99F2E596E714893D /* Drawing.swift */; };
+		151105AD3527549D440B0946A7275CA9 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B0145CB608D2A2D2EEAD9AB1AB27B /* Math.swift */; };
+		1C2D73AAEAF61A064F33617CADC06840 /* GraphicsRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69D302B69F2C4D9F1C78B2E41540952 /* GraphicsRenderer.framework */; };
+		1E49EC91A27877917433AB26447D1E30 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57213C447C154C897FAE290F5C7BCD /* Types.swift */; };
+		1E7A472B907F70D8DD27835673A979AB /* Strokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90B86932D8FE5E7B32A6414D8EC28E /* Strokes.swift */; };
+		26E9AE04C15C136592699F0850087532 /* InkKit-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A2B3A9CBC099BFA1005A62C78B4A920 /* InkKit-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		277D8F33A3D329A82AADA56FF8853E83 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E8257DB231F9C2BF2998E9EEA51000 /* Primitives.swift */; };
+		3582AC623B6B4131064E75C1E4988D12 /* Strokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90B86932D8FE5E7B32A6414D8EC28E /* Strokes.swift */; };
 		3AD8EC583BBAF931670E9BA53B41FC6D /* PDFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300541CA5C2096C78F6F115951EA441 /* PDFRenderer.swift */; };
-		3B1C17719C148D2221550F06C747E628 /* Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BC9E9200FA06E223AB15C8397856D6 /* Shadows.swift */; };
-		43A542A6073F2F66BF40CBDFC8D503DE /* Fills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B63FF2C3771A94A592D72A389B38511 /* Fills.swift */; };
-		469D122F257308066721C8D8D739A6F3 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68A15760714DEB9F836DAA87368266 /* Geometry.swift */; };
+		3FFB1CB2B5981A3B1D563B7D9FF8EDC1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FAF250306BC73FC196CB72CE25D0B /* Color.swift */; };
+		4225DFDDC2C865723407C49BEBC171DE /* Transforms+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C2752F04702796E621C69060A34F3 /* Transforms+Extensions.swift */; };
+		424F128D6015DB9B7B06905022B0EDB5 /* BezierPath+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F252A42000619DF8C1D2E843119276 /* BezierPath+Corners.swift */; };
+		4AA8737C679BDCC7EBD02D4F2A06E603 /* Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EEF5738318607EA5A985FEE3CD9C /* Shadows.swift */; };
 		4FA3D8DF56832E39F3C0E1F94153FD1E /* PDFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300541CA5C2096C78F6F115951EA441 /* PDFRenderer.swift */; };
 		506C0269796AA5218C268D91F001E7E4 /* Pods-InkExampleOSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40C52CE057EB0E69DA356ABDCD3BCF72 /* Pods-InkExampleOSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52BA0332274A8F2FFB4D401693D81296 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F0D056B32AA362DAD1B16BEBEF8672 /* Cocoa.framework */; };
-		56C97BC3B7336A0607E9057E194B989B /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586327703BF7AFED7F837CB51D1EA709 /* Math.swift */; };
-		5B015AD1AF75268731A1D7C3CB5C8B03 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FB74F5817C0502A3EFFE7C2AA7CAF9 /* Color.swift */; };
-		5B39D35140DAEF7036B9EAA248871C1B /* Transforms+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E100E5CFB98C44DC9342A5276C0AA2 /* Transforms+Extensions.swift */; };
-		5CD9E0148A7B0914A150FB8BCFCFD444 /* InkKit-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A2B3A9CBC099BFA1005A62C78B4A920 /* InkKit-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		590AC76C023A9FC16BD04902B1FE7071 /* Transform+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06CB8C749F654BC3E453F7A4BD77A8 /* Transform+Extensions.swift */; };
 		5D66571EBBAB07607A5A7EF193878611 /* Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37DD23CE694E6498045D125894B825 /* Platforms.swift */; };
-		654585A4BDFF2684C8A0CF5BF33F6943 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77FC366A2AC7589E02EC88EB87D2AE7 /* Foundation.framework */; };
+		5F077FC9A77A6199AE1E1C842687B3BF /* GraphicsRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69D302B69F2C4D9F1C78B2E41540952 /* GraphicsRenderer.framework */; };
+		6A0DCF68D9A563D24CB86E95F33CBDC4 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B2BD7A81BA5D80A870D2725C067F83 /* Grid.swift */; };
 		6BEDCA7C23E76EC4D5E32AC545393115 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F2D8664BA5E92DE61B0A6A68FC565 /* Renderer.swift */; };
+		6DC14FC67829DED62E56D7FEA56B0355 /* Fills.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE987805B1ECCF627D37FCCB7A181247 /* Fills.swift */; };
 		6E82B7CCA8C07415EA1389ABC0B443C5 /* GraphicsRenderer-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95A4CA96BFEF6C2035D0E3FEC68015 /* GraphicsRenderer-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72B79D39DE8FE3EEE5E7964839005163 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B2BD7A81BA5D80A870D2725C067F83 /* Grid.swift */; };
+		72CE832BB15E5D88D6115146426FB15E /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD54594727FEEEFCA1F074E6D0CF982F /* Drawing.swift */; };
+		73F0ACF3ED67A0A822F2FBFA7E73F741 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92B44812AB2D881B50DE7D7EFE4BF3 /* Platform.swift */; };
+		765C916F1028A3B7FB129F7AE3CF137C /* Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47261BD53B5C6CB6D3FE2C412F44CD3F /* Borders.swift */; };
 		76E8FC0BDB1BAFFCF3CCB661267BE418 /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A53AF818ED43E938294FA5DFAB98E2 /* ImageRenderer.swift */; };
-		7780EAFF33B1E0ECE317083604B9D649 /* GraphicsRenderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69D302B69F2C4D9F1C78B2E41540952 /* GraphicsRenderer.framework */; };
-		7A65D08F76FB413AC7FBA897E0A08522 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABCBE886657C653357F400463644499 /* Types.swift */; };
 		7F10DF831666E3CCB130164FAF40E71E /* GraphicsRenderer-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 20291D786A2D766EA6AC4E7269C051A5 /* GraphicsRenderer-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		889F58FBE1FB9AED11C956E668898C71 /* Image+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7696D9B53677BE3752F0DEFF8BB233 /* Image+Drawing.swift */; };
-		8965479AAC11C905B90400CD15C52F1E /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8CBDF354456770E59BAD328585B184 /* Primitives.swift */; };
 		8C05A917E510CB98F498A477AB80FE82 /* RendererDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FE58BB4854C4BA7007FF13EB54904 /* RendererDrawable.swift */; };
 		8F0006DB608EC175905D21C514641BFE /* GraphicsRenderer-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A522A23035D0DB13675A7156334F9035 /* GraphicsRenderer-iOS-dummy.m */; };
-		944066FF764A958B5BC155FA8E94A262 /* Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD21FC9D02ED8D7F5AEBD546EEB67 /* Borders.swift */; };
 		956BE61E1208EA363728225DD2EA6D1B /* Pods-InkExampleiOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF22EB065167515374C6A87E7F0B4B /* Pods-InkExampleiOS-dummy.m */; };
-		9A2C5FC9D9B65CAA158CF4D746D084BD /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABCBE886657C653357F400463644499 /* Types.swift */; };
-		A2CD6E653FC6762DB614997F0BFA1A63 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F0D056B32AA362DAD1B16BEBEF8672 /* Cocoa.framework */; };
-		A4E0A9150921598B473E58CD5B7C435F /* Transforms+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E100E5CFB98C44DC9342A5276C0AA2 /* Transforms+Extensions.swift */; };
+		967962EDF2A3D82B6A7B226F8C869F09 /* BezierPath+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F252A42000619DF8C1D2E843119276 /* BezierPath+Corners.swift */; };
+		9A4B7E12E9CDD4F46CBDFBF0C5616026 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69357CAC8CCAF0BA735D63F652BDE96A /* Geometry.swift */; };
+		9A522DDF51F8DCB4F7F5AD39797765DF /* Image+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08AC263F338514830E5676C9DABFD86 /* Image+Drawing.swift */; };
+		9E9AAF9B1EE4CB198257D1B7BE2CDD1A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F0D056B32AA362DAD1B16BEBEF8672 /* Cocoa.framework */; };
+		A1D106D56F1FEF48A50190F44696421A /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92B44812AB2D881B50DE7D7EFE4BF3 /* Platform.swift */; };
+		A3ED5A29C82EEB442B6A8DE486752CAA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FAF250306BC73FC196CB72CE25D0B /* Color.swift */; };
+		A68D4DF29A4A64FE16F455B84B91BA1E /* BezierPath+MacOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF22B2003635362A77F2E227B95CF26 /* BezierPath+MacOS.swift */; };
 		A70BB475BCB14330394A644BF057E6E2 /* Pods-InkExampleOSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DCCDC0B24159D6C70367DF22A15C12 /* Pods-InkExampleOSX-dummy.m */; };
-		A7B776F235CD7CD0BEFE850BD4D46DCB /* Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD21FC9D02ED8D7F5AEBD546EEB67 /* Borders.swift */; };
-		B6E84B6BB8EC4B6758469D7723F784C5 /* String+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE129B7DBDC2D0AB1557B08461A82F4 /* String+Drawing.swift */; };
-		B6EDEC1C7950363E59EF1AADF3215CB3 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C358ABFF69155931652735C2BEA03B /* Grid.swift */; };
-		B969C43F1ED3B82289D92415D0767CD1 /* Transform+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C3F71F7F3B713E1F145CFD61F48841 /* Transform+Extensions.swift */; };
+		AD371BB2FB777EA57F83C1095F58ABF2 /* BezierPath+MacOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF22B2003635362A77F2E227B95CF26 /* BezierPath+MacOS.swift */; };
+		B53499ABA050A12D4FFB5137FAE243C5 /* InkKit-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A751BE6065D2DD5745CA9F25F981D10 /* InkKit-OSX-dummy.m */; };
 		BAA73570D4382BE3F6AB06B9B713540E /* Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37DD23CE694E6498045D125894B825 /* Platforms.swift */; };
 		C5A208E26D509E7A4EE23BD0AF6BE9E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77FC366A2AC7589E02EC88EB87D2AE7 /* Foundation.framework */; };
-		C70B290F513010F611C960CB0D3261CD /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D2572DD1968BE99F2E596E714893D /* Drawing.swift */; };
 		C75B80588750808B405CA00A972CC88F /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A53AF818ED43E938294FA5DFAB98E2 /* ImageRenderer.swift */; };
-		CE5E5676BC228F0EE44794CA2A664527 /* Image+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7696D9B53677BE3752F0DEFF8BB233 /* Image+Drawing.swift */; };
+		C7F59B961A629DF4E81DB6CC37F4E573 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B57213C447C154C897FAE290F5C7BCD /* Types.swift */; };
+		C8EA2313AF34844F301FE3B5C6AB4B39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77FC366A2AC7589E02EC88EB87D2AE7 /* Foundation.framework */; };
 		CF0E39FF9E4FBF3BC34ADFD12A134CCC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F0D056B32AA362DAD1B16BEBEF8672 /* Cocoa.framework */; };
 		D204E3C99F4ED032B21595E40A7D13ED /* Pods-InkExampleiOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 81414F6C32B9281AE6950EA0A8A247C1 /* Pods-InkExampleiOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D75759D12D1E1A97FA6C7448C6B0EC24 /* BezierPath+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7653EF959C6E460AA9C15630890CA97 /* BezierPath+Corners.swift */; };
-		D8C115CE799AEE96CD3655F6ABFF9886 /* Strokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1B7975239068BAA5CC57A83EC8295 /* Strokes.swift */; };
+		D2BD3150F95D3E80BC3992369DFA9D57 /* InkKit-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CA801BF1F0DF8D403F1E1D00FFA90C /* InkKit-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D480430A93AD0536D99D8320804C7AF3 /* Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47261BD53B5C6CB6D3FE2C412F44CD3F /* Borders.swift */; };
+		D9324186D6BEED6F5A332E05C89CFCE5 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E8257DB231F9C2BF2998E9EEA51000 /* Primitives.swift */; };
+		D9A26EBEC1A2F0323A96C81D6953FFDA /* Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5EEF5738318607EA5A985FEE3CD9C /* Shadows.swift */; };
+		DB28C36875BD110C54D88C1B39F663BD /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD54594727FEEEFCA1F074E6D0CF982F /* Drawing.swift */; };
 		DCEEC51DC2D8FC56C9D2B347402202A1 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58F2D8664BA5E92DE61B0A6A68FC565 /* Renderer.swift */; };
+		DEA49B6338B0B12DC4308B2A48F6C0FF /* Fills.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE987805B1ECCF627D37FCCB7A181247 /* Fills.swift */; };
+		DEBADA7516A84D4CEBD9A5A794638673 /* Transform+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06CB8C749F654BC3E453F7A4BD77A8 /* Transform+Extensions.swift */; };
 		DF1CDB3CE7A0FECD016AC94601CF7207 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77FC366A2AC7589E02EC88EB87D2AE7 /* Foundation.framework */; };
-		E1B44B2085D80F81C9ADFBF90A769BE9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FB74F5817C0502A3EFFE7C2AA7CAF9 /* Color.swift */; };
-		E2267DFA3341996E99E6114097C4F3D5 /* InkKit-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CA801BF1F0DF8D403F1E1D00FFA90C /* InkKit-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E57B32F2F60D63105A648E882BFA8881 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C358ABFF69155931652735C2BEA03B /* Grid.swift */; };
-		E597EA94243DA8B99DABEBB6204F42DF /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E68A15760714DEB9F836DAA87368266 /* Geometry.swift */; };
-		E816D93A5DA9D9B70BD43F0117856E1C /* InkKit-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A751BE6065D2DD5745CA9F25F981D10 /* InkKit-OSX-dummy.m */; };
-		F3090F95E06550DA050F312A45A0C993 /* Fills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B63FF2C3771A94A592D72A389B38511 /* Fills.swift */; };
-		F743BDD4F1402BF36FDF7BA14DE2822E /* BezierPath+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7653EF959C6E460AA9C15630890CA97 /* BezierPath+Corners.swift */; };
-		FE6C8B43DFF600AAECC55197EA288A77 /* InkKit-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F66AAA322C2BD122B32CF9952FC95B26 /* InkKit-iOS-dummy.m */; };
+		E2D07C779E996CF1D899EDE71ED1B026 /* Image+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08AC263F338514830E5676C9DABFD86 /* Image+Drawing.swift */; };
+		F204016EA5ADB9BA91D1D3A27B41779F /* InkKit-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F66AAA322C2BD122B32CF9952FC95B26 /* InkKit-iOS-dummy.m */; };
+		F4F1BB1D7AAA322320F7807093649893 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B0145CB608D2A2D2EEAD9AB1AB27B /* Math.swift */; };
+		FCFE72CBEC00C533D2FB1D92146BAE8C /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69357CAC8CCAF0BA735D63F652BDE96A /* Geometry.swift */; };
 		FE993B60C572256186AC1A56E69C1ECB /* GraphicsRenderer-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADA94F46E32E72219F54C8031F93A05 /* GraphicsRenderer-OSX-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -78,29 +80,29 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 785B359FD3B5242F536DA604FDFC2215;
+			remoteGlobalIDString = D00B321AB930B9133F87A32345301B8B;
 			remoteInfo = "InkKit-OSX";
 		};
-		370FE3032D53398D19902A5161585A1E /* PBXContainerItemProxy */ = {
+		1E453E981F26F1FB23D8FA5295F6A1C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3D789815B5649772A644220EED75598F;
-			remoteInfo = "InkKit-iOS";
+			remoteGlobalIDString = C498E7DC6C8918C4B9415A1933BA0EBA;
+			remoteInfo = "GraphicsRenderer-iOS";
 		};
-		4530A3225FDC35A1FFED397FE0D27430 /* PBXContainerItemProxy */ = {
+		24E50EC67FA4CE4BAF5D0FD6602017F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3C6F39CEB31D8CA002115B23D892B372;
 			remoteInfo = "GraphicsRenderer-OSX";
 		};
-		80C173F3452E7989EFABF03B23FE493E /* PBXContainerItemProxy */ = {
+		370FE3032D53398D19902A5161585A1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C498E7DC6C8918C4B9415A1933BA0EBA;
-			remoteInfo = "GraphicsRenderer-iOS";
+			remoteGlobalIDString = D92EDA74BB3265237365A55162B658C6;
+			remoteInfo = "InkKit-iOS";
 		};
 		AEA920EAC2F172DEE259152A267CE134 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -133,67 +135,68 @@
 		23C6C6C54B1A68F0AB32E35FD232CDE2 /* InkKit-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "InkKit-iOS.xcconfig"; path = "../InkKit-iOS/InkKit-iOS.xcconfig"; sourceTree = "<group>"; };
 		2A751BE6065D2DD5745CA9F25F981D10 /* InkKit-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "InkKit-OSX-dummy.m"; sourceTree = "<group>"; };
 		2BF0C0F34C3C2F32AD12854A735AA7B9 /* InkKit-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "InkKit-iOS.modulemap"; path = "../InkKit-iOS/InkKit-iOS.modulemap"; sourceTree = "<group>"; };
-		33AAD21FC9D02ED8D7F5AEBD546EEB67 /* Borders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
-		33C3F71F7F3B713E1F145CFD61F48841 /* Transform+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Transform+Extensions.swift"; sourceTree = "<group>"; };
 		352905B6EECC4BFA723F2DA06B99479E /* Pods-InkExampleiOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InkExampleiOS-resources.sh"; sourceTree = "<group>"; };
 		40C52CE057EB0E69DA356ABDCD3BCF72 /* Pods-InkExampleOSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InkExampleOSX-umbrella.h"; sourceTree = "<group>"; };
-		42C358ABFF69155931652735C2BEA03B /* Grid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		46B2BD7A81BA5D80A870D2725C067F83 /* Grid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		47261BD53B5C6CB6D3FE2C412F44CD3F /* Borders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
 		48A019B99B8368278416F20EBD38CE61 /* Pods-InkExampleOSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-InkExampleOSX.modulemap"; sourceTree = "<group>"; };
 		4A2B3A9CBC099BFA1005A62C78B4A920 /* InkKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "InkKit-iOS-umbrella.h"; path = "../InkKit-iOS/InkKit-iOS-umbrella.h"; sourceTree = "<group>"; };
-		4B63FF2C3771A94A592D72A389B38511 /* Fills.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fills.swift; sourceTree = "<group>"; };
 		4C32E65A07B503163F3864D1A3484168 /* GraphicsRenderer-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GraphicsRenderer-OSX-prefix.pch"; sourceTree = "<group>"; };
-		586327703BF7AFED7F837CB51D1EA709 /* Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
-		60E100E5CFB98C44DC9342A5276C0AA2 /* Transforms+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Transforms+Extensions.swift"; sourceTree = "<group>"; };
+		5B57213C447C154C897FAE290F5C7BCD /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		5D2FAF250306BC73FC196CB72CE25D0B /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6146FD8A5846AA48F6272EFEE6A8A1F6 /* InkKit-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "InkKit-OSX.xcconfig"; sourceTree = "<group>"; };
 		632BAB1345E46A3DB2AC978A32DF00EB /* Pods-InkExampleOSX-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InkExampleOSX-frameworks.sh"; sourceTree = "<group>"; };
 		65C775FD78BC689AA740DFC7CEDC01A3 /* GraphicsRenderer-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "GraphicsRenderer-OSX.modulemap"; sourceTree = "<group>"; };
 		66DCCDC0B24159D6C70367DF22A15C12 /* Pods-InkExampleOSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InkExampleOSX-dummy.m"; sourceTree = "<group>"; };
+		69357CAC8CCAF0BA735D63F652BDE96A /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		6C514F7C0072D94F93D35685AF04156D /* Pods-InkExampleOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InkExampleOSX.release.xcconfig"; sourceTree = "<group>"; };
 		6DF5689810155491ADD6920A1774EDBF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720B43BC2AFFC06FE378A08053E500FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7772C3AFC55010F933E5D54F0B98583B /* Pods-InkExampleiOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InkExampleiOS-frameworks.sh"; sourceTree = "<group>"; };
 		792FEF74638F12672159CF6F93A28777 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ADA94F46E32E72219F54C8031F93A05 /* GraphicsRenderer-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GraphicsRenderer-OSX-dummy.m"; sourceTree = "<group>"; };
-		7C7696D9B53677BE3752F0DEFF8BB233 /* Image+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Image+Drawing.swift"; sourceTree = "<group>"; };
+		7B5C2752F04702796E621C69060A34F3 /* Transforms+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Transforms+Extensions.swift"; sourceTree = "<group>"; };
 		81414F6C32B9281AE6950EA0A8A247C1 /* Pods-InkExampleiOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InkExampleiOS-umbrella.h"; sourceTree = "<group>"; };
 		837E0CC3FF459C2C7590C96918F0852B /* GraphicsRenderer-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "GraphicsRenderer-iOS.modulemap"; path = "../GraphicsRenderer-iOS/GraphicsRenderer-iOS.modulemap"; sourceTree = "<group>"; };
+		88F252A42000619DF8C1D2E843119276 /* BezierPath+Corners.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BezierPath+Corners.swift"; sourceTree = "<group>"; };
 		8C425A585667F09F7273E7856DA6FC73 /* InkKit-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "InkKit-OSX.modulemap"; sourceTree = "<group>"; };
-		8EE129B7DBDC2D0AB1557B08461A82F4 /* String+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Drawing.swift"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9532C0C91DBE1F0CA1DD4EEE69758E32 /* Pods-InkExampleiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InkExampleiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		965FC1F2C4CB7F45157744A774D3B029 /* Pods-InkExampleiOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InkExampleiOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		97F0D056B32AA362DAD1B16BEBEF8672 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		995EC64FAFC10CA0A01F0F535A888BBA /* GraphicsRenderer-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "GraphicsRenderer-OSX.xcconfig"; sourceTree = "<group>"; };
 		9B7DB4C7613C745E94ED8A53F856327C /* GraphicsRenderer-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "GraphicsRenderer-iOS.xcconfig"; path = "../GraphicsRenderer-iOS/GraphicsRenderer-iOS.xcconfig"; sourceTree = "<group>"; };
-		9E68A15760714DEB9F836DAA87368266 /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		9F06CB8C749F654BC3E453F7A4BD77A8 /* Transform+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Transform+Extensions.swift"; sourceTree = "<group>"; };
 		A300541CA5C2096C78F6F115951EA441 /* PDFRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PDFRenderer.swift; path = GraphicsRenderer/Classes/PDFRenderer.swift; sourceTree = "<group>"; };
 		A343DEDA08ACBE6543270C7FBBC10CE8 /* InkKit-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "InkKit-OSX-prefix.pch"; sourceTree = "<group>"; };
 		A522A23035D0DB13675A7156334F9035 /* GraphicsRenderer-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GraphicsRenderer-iOS-dummy.m"; path = "../GraphicsRenderer-iOS/GraphicsRenderer-iOS-dummy.m"; sourceTree = "<group>"; };
 		A77FC366A2AC7589E02EC88EB87D2AE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A8E8257DB231F9C2BF2998E9EEA51000 /* Primitives.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
 		AA37DD23CE694E6498045D125894B825 /* Platforms.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platforms.swift; path = GraphicsRenderer/Classes/Platforms.swift; sourceTree = "<group>"; };
-		AB1218105EC2BDC648EDD8D535E2ED62 /* BezierPath+MacOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BezierPath+MacOS.swift"; sourceTree = "<group>"; };
+		AA90B86932D8FE5E7B32A6414D8EC28E /* Strokes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Strokes.swift; sourceTree = "<group>"; };
 		AD6FE44B96CC7F3306220BC25AAF8ED1 /* Pods-InkExampleOSX-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InkExampleOSX-acknowledgements.plist"; sourceTree = "<group>"; };
-		ADA1B7975239068BAA5CC57A83EC8295 /* Strokes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Strokes.swift; sourceTree = "<group>"; };
 		B4EDE651459F60696C93AF6C4F2A90B4 /* GraphicsRenderer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphicsRenderer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9FB74F5817C0502A3EFFE7C2AA7CAF9 /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BD92B44812AB2D881B50DE7D7EFE4BF3 /* Platform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		BFD5EEF5738318607EA5A985FEE3CD9C /* Shadows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Shadows.swift; sourceTree = "<group>"; };
 		C09DDAE1B0650E7BEFAB1F9A31005B56 /* GraphicsRenderer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphicsRenderer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C71909C360F4AA62E56422E1A42223 /* InkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF22B2003635362A77F2E227B95CF26 /* BezierPath+MacOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BezierPath+MacOS.swift"; sourceTree = "<group>"; };
+		CE9827E3BE899600840D3F01F2F37526 /* String+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Drawing.swift"; sourceTree = "<group>"; };
 		CF3AEE5300A7D25181FDE825D0AED4EE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../GraphicsRenderer-iOS/Info.plist"; sourceTree = "<group>"; };
 		D2079FBCBADC93B3A7B129D1143746AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../InkKit-iOS/Info.plist"; sourceTree = "<group>"; };
 		D58F2D8664BA5E92DE61B0A6A68FC565 /* Renderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = GraphicsRenderer/Classes/Renderer.swift; sourceTree = "<group>"; };
 		D69D302B69F2C4D9F1C78B2E41540952 /* GraphicsRenderer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphicsRenderer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7653EF959C6E460AA9C15630890CA97 /* BezierPath+Corners.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BezierPath+Corners.swift"; sourceTree = "<group>"; };
-		DABCBE886657C653357F400463644499 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		E26D2572DD1968BE99F2E596E714893D /* Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		DE987805B1ECCF627D37FCCB7A181247 /* Fills.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fills.swift; sourceTree = "<group>"; };
+		E08AC263F338514830E5676C9DABFD86 /* Image+Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Image+Drawing.swift"; sourceTree = "<group>"; };
+		E40B0145CB608D2A2D2EEAD9AB1AB27B /* Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		E5A53AF818ED43E938294FA5DFAB98E2 /* ImageRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageRenderer.swift; path = GraphicsRenderer/Classes/ImageRenderer.swift; sourceTree = "<group>"; };
 		E824077D0166D8D0537287A23820A168 /* Pods-InkExampleiOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-InkExampleiOS.modulemap"; sourceTree = "<group>"; };
 		EE11BADBDDC05B8FFA79FC201EF31A03 /* Pods-InkExampleiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InkExampleiOS.release.xcconfig"; sourceTree = "<group>"; };
-		EE8CBDF354456770E59BAD328585B184 /* Primitives.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
 		EF4F82E295F7E22493F02E534A5E5B06 /* Pods-InkExampleOSX-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InkExampleOSX-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F66AAA322C2BD122B32CF9952FC95B26 /* InkKit-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "InkKit-iOS-dummy.m"; path = "../InkKit-iOS/InkKit-iOS-dummy.m"; sourceTree = "<group>"; };
 		F7BE8E7D852966F4096CD746C3A9328D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9BC9E9200FA06E223AB15C8397856D6 /* Shadows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Shadows.swift; sourceTree = "<group>"; };
 		FCB0AF001E02632C0038C161CF31C94D /* Pods-InkExampleOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InkExampleOSX.debug.xcconfig"; sourceTree = "<group>"; };
+		FD54594727FEEEFCA1F074E6D0CF982F /* Drawing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		FD6FBE71D5EF202F1D4BE181A58E766F /* InkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -206,12 +209,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2BD61DD87DE3DC88A641E699E7031EF /* Frameworks */ = {
+		2C9298AE57C7D3E0F104AB1529F60C1E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				654585A4BDFF2684C8A0CF5BF33F6943 /* Foundation.framework in Frameworks */,
-				2072430E7DACCC28BE9D516073002B9F /* GraphicsRenderer.framework in Frameworks */,
+				9E9AAF9B1EE4CB198257D1B7BE2CDD1A /* Cocoa.framework in Frameworks */,
+				5F077FC9A77A6199AE1E1C842687B3BF /* GraphicsRenderer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,15 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF1CDB3CE7A0FECD016AC94601CF7207 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B25CE30D34F151E9A43486FC6AAC6116 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A2CD6E653FC6762DB614997F0BFA1A63 /* Cocoa.framework in Frameworks */,
-				7780EAFF33B1E0ECE317083604B9D649 /* GraphicsRenderer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +242,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F82CAFC9E4A5B5F03461FE7E59BD2052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8EA2313AF34844F301FE3B5C6AB4B39 /* Foundation.framework in Frameworks */,
+				1C2D73AAEAF61A064F33617CADC06840 /* GraphicsRenderer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -262,6 +265,31 @@
 				19D5861B852EF731E8678123AAF179D0 /* Pods_InkExampleOSX.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		16B3757431571E43798BED31C312C20C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				88F252A42000619DF8C1D2E843119276 /* BezierPath+Corners.swift */,
+				CCF22B2003635362A77F2E227B95CF26 /* BezierPath+MacOS.swift */,
+				47261BD53B5C6CB6D3FE2C412F44CD3F /* Borders.swift */,
+				5D2FAF250306BC73FC196CB72CE25D0B /* Color.swift */,
+				FD54594727FEEEFCA1F074E6D0CF982F /* Drawing.swift */,
+				DE987805B1ECCF627D37FCCB7A181247 /* Fills.swift */,
+				69357CAC8CCAF0BA735D63F652BDE96A /* Geometry.swift */,
+				46B2BD7A81BA5D80A870D2725C067F83 /* Grid.swift */,
+				E08AC263F338514830E5676C9DABFD86 /* Image+Drawing.swift */,
+				E40B0145CB608D2A2D2EEAD9AB1AB27B /* Math.swift */,
+				BD92B44812AB2D881B50DE7D7EFE4BF3 /* Platform.swift */,
+				A8E8257DB231F9C2BF2998E9EEA51000 /* Primitives.swift */,
+				BFD5EEF5738318607EA5A985FEE3CD9C /* Shadows.swift */,
+				CE9827E3BE899600840D3F01F2F37526 /* String+Drawing.swift */,
+				AA90B86932D8FE5E7B32A6414D8EC28E /* Strokes.swift */,
+				9F06CB8C749F654BC3E453F7A4BD77A8 /* Transform+Extensions.swift */,
+				7B5C2752F04702796E621C69060A34F3 /* Transforms+Extensions.swift */,
+				5B57213C447C154C897FAE290F5C7BCD /* Types.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		275051092A66232C51A508522C858069 /* OS X */ = {
@@ -299,30 +327,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/GraphicsRenderer-OSX";
-			sourceTree = "<group>";
-		};
-		4B757EACF79B9C9452FCCEF3F724B2D7 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				D7653EF959C6E460AA9C15630890CA97 /* BezierPath+Corners.swift */,
-				AB1218105EC2BDC648EDD8D535E2ED62 /* BezierPath+MacOS.swift */,
-				33AAD21FC9D02ED8D7F5AEBD546EEB67 /* Borders.swift */,
-				B9FB74F5817C0502A3EFFE7C2AA7CAF9 /* Color.swift */,
-				E26D2572DD1968BE99F2E596E714893D /* Drawing.swift */,
-				4B63FF2C3771A94A592D72A389B38511 /* Fills.swift */,
-				9E68A15760714DEB9F836DAA87368266 /* Geometry.swift */,
-				42C358ABFF69155931652735C2BEA03B /* Grid.swift */,
-				7C7696D9B53677BE3752F0DEFF8BB233 /* Image+Drawing.swift */,
-				586327703BF7AFED7F837CB51D1EA709 /* Math.swift */,
-				EE8CBDF354456770E59BAD328585B184 /* Primitives.swift */,
-				F9BC9E9200FA06E223AB15C8397856D6 /* Shadows.swift */,
-				8EE129B7DBDC2D0AB1557B08461A82F4 /* String+Drawing.swift */,
-				ADA1B7975239068BAA5CC57A83EC8295 /* Strokes.swift */,
-				33C3F71F7F3B713E1F145CFD61F48841 /* Transform+Extensions.swift */,
-				60E100E5CFB98C44DC9342A5276C0AA2 /* Transforms+Extensions.swift */,
-				DABCBE886657C653357F400463644499 /* Types.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		59F564EF4055DE19EE89DD8D8FDA4584 /* iOS */ = {
@@ -366,7 +370,7 @@
 		95C98C862D6761533C5715EC396FCCB6 /* InkKit */ = {
 			isa = PBXGroup;
 			children = (
-				CC39207D23CF379DE7DDA2D6F430E24E /* Pod */,
+				A3CC98523D8E79C55FE2AC063B87A9E1 /* Pod */,
 				CC2E1CEADDA541B012551EC454179773 /* Support Files */,
 			);
 			name = InkKit;
@@ -404,6 +408,14 @@
 			path = "Target Support Files/Pods-InkExampleiOS";
 			sourceTree = "<group>";
 		};
+		A3CC98523D8E79C55FE2AC063B87A9E1 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				16B3757431571E43798BED31C312C20C /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
 		BA25D0EFB90697EF0B9522B0E43A82FF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,14 +444,6 @@
 			path = "Example/Pods/Target Support Files/InkKit-OSX";
 			sourceTree = "<group>";
 		};
-		CC39207D23CF379DE7DDA2D6F430E24E /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				4B757EACF79B9C9452FCCEF3F724B2D7 /* Classes */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
 		DD1270DDD5F898538FFAA019B71B8406 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,19 +465,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		135869C1EE0E01E7564525CA3F21980A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5CD9E0148A7B0914A150FB8BCFCFD444 /* InkKit-iOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		29C5CAB42C7A9C36A0E31E1B761DE6B6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D204E3C99F4ED032B21595E40A7D13ED /* Pods-InkExampleiOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53C7E1E99281034E1A8F640477427F77 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26E9AE04C15C136592699F0850087532 /* InkKit-iOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,11 +497,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2FA05065B7B40DF518077639DC59C12 /* Headers */ = {
+		E5F1F9B55541767D6418224E67A8BBEA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2267DFA3341996E99E6114097C4F3D5 /* InkKit-OSX-umbrella.h in Headers */,
+				D2BD3150F95D3E80BC3992369DFA9D57 /* InkKit-OSX-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,42 +531,6 @@
 			name = "GraphicsRenderer-OSX";
 			productName = "GraphicsRenderer-OSX";
 			productReference = B4EDE651459F60696C93AF6C4F2A90B4 /* GraphicsRenderer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		3D789815B5649772A644220EED75598F /* InkKit-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 98435EA3083243F5B71C6C5EF6F5BD2B /* Build configuration list for PBXNativeTarget "InkKit-iOS" */;
-			buildPhases = (
-				70B412EDD9A30B6E8318B80F578B9487 /* Sources */,
-				A2BD61DD87DE3DC88A641E699E7031EF /* Frameworks */,
-				135869C1EE0E01E7564525CA3F21980A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F583995899AB2F0B068E0076A5687719 /* PBXTargetDependency */,
-			);
-			name = "InkKit-iOS";
-			productName = "InkKit-iOS";
-			productReference = FD6FBE71D5EF202F1D4BE181A58E766F /* InkKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		785B359FD3B5242F536DA604FDFC2215 /* InkKit-OSX */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 81A49F95755146F812EADAAD3A63BED3 /* Build configuration list for PBXNativeTarget "InkKit-OSX" */;
-			buildPhases = (
-				C227DF4FD246BBEDA535876F028DFDCE /* Sources */,
-				B25CE30D34F151E9A43486FC6AAC6116 /* Frameworks */,
-				E2FA05065B7B40DF518077639DC59C12 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C10B88BD4D0B2AE037CEF26F51AB7023 /* PBXTargetDependency */,
-			);
-			name = "InkKit-OSX";
-			productName = "InkKit-OSX";
-			productReference = C0C71909C360F4AA62E56422E1A42223 /* InkKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7D4608F1739B3A812D37AC4BA1D7E2C1 /* Pods-InkExampleOSX */ = {
@@ -620,6 +588,42 @@
 			productReference = C09DDAE1B0650E7BEFAB1F9A31005B56 /* GraphicsRenderer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D00B321AB930B9133F87A32345301B8B /* InkKit-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A03EB855B945C60C4437C0D6C490DBC3 /* Build configuration list for PBXNativeTarget "InkKit-OSX" */;
+			buildPhases = (
+				3A25A4FA6A1A7D0EE719A8382941ABF4 /* Sources */,
+				2C9298AE57C7D3E0F104AB1529F60C1E /* Frameworks */,
+				E5F1F9B55541767D6418224E67A8BBEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7509289978CA3DDA3F4DB8FD9E19B8AA /* PBXTargetDependency */,
+			);
+			name = "InkKit-OSX";
+			productName = "InkKit-OSX";
+			productReference = C0C71909C360F4AA62E56422E1A42223 /* InkKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D92EDA74BB3265237365A55162B658C6 /* InkKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF76E16BBDB39257868188BAE50B4517 /* Build configuration list for PBXNativeTarget "InkKit-iOS" */;
+			buildPhases = (
+				D68D8B099ECEEEAB4B4E086A973B242F /* Sources */,
+				F82CAFC9E4A5B5F03461FE7E59BD2052 /* Frameworks */,
+				53C7E1E99281034E1A8F640477427F77 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB379B00846592962EBD20CA3CB17BEF /* PBXTargetDependency */,
+			);
+			name = "InkKit-iOS";
+			productName = "InkKit-iOS";
+			productReference = FD6FBE71D5EF202F1D4BE181A58E766F /* InkKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -643,8 +647,8 @@
 			targets = (
 				C498E7DC6C8918C4B9415A1933BA0EBA /* GraphicsRenderer-iOS */,
 				3C6F39CEB31D8CA002115B23D892B372 /* GraphicsRenderer-OSX */,
-				3D789815B5649772A644220EED75598F /* InkKit-iOS */,
-				785B359FD3B5242F536DA604FDFC2215 /* InkKit-OSX */,
+				D92EDA74BB3265237365A55162B658C6 /* InkKit-iOS */,
+				D00B321AB930B9133F87A32345301B8B /* InkKit-OSX */,
 				86BF8EFDE00E5E06DE2657F259FB509C /* Pods-InkExampleiOS */,
 				7D4608F1739B3A812D37AC4BA1D7E2C1 /* Pods-InkExampleOSX */,
 			);
@@ -660,28 +664,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70B412EDD9A30B6E8318B80F578B9487 /* Sources */ = {
+		3A25A4FA6A1A7D0EE719A8382941ABF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D75759D12D1E1A97FA6C7448C6B0EC24 /* BezierPath+Corners.swift in Sources */,
-				2E7DA4B0A20167AAD1632A933A0539BC /* BezierPath+MacOS.swift in Sources */,
-				A7B776F235CD7CD0BEFE850BD4D46DCB /* Borders.swift in Sources */,
-				5B015AD1AF75268731A1D7C3CB5C8B03 /* Color.swift in Sources */,
-				39CF92368D92FE29B9D596904CF5FB75 /* Drawing.swift in Sources */,
-				43A542A6073F2F66BF40CBDFC8D503DE /* Fills.swift in Sources */,
-				469D122F257308066721C8D8D739A6F3 /* Geometry.swift in Sources */,
-				B6EDEC1C7950363E59EF1AADF3215CB3 /* Grid.swift in Sources */,
-				889F58FBE1FB9AED11C956E668898C71 /* Image+Drawing.swift in Sources */,
-				FE6C8B43DFF600AAECC55197EA288A77 /* InkKit-iOS-dummy.m in Sources */,
-				56C97BC3B7336A0607E9057E194B989B /* Math.swift in Sources */,
-				36B35085B58EB0968D7470E0DA1CBD7B /* Primitives.swift in Sources */,
-				11D50DEE1D62E886B54A8026495A4676 /* Shadows.swift in Sources */,
-				156C0783CC198A826014E4E307F35026 /* String+Drawing.swift in Sources */,
-				178D8EB6DCD3B9178AFD738DA63E2561 /* Strokes.swift in Sources */,
-				03D55C97F1D4780BFAF250E1D555056B /* Transform+Extensions.swift in Sources */,
-				5B39D35140DAEF7036B9EAA248871C1B /* Transforms+Extensions.swift in Sources */,
-				9A2C5FC9D9B65CAA158CF4D746D084BD /* Types.swift in Sources */,
+				967962EDF2A3D82B6A7B226F8C869F09 /* BezierPath+Corners.swift in Sources */,
+				A68D4DF29A4A64FE16F455B84B91BA1E /* BezierPath+MacOS.swift in Sources */,
+				765C916F1028A3B7FB129F7AE3CF137C /* Borders.swift in Sources */,
+				3FFB1CB2B5981A3B1D563B7D9FF8EDC1 /* Color.swift in Sources */,
+				DB28C36875BD110C54D88C1B39F663BD /* Drawing.swift in Sources */,
+				DEA49B6338B0B12DC4308B2A48F6C0FF /* Fills.swift in Sources */,
+				FCFE72CBEC00C533D2FB1D92146BAE8C /* Geometry.swift in Sources */,
+				6A0DCF68D9A563D24CB86E95F33CBDC4 /* Grid.swift in Sources */,
+				9A522DDF51F8DCB4F7F5AD39797765DF /* Image+Drawing.swift in Sources */,
+				B53499ABA050A12D4FFB5137FAE243C5 /* InkKit-OSX-dummy.m in Sources */,
+				151105AD3527549D440B0946A7275CA9 /* Math.swift in Sources */,
+				A1D106D56F1FEF48A50190F44696421A /* Platform.swift in Sources */,
+				277D8F33A3D329A82AADA56FF8853E83 /* Primitives.swift in Sources */,
+				D9A26EBEC1A2F0323A96C81D6953FFDA /* Shadows.swift in Sources */,
+				11B6FC94C536D726B219AEAF1F9682F1 /* String+Drawing.swift in Sources */,
+				3582AC623B6B4131064E75C1E4988D12 /* Strokes.swift in Sources */,
+				590AC76C023A9FC16BD04902B1FE7071 /* Transform+Extensions.swift in Sources */,
+				0BD3E7BD2F19412164E03A25083D9FAE /* Transforms+Extensions.swift in Sources */,
+				C7F59B961A629DF4E81DB6CC37F4E573 /* Types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,28 +711,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C227DF4FD246BBEDA535876F028DFDCE /* Sources */ = {
+		D68D8B099ECEEEAB4B4E086A973B242F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F743BDD4F1402BF36FDF7BA14DE2822E /* BezierPath+Corners.swift in Sources */,
-				2CC2FCF3B1495F0E69A076E56AB0D2B4 /* BezierPath+MacOS.swift in Sources */,
-				944066FF764A958B5BC155FA8E94A262 /* Borders.swift in Sources */,
-				E1B44B2085D80F81C9ADFBF90A769BE9 /* Color.swift in Sources */,
-				C70B290F513010F611C960CB0D3261CD /* Drawing.swift in Sources */,
-				F3090F95E06550DA050F312A45A0C993 /* Fills.swift in Sources */,
-				E597EA94243DA8B99DABEBB6204F42DF /* Geometry.swift in Sources */,
-				E57B32F2F60D63105A648E882BFA8881 /* Grid.swift in Sources */,
-				CE5E5676BC228F0EE44794CA2A664527 /* Image+Drawing.swift in Sources */,
-				E816D93A5DA9D9B70BD43F0117856E1C /* InkKit-OSX-dummy.m in Sources */,
-				19CCC115BA6CF22925F18555FCBC3D1E /* Math.swift in Sources */,
-				8965479AAC11C905B90400CD15C52F1E /* Primitives.swift in Sources */,
-				3B1C17719C148D2221550F06C747E628 /* Shadows.swift in Sources */,
-				B6E84B6BB8EC4B6758469D7723F784C5 /* String+Drawing.swift in Sources */,
-				D8C115CE799AEE96CD3655F6ABFF9886 /* Strokes.swift in Sources */,
-				B969C43F1ED3B82289D92415D0767CD1 /* Transform+Extensions.swift in Sources */,
-				A4E0A9150921598B473E58CD5B7C435F /* Transforms+Extensions.swift in Sources */,
-				7A65D08F76FB413AC7FBA897E0A08522 /* Types.swift in Sources */,
+				424F128D6015DB9B7B06905022B0EDB5 /* BezierPath+Corners.swift in Sources */,
+				AD371BB2FB777EA57F83C1095F58ABF2 /* BezierPath+MacOS.swift in Sources */,
+				D480430A93AD0536D99D8320804C7AF3 /* Borders.swift in Sources */,
+				A3ED5A29C82EEB442B6A8DE486752CAA /* Color.swift in Sources */,
+				72CE832BB15E5D88D6115146426FB15E /* Drawing.swift in Sources */,
+				6DC14FC67829DED62E56D7FEA56B0355 /* Fills.swift in Sources */,
+				9A4B7E12E9CDD4F46CBDFBF0C5616026 /* Geometry.swift in Sources */,
+				72B79D39DE8FE3EEE5E7964839005163 /* Grid.swift in Sources */,
+				E2D07C779E996CF1D899EDE71ED1B026 /* Image+Drawing.swift in Sources */,
+				F204016EA5ADB9BA91D1D3A27B41779F /* InkKit-iOS-dummy.m in Sources */,
+				F4F1BB1D7AAA322320F7807093649893 /* Math.swift in Sources */,
+				73F0ACF3ED67A0A822F2FBFA7E73F741 /* Platform.swift in Sources */,
+				D9324186D6BEED6F5A332E05C89CFCE5 /* Primitives.swift in Sources */,
+				4AA8737C679BDCC7EBD02D4F2A06E603 /* Shadows.swift in Sources */,
+				03EE3DD7FFFA63B5F2B3F0A960AF5E32 /* String+Drawing.swift in Sources */,
+				1E7A472B907F70D8DD27835673A979AB /* Strokes.swift in Sources */,
+				DEBADA7516A84D4CEBD9A5A794638673 /* Transform+Extensions.swift in Sources */,
+				4225DFDDC2C865723407C49BEBC171DE /* Transforms+Extensions.swift in Sources */,
+				1E49EC91A27877917433AB26447D1E30 /* Types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,8 +756,14 @@
 		25B2CC6920E938F84C664D5E29B7B6DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "InkKit-OSX";
-			target = 785B359FD3B5242F536DA604FDFC2215 /* InkKit-OSX */;
+			target = D00B321AB930B9133F87A32345301B8B /* InkKit-OSX */;
 			targetProxy = 0F01EC47D36389734958E4B8B8FA1B9C /* PBXContainerItemProxy */;
+		};
+		7509289978CA3DDA3F4DB8FD9E19B8AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "GraphicsRenderer-OSX";
+			target = 3C6F39CEB31D8CA002115B23D892B372 /* GraphicsRenderer-OSX */;
+			targetProxy = 24E50EC67FA4CE4BAF5D0FD6602017F0 /* PBXContainerItemProxy */;
 		};
 		8854437BE42EA7A50CD91F951C4F687B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -759,16 +771,10 @@
 			target = C498E7DC6C8918C4B9415A1933BA0EBA /* GraphicsRenderer-iOS */;
 			targetProxy = C558BD6D0A4853EB48789888700FA79F /* PBXContainerItemProxy */;
 		};
-		C10B88BD4D0B2AE037CEF26F51AB7023 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "GraphicsRenderer-OSX";
-			target = 3C6F39CEB31D8CA002115B23D892B372 /* GraphicsRenderer-OSX */;
-			targetProxy = 4530A3225FDC35A1FFED397FE0D27430 /* PBXContainerItemProxy */;
-		};
 		C3FB75A62596FDC03FC7CA755C0CAA65 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "InkKit-iOS";
-			target = 3D789815B5649772A644220EED75598F /* InkKit-iOS */;
+			target = D92EDA74BB3265237365A55162B658C6 /* InkKit-iOS */;
 			targetProxy = 370FE3032D53398D19902A5161585A1E /* PBXContainerItemProxy */;
 		};
 		C8FAF37C7535F4C9A3DB99A7B7080440 /* PBXTargetDependency */ = {
@@ -777,22 +783,24 @@
 			target = 3C6F39CEB31D8CA002115B23D892B372 /* GraphicsRenderer-OSX */;
 			targetProxy = AEA920EAC2F172DEE259152A267CE134 /* PBXContainerItemProxy */;
 		};
-		F583995899AB2F0B068E0076A5687719 /* PBXTargetDependency */ = {
+		FB379B00846592962EBD20CA3CB17BEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "GraphicsRenderer-iOS";
 			target = C498E7DC6C8918C4B9415A1933BA0EBA /* GraphicsRenderer-iOS */;
-			targetProxy = 80C173F3452E7989EFABF03B23FE493E /* PBXContainerItemProxy */;
+			targetProxy = 1E453E981F26F1FB23D8FA5295F6A1C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B041EC71C96F151A050ED05F6E891CF /* Debug */ = {
+		033D63A1BC21C9E4CAF5301F97093C06 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23C6C6C54B1A68F0AB32E35FD232CDE2 /* InkKit-iOS.xcconfig */;
+			baseConfigurationReference = 6146FD8A5846AA48F6272EFEE6A8A1F6 /* InkKit-OSX.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -800,20 +808,20 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/InkKit-iOS/InkKit-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/InkKit-iOS/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/InkKit-OSX/InkKit-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/InkKit-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/InkKit-iOS/InkKit-iOS.modulemap";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/InkKit-OSX/InkKit-OSX.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = InkKit;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -875,6 +883,38 @@
 				MODULEMAP_FILE = "Target Support Files/GraphicsRenderer-iOS/GraphicsRenderer-iOS.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = GraphicsRenderer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		19B53A76BF37DE12EC57AAB2D17A17D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23C6C6C54B1A68F0AB32E35FD232CDE2 /* InkKit-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/InkKit-iOS/InkKit-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/InkKit-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/InkKit-iOS/InkKit-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = InkKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -993,42 +1033,9 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 3.0;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		6779B8EBAE1AC1EEC7F6F520C96E9EC6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6146FD8A5846AA48F6272EFEE6A8A1F6 /* InkKit-OSX.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/InkKit-OSX/InkKit-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/InkKit-OSX/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/InkKit-OSX/InkKit-OSX.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = InkKit;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1073,7 +1080,75 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 3.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A085919F08142F255B4B3C658B91ECA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6146FD8A5846AA48F6272EFEE6A8A1F6 /* InkKit-OSX.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/InkKit-OSX/InkKit-OSX-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/InkKit-OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/InkKit-OSX/InkKit-OSX.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = InkKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A247EE631ECF73EDFE615D7603F1DE9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23C6C6C54B1A68F0AB32E35FD232CDE2 /* InkKit-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/InkKit-iOS/InkKit-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/InkKit-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/InkKit-iOS/InkKit-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = InkKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -1110,41 +1185,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		A7A9D5D24CEA33400200FD8BB72A0247 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6146FD8A5846AA48F6272EFEE6A8A1F6 /* InkKit-OSX.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/InkKit-OSX/InkKit-OSX-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/InkKit-OSX/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/InkKit-OSX/InkKit-OSX.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = InkKit;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		B4BABD61B565F384E006429980032193 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1254,38 +1294,6 @@
 			};
 			name = Release;
 		};
-		F0F4558B6C5C94AD0DA0DEA394F49E2C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23C6C6C54B1A68F0AB32E35FD232CDE2 /* InkKit-iOS.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/InkKit-iOS/InkKit-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/InkKit-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/InkKit-iOS/InkKit-iOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = InkKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1316,20 +1324,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81A49F95755146F812EADAAD3A63BED3 /* Build configuration list for PBXNativeTarget "InkKit-OSX" */ = {
+		A03EB855B945C60C4437C0D6C490DBC3 /* Build configuration list for PBXNativeTarget "InkKit-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A7A9D5D24CEA33400200FD8BB72A0247 /* Debug */,
-				6779B8EBAE1AC1EEC7F6F520C96E9EC6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		98435EA3083243F5B71C6C5EF6F5BD2B /* Build configuration list for PBXNativeTarget "InkKit-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B041EC71C96F151A050ED05F6E891CF /* Debug */,
-				F0F4558B6C5C94AD0DA0DEA394F49E2C /* Release */,
+				033D63A1BC21C9E4CAF5301F97093C06 /* Debug */,
+				A085919F08142F255B4B3C658B91ECA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1348,6 +1347,15 @@
 			buildConfigurations = (
 				B9C0E3CDF1A6D2DA7F0C411F1D5123F2 /* Debug */,
 				A59561AFB8BEA2238F15860364B1F59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF76E16BBDB39257868188BAE50B4517 /* Build configuration list for PBXNativeTarget "InkKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A247EE631ECF73EDFE615D7603F1DE9D /* Debug */,
+				19B53A76BF37DE12EC57AAB2D17A17D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -36,7 +36,7 @@
 		5423D22B1CE24BA0007220AB /* Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
 		5428D6591CE5051B0082D815 /* InkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InkKit.framework; path = "../../../../../../../Developer/Xcode/DerivedData/InkKit-fbosphqlxmedrxgpczcgejmkgwbw/Build/Products/Debug-iphoneos/InkKit.framework"; sourceTree = "<group>"; };
 		5428D68A1CE5D82A0082D815 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
-		5459370D1D9E790B00644DCE /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5459370D1D9E790B00644DCE /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; tabWidth = 4; };
 		545937151D9E9BC200644DCE /* InkExampleOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InkExampleOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545937171D9E9BC200644DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		545937191D9E9BC200644DCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +51,7 @@
 		54D95B891D74806C005AA315 /* Transforms+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transforms+Extensions.swift"; sourceTree = "<group>"; };
 		54D95B8B1D7480F8005AA315 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		54D95B8D1D74842E005AA315 /* BezierPath+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BezierPath+Corners.swift"; sourceTree = "<group>"; };
+		54F30EB61DA2CDBE00B3D43E /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		5B5F176F14E45D023ADB564A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* InkExampleiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InkExampleiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 				541FFBC21CB545CF00967CB1 /* Types.swift */,
 				54D95B891D74806C005AA315 /* Transforms+Extensions.swift */,
 				54D95B8B1D7480F8005AA315 /* Math.swift */,
+				54F30EB61DA2CDBE00B3D43E /* Platform.swift */,
 			);
 			name = Classes;
 			path = ../Pod/Classes;
@@ -456,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0AB89947FBA728A182503111 /* Pods-InkExampleOSX.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -479,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F2449DD6026240D4F69EC9B1 /* Pods-InkExampleOSX.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;

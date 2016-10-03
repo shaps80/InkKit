@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/GraphicsRenderer-iOS/GraphicsRenderer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/InkKit-iOS/InkKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/GraphicsRenderer-iOS/GraphicsRenderer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/InkKit-iOS/InkKit.framework"
 fi

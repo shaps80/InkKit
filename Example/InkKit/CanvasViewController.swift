@@ -24,15 +24,14 @@ import UIKit
 import InkKit
 
 final class CanvasView: UIView {
-//
+
 //  private var table: Grid!
-//  @IBOutlet var slider: UISlider!
-//  
-//  @IBAction func valueChanged(_ slider: UISlider) {
-//    setNeedsDisplay()
-//
-//  }
-//  
+  @IBOutlet var slider: UISlider!
+
+  @IBAction func valueChanged(_ slider: UISlider) {
+    setNeedsDisplay()
+  }
+
 //  override func draw(_ bgFrame: CGRect) {
 //    super.draw(bgFrame)
 //    if let color = Color(hex: "1c3d64") {
@@ -244,7 +243,7 @@ final class CanvasViewController: UIViewController {
 //      return
 //    }
     
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) { 
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
       self.animate()
     }
   }

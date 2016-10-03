@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7D4608F1739B3A812D37AC4BA1D7E2C1'
-               BlueprintName = 'Pods-InkExampleOSX'
+               BlueprintIdentifier = '3C6F39CEB31D8CA002115B23D892B372'
+               BlueprintName = 'GraphicsRenderer-OSX'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-InkExampleOSX.framework'>
+               BuildableName = 'GraphicsRenderer-OSX.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

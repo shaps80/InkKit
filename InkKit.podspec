@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.platforms = { :ios => "8.0", :osx => "10.10" }
   s.requires_arc     = true
   s.source_files     = 'Pod/Classes/**/*'
+  s.dependency         'GraphicsRenderer'
 end

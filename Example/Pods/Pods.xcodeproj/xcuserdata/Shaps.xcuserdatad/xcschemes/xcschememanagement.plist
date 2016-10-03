@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GraphicsRenderer-OSX.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GraphicsRenderer-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>InkKit-OSX.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -26,27 +36,6 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>515B6F1B92922366338015D4ACE36EBB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7E1567AD2CFE0F50E9736E142EE0F9AF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>974FFF409DBCE3085ADAE79D5D46FAC7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B798AFBFD87A720C3A0AB2FB4FA19C2E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

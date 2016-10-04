@@ -20,6 +20,8 @@
  THE SOFTWARE.
  */
 
+import CoreGraphics
+
 /**
  *  Represents a color value type
  */
@@ -136,7 +138,7 @@ extension Color {
             red:   Float((normalizedHex >> 24) & 0xFF) / 255,
             green: Float((normalizedHex >> 16) & 0xFF) / 255,
             blue:  Float((normalizedHex >> 8)  & 0xFF) / 255,
-            alpha: alpha ?? Float((normalizedHex >> 0)  & 0xFF))
+            alpha: alpha ?? Float((normalizedHex)  & 0xFF) / 255)
     }
     
     /**
@@ -147,7 +149,7 @@ extension Color {
      - returns: A hex string representation
      */
     public func toHex(withAlpha: Bool = true) -> String {
-        let alpha = withAlpha ? String(format: "%02X", Int(rgba.alpha)) : ""
+        let alpha = withAlpha ? String(format: "%02X", Int(rgba.alpha * 255)) : ""
         return String(format: "%02X%02X%02X\(alpha)", Int(rgba.red * 255), Int(rgba.green * 255), Int(rgba.blue * 255))
     }
     
@@ -201,14 +203,6 @@ extension Color {
     
 }
 
-//extension Color: ExpressibleByIntegerLiteral {
-//
-//    public init(integerLiteral value: Int) {
-//        self.init(hex: integerValue)
-//    }
-//    
-//}
-
 extension Color {
     
     /// Returns true if the color is considered visually dark. False otherwise
@@ -248,7 +242,7 @@ extension Color {
 }
 
 extension Color {
-  
+    
     public func set() {
         setFill()
         setStroke()
@@ -261,9 +255,8 @@ extension Color {
     public func setStroke() {
         CGContext.current?.setStrokeColor(cgColor)
     }
-  
+    
 }
-
 
 #if os(iOS)
     import UIKit

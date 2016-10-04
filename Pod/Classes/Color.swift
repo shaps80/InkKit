@@ -241,12 +241,6 @@ extension Color {
     
 }
 
-extension Color: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: Int) {
-        self.init(hex: value)!
-    }
-}
-
 extension Color: ExpressibleByStringLiteral {
     public init(extendedGraphemeClusterLiteral value: String) {
         self.init(hex: value)!

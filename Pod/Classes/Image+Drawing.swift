@@ -123,7 +123,7 @@ extension Image {
       GraphicsContext()?.draw(inRect: rect, attributes: attributesBlock, drawing: drawing)
       let image = UIGraphicsGetImageFromCurrentImageContext()
       UIGraphicsEndImageContext()
-      return image
+      return image!
     #endif
   }
   

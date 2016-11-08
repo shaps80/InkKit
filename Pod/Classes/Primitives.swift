@@ -46,7 +46,7 @@ extension Draw {
       end.x += rect.origin.x
       end.y += rect.origin.y
       
-      CGContextDrawLinearGradient(context, gradient, start, end, [ .DrawsAfterEndLocation, .DrawsBeforeStartLocation ])
+      CGContextDrawLinearGradient(context, gradient!, start, end, [ .DrawsAfterEndLocation, .DrawsBeforeStartLocation ])
     })
   }
   

@@ -58,12 +58,12 @@ pod 'InkKit'
 
 In order to use InkKit in a Swift 2.3 project, ensure you point to the `swift2.3` branch.
 
-pod 'InkKit', :branch => 'swift2.3'
+`pod 'InkKit', :git => 'https://github.com/shaps80/InkKit/', :branch => 'swift2.3'`
 
 **Swift 2.2**
 
 If you still require Swift 2.2, point your version as such:
-`pod 'InkKit', '1.3.1'
+`pod 'InkKit', '1.3.1'`
 
 ## Change Log
 

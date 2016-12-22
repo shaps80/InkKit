@@ -69,7 +69,7 @@ extension Draw {
       CGContextBeginTransparencyLayer(context, nil)
       CGContextSetShadowWithColor(context, offset, radius, opaqueShadowColor)
       CGContextSetBlendMode(context, .SourceOut)
-      CGContextSetFillColorWithColor(context, opaqueShadowColor)
+      CGContextSetFillColorWithColor(context, opaqueShadowColor!)
       CGContextAddPath(context, path.CGPath)
       CGContextFillPath(context)
       CGContextEndTransparencyLayer(context)

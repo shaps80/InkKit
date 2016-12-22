@@ -5,6 +5,22 @@
 [![Language](https://img.shields.io/badge/language-swift-ff69b4.svg)](http://cocoadocs.org/docsets/InkKit)
 [![Platform](https://img.shields.io/cocoapods/p/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
 
+# Swift Support
+
+**Swift 3.0**
+
+InkKit is Swift 3.0 by default, so to use that just include InkKit in your podfile:
+
+pod 'InkKit'
+
+**Swift 2.3**
+
+In order to use InkKit in a Swift 2.3 project, ensure you point to the `swift2.3` branch.
+
+pod 'InkKit', :branch => 'swift2.3'
+
+---
+
 Everything you see here, was code-drawn with InkKit! In fact, other than some `CGRect` instances, this is ALL the code required to draw the image you see on the right ;)
 
 <table>

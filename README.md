@@ -5,12 +5,6 @@
 [![Language](https://img.shields.io/badge/language-swift-ff69b4.svg)](http://cocoadocs.org/docsets/InkKit)
 [![Platform](https://img.shields.io/cocoapods/p/InkKit.svg?style=flat)](http://cocoapods.org/pods/InkKit)
 
-#### Note
-> If you require Swift 2.2 still, fix your version of InkKit to:
-`pod 'InkKit', '1.3.1'
-
----
-
 Everything you see here, was code-drawn with InkKit! In fact, other than some `CGRect` instances, this is ALL the code required to draw the image you see on the right ;)
 
 <table>
@@ -51,6 +45,25 @@ let (_, navFrame) = barFrame.divide(20, fromEdge: .MinYEdge)
 backIndicatorImage().drawAtPoint(CGPoint(x: 22, y: 30))  
 </pre></div></td></tr>
 </table>
+
+## Swift Support
+
+**Swift 3.0**
+
+InkKit is Swift 3.0 by default, so to use that just include InkKit in your podfile:
+
+pod 'InkKit'
+
+**Swift 2.3**
+
+In order to use InkKit in a Swift 2.3 project, ensure you point to the `swift2.3` branch.
+
+pod 'InkKit', :branch => 'swift2.3'
+
+**Swift 2.2**
+
+If you still require Swift 2.2, point your version as such:
+`pod 'InkKit', '1.3.1'
 
 ## Change Log
 

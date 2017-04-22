@@ -14,7 +14,7 @@ Everything you see here, was code-drawn with InkKit! In fact, other than some `C
   </tr>
   <tr>
     <td>Lets draw the screen on the right.</td>
-    <th rowspan="9"><img src="http://shaps.me/assets/img/blog/InkKit.gif"></th>
+    <th rowspan="9"><img src="https://camo.githubusercontent.com/3b91556602d4501e9916903939f35d1ea85697a7/687474703a2f2f73686170732e6d652f6173736574732f696d672f626c6f672f496e6b4b69742e676966"></th>
   </tr>
   <tr><td><div class="highlight highlight-source-swift"><pre>
 Draw.fillRect(bgFrame, color: UIColor(hex: "1c3d64"))

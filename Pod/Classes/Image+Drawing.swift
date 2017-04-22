@@ -129,7 +129,6 @@ extension Image {
     format.scale = scale
     return ImageRenderer(size: size, format: format).image { context in
       context.cgContext.draw(inRect: context.format.bounds, attributes: attributesBlock, drawing: drawing)
-      let rect = context.format.bounds
     }
   }
   

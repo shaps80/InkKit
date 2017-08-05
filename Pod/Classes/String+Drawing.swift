@@ -20,6 +20,7 @@
   THE SOFTWARE.
  */
 
+import Foundation
 import CoreGraphics
 
 extension String {

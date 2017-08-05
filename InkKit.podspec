@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "InkKit"
-  s.version          = "2.0.1"
-  s.summary          = "Drawing and Geometry made easy on iOS - now in Swift 3.0"
+  s.version          = "4.0.0"
+  s.summary          = "Drawing and Geometry made easy on iOS - now in Swift 4.0"
   s.homepage         = "https://github.com/shaps80/InkKit"
   s.screenshots      = "https://camo.githubusercontent.com/3b91556602d4501e9916903939f35d1ea85697a7/687474703a2f2f73686170732e6d652f6173736574732f696d672f626c6f672f496e6b4b69742e676966"
   s.license          = 'MIT'

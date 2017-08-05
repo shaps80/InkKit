@@ -1,6 +1,6 @@
 PODS:
   - GraphicsRenderer (1.0.0)
-  - InkKit (2.0.0):
+  - InkKit (4.0.0):
     - GraphicsRenderer
 
 DEPENDENCIES:
@@ -12,8 +12,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GraphicsRenderer: 24c313f90d5ccb41e54785f57fff5c9aff19ba20
-  InkKit: dee5f114e9b568d48733eb142559df01bdd8a225
+  InkKit: f180af02b0caa0cdecec10c5ea371daebb1840de
 
-PODFILE CHECKSUM: ebe162fdb8d7fc5158b4abe82074d73a7b4cc414
+PODFILE CHECKSUM: f6aca2612d5a9ec22602985383e420187e31c3a9
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.2.1

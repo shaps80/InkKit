@@ -65,15 +65,15 @@ final class CanvasView: UIView {
     context.fill(rect: barFrame, color: Color(hex: "ff0083")!)
     
     "InkKit".drawAligned(to: barFrame, attributes: [
-      NSForegroundColorAttributeName: Color.white.uiColor,
-      NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])
+        .foregroundColor: Color.white.uiColor,
+        .font: Font(name: "Avenir-Book", size: 20)! ])
     
     backIndicatorImage().draw(in: CGRect(x: 20, y: 11, width: 12, height: 22))
     
     grid.enumerateCells { (index, col, row, bounds) in
       "\(index)".drawAligned(to: bounds, attributes: [
-        NSFontAttributeName: Font(name: "Avenir-Book", size: 12)!,
-        NSForegroundColorAttributeName: Color(white: 1, alpha: 0.5).uiColor
+        .font: Font(name: "Avenir-Book", size: 12)!,
+        .foregroundColor: Color(white: 1, alpha: 0.5).uiColor
         ])
     }
     
@@ -103,8 +103,8 @@ final class CanvasView: UIView {
     }
     
     title.drawAligned(to: bounds, attributes: [
-      NSForegroundColorAttributeName: Color.white.uiColor,
-      NSFontAttributeName: Font(name: "Avenir-Medium", size: 15)!
+      .foregroundColor: Color.white.uiColor,
+      .font: Font(name: "Avenir-Medium", size: 15)!
       ])
   }
   

@@ -53,7 +53,7 @@ final class CanvasView: NSView {
     
     // Table
     
-    let grid = Grid(colCount: 6, rowCount: 9, bounds: tableFrame)
+    let grid = InkKit.Grid(colCount: 6, rowCount: 9, bounds: tableFrame)
     let path = grid.path(include: [.columns, .rows])
     
     context.stroke(path: path, startColor: Color(white: 1, alpha: 0.15), endColor: Color(white: 1, alpha: 0.05), angleInDegrees: 90)
@@ -69,15 +69,15 @@ final class CanvasView: NSView {
     context.fill(rect: barFrame, color: Color(hex: "ff0083")!)
     
     "InkKit".drawAligned(to: barFrame, attributes: [
-      NSForegroundColorAttributeName: Color.white.nsColor,
-      NSFontAttributeName: Font(name: "Avenir-Book", size: 20)! ])
+      NSAttributedStringKey.foregroundColor: Color.white.nsColor,
+      NSAttributedStringKey.font: Font(name: "Avenir-Book", size: 20)! ])
     
     backIndicatorImage().draw(in: CGRect(x: 20, y: 11, width: 12, height: 22))
     
     grid.enumerateCells { (index, col, row, bounds) in
       "\(index)".drawAligned(to: bounds, attributes: [
-        NSFontAttributeName: Font(name: "Avenir-Book", size: 12)!,
-        NSForegroundColorAttributeName: Color(white: 1, alpha: 0.5).nsColor
+        NSAttributedStringKey.font: Font(name: "Avenir-Book", size: 12)!,
+        NSAttributedStringKey.foregroundColor: Color(white: 1, alpha: 0.5).nsColor
       ])
     }
     
@@ -85,7 +85,7 @@ final class CanvasView: NSView {
   }
 
   func drawInnerGrid(in bounds: CGRect) {
-    let grid = Grid(colCount: 3, rowCount: 3, bounds: bounds)
+    let grid = InkKit.Grid(colCount: 3, rowCount: 3, bounds: bounds)
     let path = grid.path(include: [ .outline, .columns, .rows ])
     
     Color.white.setStroke()
@@ -107,8 +107,8 @@ final class CanvasView: NSView {
     }
     
     title.drawAligned(to: bounds, attributes: [
-      NSForegroundColorAttributeName: Color.white.nsColor,
-      NSFontAttributeName: Font(name: "Avenir-Medium", size: 15)!
+      NSAttributedStringKey.foregroundColor: Color.white.nsColor,
+      NSAttributedStringKey.font: Font(name: "Avenir-Medium", size: 15)!
     ])
   }
   

@@ -114,19 +114,11 @@ extension Color {
      - parameter alpha: An optional alpha value. Defaults to 1.0
      */
     public init?(hex: String, alpha: Float? = nil) {
-        var hexValue = hex.hasPrefix("#") ? String(hex.characters.dropFirst()) : hex
-        guard [3, 4, 6, 8].contains(hexValue.characters.count) else { return nil }
+        var hexValue = hex.hasPrefix("#") ? String(hex.dropFirst()) : hex
+        guard [3, 4, 6].contains(hexValue.count) else { return nil }
         
-        if hexValue.characters.count == 3 {
-            hexValue.append("F")
-        }
-        
-        if hexValue.characters.count == 6 {
-            hexValue.append("FF")
-        }
-        
-        if [3, 4].contains(hexValue.characters.count) {
-            for (index, char) in hexValue.characters.enumerated() {
+        if [3, 4].contains(hexValue.count) {
+            for (index, char) in hexValue.enumerated() {
                 let index = hexValue.index(hexValue.startIndex, offsetBy: index * 2)
                 hexValue.insert(char, at: index)
             }
@@ -135,10 +127,10 @@ extension Color {
         guard let normalizedHex = Int(hexValue, radix: 16) else { return nil }
         
         self.init(
-            red:   Float((normalizedHex >> 24) & 0xFF) / 255,
-            green: Float((normalizedHex >> 16) & 0xFF) / 255,
-            blue:  Float((normalizedHex >> 8)  & 0xFF) / 255,
-            alpha: alpha ?? Float((normalizedHex)  & 0xFF) / 255)
+            red:   Float((normalizedHex >> 16) & 0xFF) / 255,
+            green: Float((normalizedHex >> 8) & 0xFF) / 255,
+            blue:  Float((normalizedHex)  & 0xFF) / 255,
+            alpha: 1.0)
     }
     
     /**

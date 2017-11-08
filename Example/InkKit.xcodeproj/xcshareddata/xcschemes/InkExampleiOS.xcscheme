@@ -20,6 +20,20 @@
                ReferencedContainer = "container:InkKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "545937141D9E9BC200644DCE"
+               BuildableName = "InkExampleOSX.app"
+               BlueprintName = "InkExampleOSX"
+               ReferencedContainer = "container:InkKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
